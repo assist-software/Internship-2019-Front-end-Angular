@@ -1,0 +1,15 @@
+.container-header{
+   position: relative;
+   margin: auto;
+   
+   padding: 10px;
+}
+h1{
+    display: inline;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+button{
+    margin-left: 5%;
+    margin-right: 5%;
+}
