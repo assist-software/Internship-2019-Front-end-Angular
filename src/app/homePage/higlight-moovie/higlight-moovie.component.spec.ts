@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LastPartComponent } from './last-part.component';
+import { HiglightMoovieComponent } from './higlight-moovie.component';
 
-describe('LastPartComponent', () => {
-  let component: LastPartComponent;
-  let fixture: ComponentFixture<LastPartComponent>;
+describe('HiglightMoovieComponent', () => {
+  let component: HiglightMoovieComponent;
+  let fixture: ComponentFixture<HiglightMoovieComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LastPartComponent ]
+      declarations: [ HiglightMoovieComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LastPartComponent);
+    fixture = TestBed.createComponent(HiglightMoovieComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -16,6 +16,8 @@ import { AdminMoovieComponent } from './administration/admin-moovie/admin-moovie
 import { ListMoovieComponent } from './moovie/list-moovie/list-moovie.component';
 import { MoovieDetailsComponent } from './moovie/moovie-details/moovie-details.component';
 import { NewMoovieComponent } from './new-moovie/new-moovie.component';
+import { HiglightMoovieComponent } from './higlight-moovie/higlight-moovie.component';
+import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-of-next-moovie.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { NewMoovieComponent } from './new-moovie/new-moovie.component';
     AdminMoovieComponent,
     ListMoovieComponent,
     MoovieDetailsComponent,
-    NewMoovieComponent
+    NewMoovieComponent,
+    HiglightMoovieComponent,
+    ListOfNextMoovieComponent
   ],
   imports: [
     BrowserModule,

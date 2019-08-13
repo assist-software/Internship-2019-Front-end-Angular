@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderPartComponent } from './header-part.component';
+import { ListOfNextMoovieComponent } from './list-of-next-moovie.component';
 
-describe('HeaderPartComponent', () => {
-  let component: HeaderPartComponent;
-  let fixture: ComponentFixture<HeaderPartComponent>;
+describe('ListOfNextMoovieComponent', () => {
+  let component: ListOfNextMoovieComponent;
+  let fixture: ComponentFixture<ListOfNextMoovieComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderPartComponent ]
+      declarations: [ ListOfNextMoovieComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderPartComponent);
+    fixture = TestBed.createComponent(ListOfNextMoovieComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
