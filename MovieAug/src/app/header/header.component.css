@@ -1,15 +1,26 @@
-.container-header{
-   position: relative;
-   margin: auto;
-   
-   padding: 10px;
+.container-header {
+  background-color: black;
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  text-align: center;
+
 }
-h1{
-    display: inline;
-    padding-left: 5%;
-    padding-right: 5%;
+
+h1 {
+  color: wheat;
+  display: inline;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-button{
-    margin-left: 5%;
-    margin-right: 5%;
+
+button {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  background-color: black;
+  color: wheat;
+  border: none;
 }

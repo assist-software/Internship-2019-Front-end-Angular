@@ -8,9 +8,10 @@ import { Router } from "@angular/router";
 })
 export class FormsComponent implements OnInit {
   constructor(public router: Router) {}
-
+  public location = this.router.url;
   ngOnInit() {}
-  onSubmit() {
+  onLogin() {
+    console.log(this.location);
     this.router.navigate(["/home"]);
   }
 }
