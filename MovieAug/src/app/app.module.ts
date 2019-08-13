@@ -14,6 +14,8 @@ import { WatchlistComponent } from './watchlist/watchlist.component';
 import { LoginComponent } from './login/login.component';
 import { ResetComponent } from './reset/reset.component';
 import { RegisterComponent } from './register/register.component';
+import { FormsComponent } from './common/forms/forms.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { RegisterComponent } from './register/register.component';
     WatchlistComponent,
     LoginComponent,
     ResetComponent,
-    RegisterComponent
+    RegisterComponent,
+    FormsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
