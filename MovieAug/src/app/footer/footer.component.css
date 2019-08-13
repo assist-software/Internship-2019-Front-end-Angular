@@ -31,3 +31,8 @@ hr {
 ul {
   list-style-type: none;
 }
+
+img {
+  width: 200px;
+  height: 50px;
+}
