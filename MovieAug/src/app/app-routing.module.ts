@@ -6,6 +6,7 @@ import { ResetComponent } from './reset/reset.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { HomeComponent } from './home/home.component';
 import { AddMovieComponent } from './administrator/add-movie/add-movie.component';
+import { ListMoviesAdminComponent } from './administrator/list-movies-admin/list-movies-admin.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetComponent },
   { path: 'home', component: HomeComponent },
   { path: 'watchlist', component: WatchlistComponent },
-  { path: 'addMovie', component: AddMovieComponent }
+  { path: 'addMovie', component: AddMovieComponent },
+  { path: 'adminMoviesList', component: ListMoviesAdminComponent }
 ];
 
 @NgModule({

@@ -17,6 +17,8 @@ import { RegisterComponent } from './register/register.component';
 import { FormsComponent } from './common/forms/forms.component';
 import { HomeComponent } from './home/home.component';
 import { AddMovieComponent } from './administrator/add-movie/add-movie.component';
+import { HeaderAdminComponent } from './administrator/header-admin/header-admin.component';
+import { ListMoviesAdminComponent } from './administrator/list-movies-admin/list-movies-admin.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AddMovieComponent } from './administrator/add-movie/add-movie.component
     RegisterComponent,
     FormsComponent,
     HomeComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    HeaderAdminComponent,
+    ListMoviesAdminComponent
   ],
   imports: [
     BrowserModule,
