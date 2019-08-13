@@ -1,0 +1,102 @@
+.section1 {
+  width: 45%;
+  margin: 0 auto;
+  height: 600px;
+}
+
+.left {
+  width: 49%;
+  float: left;
+}
+
+.right {
+  width: 49%;
+  float: right;
+}
+
+.title {
+  position: relative;
+  height: 60px;
+  text-align: center;
+  top: 10%;
+  font-family: Campton;
+  font-size: 36px;
+  line-height: 60px;
+  margin-bottom: 20%;
+}
+
+.text {
+  margin-top: 30px;
+  margin-bottom: 2px;
+  color: dimgray;
+  font-family: SF Pro Display;
+  font-size: 18px;
+  display: inline-block;
+  opacity: 0.7;
+  text-align: left !important;
+}
+
+.tbox {
+  height: 48px;
+  left: 0px;
+  right: 0px;
+  top: 43px;
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.tboxLong {
+  text-align: center;
+  height: 48px;
+  left: 0px;
+  right: 0px;
+  top: 43px;
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+}
+
+textarea {
+  height: 159px;
+  left: 440px;
+  right: 440px;
+  top: 881px;
+
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.buttonAdauga {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: #F5044C;
+  border-radius: 8px;
+  margin-top: 15%;
+  margin-bottom: 10%;
+}
+
+.cancel {
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10%;
+  font-family: Campton;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.selector {
+  height: 48px;
+  background-color: white;
+  width: 100%;
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+}

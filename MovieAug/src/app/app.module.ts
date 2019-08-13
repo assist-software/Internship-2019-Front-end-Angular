@@ -16,6 +16,7 @@ import { ResetComponent } from './reset/reset.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsComponent } from './common/forms/forms.component';
 import { HomeComponent } from './home/home.component';
+import { AddMovieComponent } from './administrator/add-movie/add-movie.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HomeComponent } from './home/home.component';
     ResetComponent,
     RegisterComponent,
     FormsComponent,
-    HomeComponent
+    HomeComponent,
+    AddMovieComponent
   ],
   imports: [
     BrowserModule,
