@@ -13,3 +13,18 @@ button{
     margin-left: 5%;
     margin-right: 5%;
 }
+.home{
+    position: absolute;
+    width: 85px;
+    height: 22px;
+    left: 277px;
+    top: 72px;
+    
+    font-family: Campton;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+}
