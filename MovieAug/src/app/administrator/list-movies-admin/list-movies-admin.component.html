@@ -1,22 +1,44 @@
 <app-header-admin></app-header-admin>
-
 <!-- first page-->
-
-<button class="btn buttonAdd">Add new</button>
-<div class="input-group">
-  <input type="search" placeholder="Search..." aria-describedby="button-addon1" class="search">
-  <div class="input-group-append">
-    <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+<div class="row section1">
+  <div class="col input-group">
+    <input type="search" placeholder="  Search for a movie..." aria-describedby="button-addon1" class="search">
+    <div class="input-group-append">
+      <button id="button-addon1 " type="submit" class="btn btn-link text-primary lupa"><i
+          class="fa fa-search "></i></button>
+    </div>
+  </div>
+  <div class="col ">
+    <button class="btn btn-primary-warning buttonAdauga " (click)="newMovie()">Add new</button>
   </div>
 </div>
 
-
-<div class="service_box" style="padding-bottom:5%">
+<div *ngFor="let movie of movies" class="service_box">
   <div class="section2"><br>
-    <div class="title">
-      <input type="text" placeholder="Name movie" class="EditMovie">
-    </div>
-    <textarea placeholder="Description movie" class="DescriptionName">Aici</textarea><br><br>
+    <ul class="row">
+      <li class="columns">
+        <h1><img src="../../../assets/image 11.png" class="photoMovi" alt="Moovie"></h1>
+      </li>
+      <li class="columns">
+        <p>Fantastic Beasts</p>
+      </li>
+      <li class="columns">
+        <p>{{movie.name}}</p>
+      </li>
+      <li class="columns">
+        <p>Fantasy • Adventure</p>
+      </li>
+      <li class="columns buttonsModify">
+        <div class="row">
+          <div class="col">
+            <img src="../../../assets/Vector.png" class="photoMovi" alt="Moovie">
+          </div>
+          <div class="col">
+            <img src="../../../assets/Edit.png" class="edit" alt="Moovie">
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
 <!-- END ...first page-->

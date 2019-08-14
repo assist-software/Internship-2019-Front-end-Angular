@@ -1,14 +1,55 @@
-.buttonAdd {
+.buttonAdauga {
   background: #F5044C;
+  width: 30%;
+  margin-left: 38%;
+  cursor: pointer;
+}
 
+.section1 {
+  margin-bottom: 10%;
+  margin-top: 10%;
+  text-align: center;
+  margin-left: 3%;
+}
+
+.lupa {
+
+  left: -80%;
+}
+
+.search {
+  position: relative;
+  margin-left: 7%;
+  border-radius: 8px;
+  width: 50%;
+  text-align: 2px;
 }
 
 .section2 {
   background-color: red;
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
   border-radius: 8px;
-  margin-top: 10% !important;
+  margin-top: -4% !important;
 }
 
-.search {}
+ul {
+  list-style-type: none;
+}
+
+.edit {
+  float: right;
+  margin-left: 5%;
+}
+
+li {
+  margin-right: 10%;
+}
+
+.buttonsModify {
+  margin-right: 5% !important;
+}
+
+.service_box {
+  padding-bottom: 5%;
+}
