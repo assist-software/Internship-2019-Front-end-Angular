@@ -1,32 +1,28 @@
-.container-header {
-  background-color: black;
-  position: absolute;
-  margin: auto;
+header {
   width: 100%;
-  height: auto;
-  text-align: center;
-
-}
-
-h1 {
-  color: wheat;
-  display: inline;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-button {
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  background-color: black;
-  color: wheat;
-  border: none;
+  height: 10%;
 }
 
 
 img {
-  width: 200px;
-  height: 50px;
+  width: 60%;
+  height: auto;
+
+}
+
+.nav-item {
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: auto;
+  height: auto;
+}
+
+
+.navbar {
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: block !important;
 }
