@@ -1,8 +1,9 @@
 <div class="containeru">
   <div class="container-black">
     <div class="header">
-      <h1>MOOVIE</h1>
+      <h1><img src="../../../assets/img/moovie-watchers_logo.png" alt="Movie"></h1>
     </div>
+    <hr class="loginbar">
     <div [ngSwitch]="location">
       <ul *ngSwitchCase="'/register'">
         <li>
@@ -21,8 +22,8 @@
         </li>
         <li>
           <span>
-            <p>Already have a account? </p>
-            <a routerLink="/">Log in</a>
+            <p>Already have a account?<a routerLink="/"> Log in</a> </p>
+
           </span>
         </li>
 
