@@ -1,12 +1,34 @@
 .container {
     background-color: black;
-    width: 100%;
     padding: 0;
     margin: 0;
     max-width: 100vw;
-}
-.image-backdrop {
-    background-image: url("./../../../assets/pictures/image 4.1.png");
+    max-height: 100hw;
+    z-index: -1;
     width: 100vw;
     height: 100vh;
+}
+.blog .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -40px;
+
+}
+
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.blog .carousel-indicators .active {
+background: #707070;
+}
+
+.col-md-12 {
+    top: 100px;
+    left: 50px;
+
 }

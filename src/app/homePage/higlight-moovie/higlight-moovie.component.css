@@ -1,0 +1,80 @@
+.container {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    max-width: 200vw;
+    max-height: 200hw;
+    width: 100vw;
+    z-index: -1;
+}
+.image-backdrop {
+    background-image: url("./../../../assets/pictures/image 4.1.png");
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.image-movie {
+    background-image: url("./../../../assets/pictures/image 4.2.png");
+    z-index: 9999;
+    position: absolute;
+    width: 392px;
+    height: 552px;
+    left: 800px;
+    top: 32px;
+}
+.title-movie {
+    position: absolute;
+    width: 376px;
+    height: 53px;
+    left: 248px;
+    top: 168px;
+    z-index: 9999;
+    font-family: Campton;
+    font-size: 48px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+.description {
+    position: absolute;
+    width: 464px;
+    height: 100px;
+    left: 248px;
+    top: 245px;
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+    opacity: 0.6;
+}
+.button1 {
+    position: absolute;
+    padding: 15px 32px;
+    left: 248px;
+    top: 345px;
+    background: #F5044C;
+    border-color: #F5044C;
+    border-radius: 8px;
+    align-items: center;
+    text-align: center;
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+.button2 {
+    position: absolute;
+    padding: 15px 32px;
+    left: 448px;
+    top: 345px;
+    background: #1E1E1E;
+    border-color: #1E1E1E;
+    border-radius: 8px;
+    align-items: center;
+    text-align: center;
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+}

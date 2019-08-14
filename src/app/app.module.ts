@@ -16,6 +16,9 @@ import { MoovieDetailsComponent } from './moovie/moovie-details/moovie-details.c
 import { NewMoovieComponent } from './new-moovie/new-moovie.component';
 import { HiglightMoovieComponent } from './homePage/higlight-moovie/higlight-moovie.component';
 import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-of-next-moovie.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-o
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
