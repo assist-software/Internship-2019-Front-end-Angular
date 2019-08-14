@@ -1,13 +1,77 @@
-<div class="container">
-  <div>
-    <span>Full Name</span><input type="text" name="Full Name" id="fullName" />
-  </div>
-  <div>
-    <span>Email</span><input type="email" name="Email" id="email" />
-  </div>
-  <div>
-    <span>Password</span><input type="password" name="Password" id="password" />
-  </div>
-  <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+<div class="containeru">
+  <div class="container-black">
+    <div class="header">
+      <h1>MOOVIE</h1>
+    </div>
+    <div [ngSwitch]="location">
+      <ul *ngSwitchCase="'/register'">
+        <li>
+          <h2>Register Page</h2>
+          <hr>
+        </li>
+        <li> <input class="form-control" type="text" placeholder="Nume" name="name" id="name"></li>
+        <li> <input class="form-control" type="email" placeholder="email" name="email" id="email"></li>
+        <li> <input class="form-control" type="password" placeholder="password" name="pass" id="pass"></li>
+        <li>
+          <hr>
+        </li>
+        <li> <button class="btn btn-primary-warning">Register</button></li>
+        <li>
+          <hr>
+        </li>
+        <li>
+          <span>
+            <p>Already have a account? </p>
+            <a routerLink="/">Log in</a>
+          </span>
+        </li>
 
+      </ul>
+      <ul *ngSwitchCase="'/'">
+        <li>
+          <h2>Login</h2>
+          <hr>
+        </li>
+        <li> <input class="form-control" type="email" placeholder="email" name="email" id="email"></li>
+        <li> <input class="form-control" type="password" placeholder="password" name="pass" id="pass"></li>
+        <li>
+          <hr>
+        </li>
+        <li> <button class="btn btn-primary-warning" (click)="onLogin()">Login</button></li>
+        <li>
+          <hr>
+        </li>
+        <li>
+          <span>
+            <a routerLink="/register">Create an account</a>
+            <hr>
+            <a routerLink="/reset-password">Reset the password</a>
+          </span>
+        </li>
+
+      </ul>
+      <ul *ngSwitchCase="'/reset-password'">
+        <li>
+          <h2>Reset password</h2>
+          <hr>
+        </li>
+        <li> <input class="form-control" type="email" placeholder="email" name="email" id="email"></li>
+        <li>
+          <hr>
+        </li>
+        <li> <button class="btn btn-primary-warning">Reset</button></li>
+        <li>
+          <hr>
+        </li>
+        <li>
+          <span>
+            <a routerLink="/register">Create an account</a>
+            <hr>
+            <a routerLink="/">Log in</a>
+          </span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
 </div>

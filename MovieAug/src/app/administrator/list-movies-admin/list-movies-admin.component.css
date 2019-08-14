@@ -2,3 +2,13 @@
   background: #F5044C;
 
 }
+
+.section2 {
+  background-color: red;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 8px;
+  margin-top: 10% !important;
+}
+
+.search {}

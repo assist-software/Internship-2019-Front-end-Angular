@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'watchlist', component: WatchlistComponent },
   { path: 'addMovie', component: AddMovieComponent },
   { path: 'adminMoviesList', component: ListMoviesAdminComponent }
+  // { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
