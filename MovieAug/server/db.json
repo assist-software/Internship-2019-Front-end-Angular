@@ -1,0 +1,36 @@
+{
+  "movie": [{
+      "id": 1,
+      "title": "Tony Stark",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Adventure",
+      "IMDBScore": "sdegterhterherhrth",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 2,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "sdegterhterherhrth",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 3,
+      "title": "Moonlight Beas",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "sdegterhterherhrth",
+      "ReleaseDate": "001-123-4567"
+    }
+  ]
+}

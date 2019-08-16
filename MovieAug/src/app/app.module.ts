@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,7 +23,6 @@ import { HomeComponent } from './home/home.component';
 import { AddMovieComponent } from './administrator/add-movie/add-movie.component';
 import { HeaderAdminComponent } from './administrator/header-admin/header-admin.component';
 import { ListMoviesAdminComponent } from './administrator/list-movies-admin/list-movies-admin.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,9 @@ import { ListMoviesAdminComponent } from './administrator/list-movies-admin/list
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ModalModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
