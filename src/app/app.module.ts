@@ -19,6 +19,8 @@ import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-o
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { SlickModule } from 'ngx-slick';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    SlickModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

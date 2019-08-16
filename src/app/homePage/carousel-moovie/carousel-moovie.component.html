@@ -1,19 +1,22 @@
 <head>
+
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//unpkg.com/slick-carousel@1.8.1/slick/slick.js"></script>
 </head>
 
 <body>
-    <div class="container" style="width: 90vh; height: 100px; position:relative; left: 300px;">
-        <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="singleSlideOffset" [noWrap]="!noWrap"
-            [interval]="false" [startFromIndex]="1" (slideRangeChange)="onSlideRangeChange($event)">
-            <slide *ngFor="let slide of slides; let index=index">
-                <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-                <div class="carousel-caption">
-                    <h4>Slide {{index}}</h4>
-                </div>
-            </slide>
-        </carousel>
+    <div class="container">
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig"
+            (afterChange)="afterChange($event)">
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                <img src="{{ slide.img }}" alt="" width="100%" width="250vw">
+            </div>
+
+        </ngx-slick>
+        <!-- <button class="btn-next" (click)="next()">next</button>
+        <button class="btn-prev" (click)="prev()">prev</button> -->
     </div>
 </body>
