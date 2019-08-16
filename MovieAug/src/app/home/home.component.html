@@ -1,4 +1,4 @@
-<div class="row d-flex justify-content-center">
+<!-- <div class="row d-flex justify-content-center">
   <div class="col-md-9">
     <app-header></app-header>
 
@@ -6,4 +6,111 @@
     <app-footer></app-footer>
 
   </div>
+</div> -->
+
+<header>
+
+
+
+  <div class="container ">
+    <app-header></app-header>
+
+
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li>
+            <h1>Titlu</h1>
+          </li>
+          <li>
+            <h4>Descriere</h4>
+          </li>
+          <br>
+          <li>
+            <button class="btn btn-primary-danger">Watch triler</button>
+
+            <button class="btn btn-primary-secondary"><i class="fas fa-plus"></i>Add to list</button>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <P><img src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt="Movie" class="rounded"></P>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center ">
+      <p> <i class="arrow down"></i></p>
+    </div>
+  </div>
+</header>
+<br>
+<br>
+<br>
+<div class="d-flex justify-content-center">
+  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <img src="{{ slide.img }}" alt="" width="100%">
+    </div>
+  </ngx-slick>
+
+  <button (click)="addSlide()">Add</button>
+  <button (click)="removeSlide()">Remove</button>
+  <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+  <button (click)="slickModal.unslick()">unslick</button>
 </div>
+<br>
+<br>
+<br>
+
+<div class="container" style="background-color: black">
+  <div class="row">
+    <div class="col">
+      <H1>Filme urmatoare</H1>
+    </div>
+    <div class="col">
+      <p>Filter by:</p>
+    </div>
+    <div class="col">
+      <p><button class="btn btn-primary-warning">filter</button></p>
+    </div>
+    <div class="col">
+      <p><button class="btn btn-primary-warning">date</button></p>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="row">
+
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+  </div>
+
+</div>
+<app-footer></app-footer>

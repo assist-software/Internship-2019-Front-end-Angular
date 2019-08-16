@@ -17,6 +17,9 @@ import { RegisterComponent } from './register/register.component';
 import { FormsComponent } from './common/forms/forms.component';
 import { HomeComponent } from './home/home.component';
 import { AddMovieComponent } from './administrator/add-movie/add-movie.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SlickModule } from 'ngx-slick';
 
 @NgModule({
   declarations: [
@@ -34,11 +37,16 @@ import { AddMovieComponent } from './administrator/add-movie/add-movie.component
     RegisterComponent,
     FormsComponent,
     HomeComponent,
-    AddMovieComponent
+    AddMovieComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule.forRoot(),
+    SlickModule.forRoot()
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
