@@ -8,9 +8,8 @@
             <input class="spaceInput" type="email" name="email" placeholder="Email" formControlName="email"><br>
             <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" class="wrong">Please insert a valid email!<br></span>
             
-            <input class="spaceInput" type="password" name="password" placeholder="Password" formControlName="password">
-            <i id="pass-status" class="fa fa-eye myEye" aria-hidden="true" onClick="viewPassword()"></i><br>
-            <!-- <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span> -->
+            <input class="spaceInput" type="{{type}}" name="password" placeholder="Password" formControlName="password">
+            <i id="pass-status" class="fa fa-eye myEye" aria-hidden="true" (click)="showPassword()"></i><br>
             <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" class="wrong1">Please insert a valid password!<br></span>
 
             <div class="container-forgot" ><span [routerLink]="['/reset-password']">Forgot password?</span></div>

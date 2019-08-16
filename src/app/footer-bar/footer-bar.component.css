@@ -1,62 +1,61 @@
 .firstContainer {
-    background-color: #010102;
+  background-color: #010102;
 }
 
 .container {
-    padding-top: 56px!important;
-    width: 90%;
+  padding-top: 56px !important;
+  width: 90%;
 }
 
 img {
-    margin-left: 14px;
-    width: 250px;
-    height: 50px;
+  margin-left: 14px;
+  width: 250px;
+  height: 50px;
 }
 
 p {
-    font-family: Campton;
-    font-size: 14px;
-    line-height: 42px;
-    /* or 300% */
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
+  font-family: Campton;
+  font-size: 14px;
+  line-height: 42px;
+  /* or 300% */
+  display: flex;
+  align-items: center;
+  color: #ffffff;
 }
 
 .socialMedia {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .socialMediaBig {
-    padding-right: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-top: -3px;
-    padding-left: 30px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: -3px;
 }
 
 #copyrightText {
-    padding: 0px;
-    margin: 0px;
-    text-align: right;
+  padding: 0px;
+  margin: 0px;
+  text-align: right;
 }
 
 .table {
-    font-family: Campton;
-    font-size: 14px;
-    line-height: 42px;
-    color: #FFFFFF;
+  font-family: Campton;
+  font-size: 14px;
+  line-height: 42px;
+  color: #ffffff;
 }
 
 .myContainer {
-    opacity: 0.7;
-    border: 1px solid #B3B3B3;
-    margin-bottom: 16px;
+  opacity: 0.7;
+  border: 1px solid #b3b3b3;
+  margin-bottom: 16px;
 }
 
 @media (min-width: 1200px) {
-    .container {
-        max-width: 2140px;
-    }
+  .container {
+    max-width: 2140px;
+  }
 }

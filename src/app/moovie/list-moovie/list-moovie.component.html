@@ -1,1 +1,41 @@
-<p>list-moovie works!</p>
+<div class="allPage">
+  <app-header-bar></app-header-bar>
+  <div class="myContainer">
+    <div class="col-md-9">
+      <h5>Welcome to your Watchlist page.</h5>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row searchBtn">
+      <div class="col-md-10 ">
+        <div class="md-form mt-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search for a movie" />
+          <span class="fa fa-search positionSearcBtn"></span>
+        </div>
+      </div>
+      <div class="col-md-2 btnRight">
+        <button class="btn btn-primary">Add new</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let movie of moviesArray">
+          <!-- assets/img/anonymous_finger_goouGu.com.jpg -->
+          <!-- style="background-image: url('myPicture')" -->
+          <!-- [style.background-image]='backgoundImage' style="background-image: url('backgoundImage')"  -->
+          <div class="pictureContainer">
+            <button class="btn btnRemove">Remove</button>
+            <button class="btn btnScore">{{movie.score}}</button>
+          </div>
+          <p>{{ movie.title }}</p>
+          <p>{{ movie.category }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel-moovie.component.css']
 })
 export class CarouselMoovieComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

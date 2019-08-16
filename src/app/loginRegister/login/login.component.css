@@ -46,6 +46,7 @@
     background-color: #0A0A0A;
     color: #9C9B9B;
     padding: 10px;
+    padding-right: 36px;
 }
 
 .btnLog {
@@ -107,7 +108,10 @@
 }
 
 .myEye {
-    background-color: red;
-    width: 50px;
-    height: 50px;
+    position: absolute;
+    top: 55.3%;
+}
+
+.fa-eye:before {
+    margin-left: -38px;
 }

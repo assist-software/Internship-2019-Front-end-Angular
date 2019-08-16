@@ -33,9 +33,22 @@ export class AdminMoovieComponent implements OnInit {
       date: 333333,
     }
   ];
-  constructor(private modalService: BsModalService) { }
+  constructor(
+    private modalService: BsModalService) { }
 
   ngOnInit() {
+  }
+
+  confirm(): void {
+    // this.message = 'Confirmed!';
+    console.log('A spus da');
+    this.modalRef.hide();
+  }
+
+  decline(): void {
+    // this.message = 'Declined!';
+    console.log('A spus nu');
+    this.modalRef.hide();
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
