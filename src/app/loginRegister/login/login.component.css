@@ -1,0 +1,113 @@
+.container-form {
+    width: 560px;
+    height: 623px;
+    /* border: 1px solid blue; */
+    margin: auto;
+    text-align: center;
+    background: #0A0A0A;
+}
+
+.container-gray {
+    background-color: #212128;
+    height: 8px;
+}
+
+.titleMoovie {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 30px;
+    padding: 20px;
+    padding-top: 70px;
+}
+
+.titleForm {
+    font-family: Campton;
+    font-size: 48px;
+    line-height: 125%;
+    padding-right: 64px;
+    padding-left: 64px;
+    padding-top: 52px;
+    padding-bottom: 48px;
+    /* or 125% */
+    display: flex;
+    /* align-items: center; */
+    text-align: center;
+    color: #FFFFFF;
+    ;
+}
+
+.spaceInput {
+    height: 48px;
+    width: 367px;
+    margin-bottom: 12px;
+    border: 1px solid #9C9B9B;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #0A0A0A;
+    color: #9C9B9B;
+    padding: 10px;
+}
+
+.btnLog {
+    height: 48px;
+    width: 367px;
+    background: #F5044C;
+    border-radius: 8px;
+}
+
+.container-forgot {
+    width: 368px;
+    height: 30px;
+    /* border: 1px solid red; */
+    margin: auto;
+    text-align: right;
+    color: #9C9B9B;
+    margin-bottom: 74px;
+    cursor: pointer;
+}
+
+.container-login {
+    height: 100%;
+    background-color: black;
+}
+
+.textDown {
+    font-family: Campton;
+    font-size: 14px;
+    line-height: 80px;
+    text-align: center;
+    color: #9C9B9B;
+}
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+    color: red;
+}
+
+.imagMoovie {
+    /* align-items: center; */
+    width: 230px;
+    margin: auto;
+}
+
+.wrong {
+    color: red;
+    text-align: left;
+    margin-left: -29%;
+}
+
+.wrong1 {
+    color: red;
+    text-align: left;
+    margin-left: -24%;
+}
+
+.myEye {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+}

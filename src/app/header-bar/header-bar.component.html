@@ -1,1 +1,8 @@
-<p>header-bar works!</p>
+<div class="navbar navbar2 navbar-transparent bg-transparent">
+    <!-- <li class="navbar-item">  -->
+    <a class="navbar firstElement" id="firstButton" [routerLink]="['/']">Home</a>
+    <a class="navbar" [routerLink]="['/']">Categories</a>
+    <img class="navbar" src="assets/img/moovie-watchers_logo.png" alt="NOT FOUND">
+    <a class="navbar" [routerLink]="['/']">Watchlist<span class="numberOfMovie">{{numberOfMOvie}}</span></a>
+    <a class="navbar lastElement" id="lastButton" [routerLink]="['/']">Contact</a>
+</div>

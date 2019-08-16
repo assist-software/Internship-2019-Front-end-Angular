@@ -1,1 +1,46 @@
-<p>admin-moovie works!</p>
+<app-admin-nav-bar></app-admin-nav-bar>
+<div style="backgroun-color: white;">
+    <div class="firstContainer">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="md-form mt-0">
+                    <input class="form-control mr-sm-2 fas fa-search" type="text" placeholder="Search for a movie">
+                </div>
+            </div>
+            <div class="col-md-6 btnRight">
+                <button class="btn" (click)="lgModal.show()">Add new</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" *ngFor="let movie of listMovies">
+            <div class="col-2 " style="cursor: pointer"><img class="imgMovie rounded mx-auto d-block" src="assets/img/Ellipse.png" width="80px" height="80px"></div>
+            <div class="col-3 align1 textTitle">{{movie.title}}</div>
+            <div class="col-2 align textInfo">{{movie.date}}</div>
+            <div class="col-2 align textInfo">{{movie.category}}</div>
+            <div class="col align"></div>
+            <div class="col-2 align"><img class="myPicture" src="assets/img/Vector (1).png" alt="Recicle"><img
+                    src="assets/img/Vector (2).png" alt="Edit"></div>
+        </div>
+    </div>
+
+    <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="dialog-sizes-name1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <app-add-moovie></app-add-moovie>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <span style="font-size: 48px; color: Dodgerblue;">
+    <i class="fas fa-camera"></i>
+</span>
+<p>That is my test <i class="fas fa-camera"></i></p> -->

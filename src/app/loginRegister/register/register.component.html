@@ -1,24 +1,30 @@
-<div style="background-color: black"></div>
-<div class="container center">
-    <!-- <div class="row d-flex justify-content-center"> -->
+<div class="container-login">
+    <p class="titleMoovie"><img class="imagMoovie" src="assets/img/moovie-watchers_logo.png" alt="No found!"></p>
+    <div class="container-form">
+        <div class="container-gray"></div>
+        <h2 class="titleForm">Let’s create your account</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-        <!-- <div class="col-md-5 text-center"> -->
-
-        <p style="font-size: 30px; margin-top: 107px; margin-bottom: 37px;">Moovie</p>
-
-        <div style="background-color: #0A0A0A;">
-
-            <p class="titleReg">Let's create your account</p>
-
-            <form>
-                <input class="form-control" type="text" name="name" placeholder="Full Name">
-                <input class="form-control" type="email" name="email" placeholder="Email Adress">
-                <input class="form-control" type="password" name="password" placeholder="Password">
-                <button class="btn btn-success btnReg textBtn">Register</button>
-            </form>
-
-            <p>Already have an account? Log in</p>
-        </div>
-        <!-- </div> -->
+            <input class="spaceInput" type="name" name="name" placeholder="Name" formControlName="name"><br>
+            <span class="wrong" *ngIf="!registerForm.get('name').valid && registerForm.get('name').touched">
+                Enter a valid name!<br>
+            </span>
+            <input class="spaceInput" type="email" name="email" placeholder="Email" formControlName="email"><br>
+            <span class="wrong" *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">
+                Enter a valid email!<br>
+            </span>
+            <input class="spaceInput" type="password" name="password" placeholder="Password"
+                formControlName="password"><br>
+            <span class="wrong1" *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">
+                Enter a valid password!<br>
+            </span>
+            <button
+                [ngClass]="[registerForm.get('password').touched || registerForm.get('email').touched || registerForm.get('name').touched ? 'btnLog2' : 'btnLog' ]"
+                type="submit" [disabled]="!registerForm.valid">
+                Log in
+            </button>
+        </form>
+        <p class="textDown">Already have an account? <a [routerLink]="['/login']">Log in</a></p>
     </div>
-<!-- </div> -->
+    <br>
+</div>

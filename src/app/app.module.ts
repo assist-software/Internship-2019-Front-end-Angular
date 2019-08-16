@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +21,7 @@ import { MoovieDetailsComponent } from './moovie/moovie-details/moovie-details.c
 import { NewMoovieComponent } from './new-moovie/new-moovie.component';
 import { HiglightMoovieComponent } from './homePage/higlight-moovie/higlight-moovie.component';
 import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-of-next-moovie.component';
+import { AdminNavBarComponent } from './administration/admin-nav-bar/admin-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +39,16 @@ import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-o
     NewMoovieComponent,
     HiglightMoovieComponent,
     ListOfNextMoovieComponent,
-    HomePageComponent
+    HomePageComponent,
+    AdminNavBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ModalModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
