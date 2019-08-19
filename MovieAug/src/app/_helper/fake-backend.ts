@@ -37,6 +37,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return authenticate();
         case url.endsWith("/users") && method === "GET":
           return getUsers();
+        case url.endsWith("/create"):
+          return createUser();
         default:
           // pass through any requests not handled above
           return next.handle(request);
@@ -80,6 +82,21 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     function isLoggedIn() {
       return headers.get("Authorization") === "Bearer fake-jwt-token";
+    }
+    function createUser() {
+      const { fullName, password, email } = body;
+      const user = users.find(x => x.email === email);
+      if (user) return error("Email already used");
+      const newId = users[users.length - 1].id;
+      const test = {
+        id: newId + 1,
+        email: email,
+        password: password,
+        name: fullName
+      };
+      users.push(test);
+      console.log(users);
+      return ok({ result: true });
     }
   }
 }

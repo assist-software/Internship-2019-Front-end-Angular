@@ -37,7 +37,24 @@ export class AuthenticationService {
         })
       );
   }
-
+  register(fullName: string, email: string, password: string) {
+    const role = [{ name: "user", admin: false }];
+    return this.http
+      .post<any>("/create", { fullName, password, email, role: role })
+      .pipe(
+        map(user => {
+          return user;
+        })
+      );
+  }
+  reset(email: string) {
+    return this.http.post<any>("", { email }).pipe(
+      map(user => {
+        this.currentUserSubject.next(user);
+        return user;
+      })
+    );
+  }
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem("currentUser");
