@@ -5,6 +5,16 @@
   cursor: pointer;
 }
 
+.cancel {
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10%;
+  font-family: Campton;
+  font-size: 18px;
+  line-height: 25px;
+}
+
 .section1 {
   margin-bottom: 10%;
   margin-top: 10%;
@@ -13,7 +23,7 @@
 }
 
 .lupa {
-
+  color: #9C9B9B;
   left: -80%;
 }
 
@@ -23,10 +33,12 @@
   border-radius: 8px;
   width: 50%;
   text-align: 2px;
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
 }
 
 .section2 {
-  background-color: red;
+  background-color: #F5044C;
   width: 85%;
   margin: 0 auto;
   border-radius: 8px;
@@ -72,4 +84,10 @@ li {
 
 .service_box {
   padding-bottom: 5%;
+}
+
+.buttonX {
+  float: right;
+  margin-top: 3%;
+  margin-right: 3%;
 }

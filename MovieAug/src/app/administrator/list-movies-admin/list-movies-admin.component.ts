@@ -12,14 +12,6 @@ export class ListMoviesAdminComponent implements OnInit {
   modalRef: BsModalRef;
   movies: any = [];
   movieID: number;
-  // movies: any[] = [
-  //   { name: "Dr Nice" },
-  //   { name: "bla bla" },
-  //   { name: "Dr Nice" },
-  //   { name: "Dr Nice" },
-  //   { name: "Dr Nice" },
-  //   { name: "Dr Nice" },
-  // ];
   constructor(private route: ActivatedRoute,
     private router: Router,
     private modalService: BsModalService,
@@ -30,7 +22,7 @@ export class ListMoviesAdminComponent implements OnInit {
   }
   // Get employees list
   loadMovie() {
-    return this.restApi.getMovie().subscribe((data: {}) => {
+    return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
       console.log("Json");
       console.log(data);
@@ -38,6 +30,7 @@ export class ListMoviesAdminComponent implements OnInit {
   }
   newMovie(template: TemplateRef<any>) {
     console.log("Aici");
+    localStorage.setItem('movie', "-1");
     //this.router.navigate(['/app-add-movie']); 
     this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
   }
@@ -47,6 +40,14 @@ export class ListMoviesAdminComponent implements OnInit {
     console.log("Delete", this.movieID);
     this.modalRef = this.modalService.show(template, { class: '.col-md-3 .modal-sm' });
   }
+  UpdateMovie(template: TemplateRef<any>, id) {
+    const initialState = {
+      MovieId: id
+    };
+    localStorage.setItem("movie", id);
+    this.modalRef = this.modalService.show(template, { class: 'modal-lg', initialState });
+    console.log("id:", this.modalRef);
+  }
   confirmDeleteMovie() {
     console.log("test");
     this.restApi.deleteMovie(this.movieID).subscribe(data => {
@@ -54,6 +55,7 @@ export class ListMoviesAdminComponent implements OnInit {
     })
     this.modalRef.hide();
     this.modalRef = null;
+    window.location.reload();
 
   }
 }

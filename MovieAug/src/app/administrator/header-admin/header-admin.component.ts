@@ -11,5 +11,7 @@ export class HeaderAdminComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  logOut() {
+    localStorage.removeItem('currentUser');
+  }
 }

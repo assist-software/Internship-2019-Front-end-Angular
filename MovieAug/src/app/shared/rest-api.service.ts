@@ -15,16 +15,36 @@ export class RestApiService {
       'Content-Type': 'application/json'
     })
   }
-  getMovie(): Observable<movie> {
+  getMovies(): Observable<movie> {
     return this.http.get<movie>(this.apiURL + '/movie')
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
-
+  getMovie(id): Observable<movie> {
+    return this.http.get<movie>(this.apiURL + '/movie/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
   deleteMovie(id) {
     return this.http.delete<movie>(this.apiURL + '/movie/' + id, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  createMovie(movie): Observable<movie> {
+    return this.http.post<movie>(this.apiURL + '/movie', JSON.stringify(movie), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  updateMovie(id, movie): Observable<movie> {
+    return this.http.put<movie>(this.apiURL + '/movie/' + id, JSON.stringify(movie), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

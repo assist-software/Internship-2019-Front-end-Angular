@@ -1,44 +1,42 @@
 <div class="col-lg-11" style="left: 5%">
   <div class="section1">
-    <h5 class="title">Add Movie</h5><br>
-    <div class="left">
-      <h5 class="text">Movie title</h5><br>
-      <input type="text" class="tbox" name="mobieTitle"><br>
+    <form [formGroup]="profileForm">
+      <h5 class="title">{{titleModal}}</h5><br>
+      <div class="left">
+        <h5 class="text">Movie title</h5><br>
+        <input type="text" formControlName="title" [(ngModel)]="this.movies.title" class="tbox" name="mobieTitle"><br>
+      </div>
+      <div class="right">
+        <h5 class="text">Trailer URL</h5><br>
+        <input type="text" formControlName="trailer" [(ngModel)]="this.movies.trailer" class="tbox"
+          name="TrailerURL"><br>
+      </div>
+      <h5 class="text">Original source</h5><br>
+      <input type="text" formControlName="source" [(ngModel)]="this.movies.source" name="originalSource"
+        class="tboxLong"><br>
+      <h5 class="text">Cover URL</h5><br>
+      <input type="value" formControlName="coverURL" [(ngModel)]="this.movies.coverURL" name="coverURL"
+        class="tboxLong"><br>
+      <h5 class="text">Description</h5><br>
+      <textarea rows="4" formControlName="description" [(ngModel)]="this.movies.description"
+        name="description"></textarea>
+      <div class="left">
+        <h5 class="text">Category</h5><br>
+        <select class="selector" formControlName="Category" [(ngModel)]="this.movies.Category" name="mobieTitle">
+          <option *ngFor="let gen of genMovies" [value]="gen.id">{{gen.name}}</option>
 
-    </div>
-    <div class="right">
+        </select><br>
+      </div>
+      <div class="right">
+        <h5 class="text">IMDB Score</h5><br>
+        <input type="text" class="tbox" formControlName="IMDBScore" [(ngModel)]="this.movies.IMDBScore"
+          name="TrailerURL"><br>
+      </div>
+      <h5 class="text">Release date</h5><br>
+      <input type="value" formControlName="ReleaseDate" [(ngModel)]="this.movies.ReleaseDate" name="coverURL"
+        class="tboxLong"><br>
+      <button (click)="createMovie()" class="btn buttonAdauga">{{titleModal}}</button>
 
-      <h5 class="text">Trailer URL</h5><br>
-      <input type="text" class="tbox" name="TrailerURL"><br>
-    </div>
-    <h5 class="text">Original source</h5><br>
-    <input type="text" name="originalSource" class="tboxLong"><br>
-    <h5 class="text">Cover URL</h5><br>
-    <input type="value" name="coverURL" class="tboxLong"><br>
-    <h5 class="text">Description</h5><br>
-    <textarea rows="4" name="description"></textarea>
-    <div class="left">
-      <h5 class="text">Category</h5><br>
-      <select class="selector" name="mobieTitle">
-        <option value="empty"></option>
-        <option value="Animatie">Animatie</option>
-        <option value="Documantar">Documantar</option>
-        <option value="Actiune">Actiune</option>
-        <option value="Crima">Crima</option>
-      </select><br>
-    </div>
-    <div class="right">
-
-      <h5 class="text">IMDB Score</h5><br>
-      <input type="text" class="tbox" name="TrailerURL"><br>
-    </div>
-    <h5 class="text">Release date</h5><br>
-    <input type="value" name="coverURL" class="tboxLong"><br>
-    <button class="btn buttonAdauga">Add movie</button>
-
-    <!-- <h5 class="cancel">Cancel</h5> -->
-
-    <h5 class="cancel" aria-label="Close" (click)="closeModal('template');">Cancel</h5>
-
+    </form>
   </div>
 </div>

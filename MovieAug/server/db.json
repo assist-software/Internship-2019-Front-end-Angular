@@ -1,26 +1,5 @@
 {
-  "movie": [{
-      "id": 1,
-      "title": "Tony Stark",
-      "trailer": "sdegterhterherhrth",
-      "source": "001-123-4567",
-      "coverURL": "Tony Stark",
-      "description": "20/04/04.2019",
-      "Category": "Adventure",
-      "IMDBScore": "sdegterhterherhrth",
-      "ReleaseDate": "001-123-4567"
-    },
-    {
-      "id": 2,
-      "title": "Fantastic Beasts",
-      "trailer": "sdegterhterherhrth",
-      "source": "001-123-4567",
-      "coverURL": "Tony Stark",
-      "description": "20/04/04.2019",
-      "Category": "Fantasy",
-      "IMDBScore": "sdegterhterherhrth",
-      "ReleaseDate": "001-123-4567"
-    },
+  "movie": [
     {
       "id": 3,
       "title": "Tony Stark",
@@ -53,6 +32,28 @@
       "Category": "Fantasy",
       "IMDBScore": "sdegterhterherhrth",
       "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 667,
+      "title": "TestModificatFinal",
+      "trailer": "ery",
+      "source": "ery",
+      "coverURL": "ery",
+      "description": "ery",
+      "Category": "Documantar",
+      "IMDBScore": "5",
+      "ReleaseDate": "34/43/1234"
+    },
+    {
+      "id": 316,
+      "title": "AdaugFinal",
+      "trailer": "dg",
+      "source": "ery",
+      "coverURL": "35435",
+      "description": "etgdfg",
+      "Category": "Animatie",
+      "IMDBScore": "5",
+      "ReleaseDate": "12/12/1212"
     }
   ]
 }
