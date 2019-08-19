@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HiglightMoovieComponent } from './homePage/higlight-moovie/higlight-moovie.component';
 import { LoginComponent } from './loginRegister/login/login.component';
 import { RegisterComponent } from './loginRegister/register/register.component';
 import { HomePageComponent } from './homePage/home-page/home-page.component';
@@ -18,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'reset-password', component: ResetPassComponent },
-  { path: 'add-movie', component: AddMoovieComponent },
+  { path: 'add-moovie', component: AddMoovieComponent },
   { path: 'admin-moovie', component: AdminMoovieComponent },
   { path: 'list-moovie', component: ListMoovieComponent },
   { path: 'movie-details', component: MoovieDetailsComponent },

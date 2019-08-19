@@ -1,0 +1,106 @@
+.pictureContainer {
+    height: 416px;
+    position: relative;
+}
+
+.btnRemove {
+    position: absolute;
+    width: 106px;
+    height: 32px;
+    right: 63px;
+    bottom: 24px;
+    background: #F5044C;
+    border-radius: 4.81818px;
+    font-family: Campton;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.positionSearcBtn {
+    position: absolute;
+    top: 20px;
+    right: 368px;
+}
+
+.btnScore {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 24px;
+    bottom: 24px;
+    background: #FF9A03;
+    border-radius: 5px;
+    font-family: Campton;
+    font-size: 10px;
+    /* line-height: 80px; */
+    text-align: center;
+    color: #FFFFFF
+}
+
+.myContainer {
+    width: 560px;
+    height: 120px;
+    margin-left: 56px;
+    padding-top: 256px;
+}
+
+h5 {
+    font-family: Campton;
+    font-size: 48px;
+    line-height: 60px;
+    padding-left: 46px;
+    color: #FFFFFF;
+}
+
+.allPage {
+    background-color: black;
+}
+
+.searchBtn {
+    margin-top: 200px;
+    display: flex;
+    /* margin-left: -40px; */
+    align-items: right;
+}
+
+.col-md-6 {
+    padding: 0;
+}
+
+.btnRight {
+    /* display: flex;
+    align-items: center; */
+    margin-left: 26%;
+}
+
+.emailWrite {
+    font-family: Campton;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    color: #FFFFFF;
+}
+
+.mySelect {
+    border: 1px solid #F5044C;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.mr-sm-2 {
+    width: 368px;
+    height: 56px;
+}
+
+.mt-0 {
+    margin-left: 16%;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1471px;
+    }
+}

@@ -8,7 +8,7 @@
     max-height: 200hw;
     z-index: -1;
     width: 100vw;
-    height: 100vh;
+    height: 140vh;
 }
 .blog .carousel-indicators {
 	left: 0;
@@ -48,10 +48,76 @@ background: #707070;
     border: 1px rgb(255, 255, 255);
     z-index: 999;
 }
-.slick-prev:before, .slick-next:before {
-    font-size: 100px;
-} 
 
-.slick-prev:before {
-    width: 100px;
-  }
+.carouselbuttons {
+    margin-top: 138px;
+    margin-left: 350px;
+}
+.Button1{
+    width: 32px;
+    height: 32px;
+    border-color: #F5044C;
+    background: #F5044C;
+    border-radius: 8px;
+}
+.Button2{
+    width: 32px;
+    height: 32px;
+    background: #F5044C;
+    border-color: #F5044C;
+    border-radius: 8px;
+}
+.watchlistbutton{
+    
+    margin-top: 360px;
+    margin-left: 80px;
+    background: #F5044C;
+    border-color: #F5044C;
+    border-radius: 4.81818px;
+    position: absolute;
+    color: white;
+    
+}
+.notemovie{
+    
+    margin-top: 360px;
+    margin-left: 220px;
+    background: #FF9A03;
+    border-radius: 5px;
+    border-color: #FF9A03;
+    position: absolute;
+    color: white;
+}
+.title-movie{
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 80px;
+    display: flex;
+    align-items: center;
+
+color: #FFFFFF;
+}
+.details-movie{
+    font-family: Campton;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+
+    opacity: 0.5;
+}
+.recent-added{
+    margin-left: 3%;
+    position: absolute;
+    width: 256px;
+    height: 69px;
+
+    top: 1144px;
+
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 80px;
+
+    color: #FFFFFF;
+
+}

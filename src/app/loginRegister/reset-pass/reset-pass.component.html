@@ -1,1 +1,17 @@
-<p>reset-pass works!</p>
+<div class="container-login">
+    <p class="titleMoovie"><img class="imagMoovie" src="assets/img/moovie-watchers_logo.png" alt="No found!"></p>
+    <div class="container-form">
+        <div class="container-gray"></div>
+        <h2 class="titleForm">Reset password</h2>
+        <p class="textForm">We will send you over email the instructions in order to get your password reseted.</p>
+        <form [formGroup]="resetForm" (ngSubmit)="onSubmit()">
+            <input class="spaceInput" type="email" name="email" placeholder="Email" formControlName="email" required><br>
+            <div *ngIf="!resetForm.get('email').valid && resetForm.get('email').touched">
+                <p class="wrong">Please eneter a valid email!</p>
+            </div>
+            <button type="submit" class="btnLog" [disabled]="!resetForm.valid">Reset
+                password</button>
+        </form>
+    </div>
+    <br>
+</div>

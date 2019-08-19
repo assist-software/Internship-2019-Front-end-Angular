@@ -1,1 +1,19 @@
-<p>moovie-details works!</p>
+<div class="myBody">
+  <app-header-bar></app-header-bar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img src="assets/img/anonymous_finger_goouGu.com.jpg" alt="movie.image" width="368px" height="552px">
+        <p class="originalSource">See original source</p>
+      </div>
+      <div class="col-md-6 myCol">
+        <h4 class="movieTitle">{{ movie.title }}</h4>
+        <br />
+        <h6 class="movieCategory">{{ movie.category }}</h6> <br>
+        <p class="movieDescription">{{ movie.description }}</p> <br>
+        <button class="btn myBtn">Add to watchlist</button><br>
+        <p class="movieDirector"> Director: <span class="txtMovieDir">{{ movie.director}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>
