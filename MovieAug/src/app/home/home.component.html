@@ -1,4 +1,4 @@
-<!-- <div class="row d-flex justify-content-center">
+<!-- <div class="row ">
   <div class="col-md-9">
     <app-header></app-header>
 
@@ -45,40 +45,17 @@
 <br>
 <br>
 <br>
-<div class="d-flex justify-content-center">
-  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-      <img src="{{ slide.img }}" alt="" width="100%">
-    </div>
-  </ngx-slick>
 
-  <button (click)="addSlide()">Add</button>
-  <button (click)="removeSlide()">Remove</button>
-  <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-  <button (click)="slickModal.unslick()">unslick</button>
+<div>
+
+
 </div>
 <br>
 <br>
 <br>
 
-<div class="container" style="background-color: black">
-  <div class="row">
-    <div class="col">
-      <H1>Filme urmatoare</H1>
-    </div>
-    <div class="col">
-      <p>Filter by:</p>
-    </div>
-    <div class="col">
-      <p><button class="btn btn-primary-warning">filter</button></p>
-    </div>
-    <div class="col">
-      <p><button class="btn btn-primary-warning">date</button></p>
-    </div>
-  </div>
 
-
-
+<div class="row d-flex justify-content-center ">
 
 
   <div class="row">
@@ -111,6 +88,6 @@
       <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
     </div>
   </div>
-
 </div>
+
 <app-footer></app-footer>

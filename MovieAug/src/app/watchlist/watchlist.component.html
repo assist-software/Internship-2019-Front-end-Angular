@@ -1,80 +1,68 @@
-<div class="row d-flex justify-content-center">
-  <div class="col-md-9">
+<!-- <p style="color: white"> movie detail works</p>
+<app-movie-detail></app-movie-detail>
+<p style="color: white"> movie detail works</p> -->
+
+<body class="bdy ">
+
+  <div class="container">
     <app-header></app-header>
+    <div class="row">
+      <ul style="list-style: none">
+        <li>
+          <h1>Welcome to your</h1>
+        </li>
+        <li>
+          <h1>Watchlist page.</h1>
+        </li>
+      </ul>
+    </div>
+    <div class="row ">
+      <div class="col">
 
-    <body>
-
-      <div class="container">
-        <div class="row">
-          <div class="col">
-
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
-              allowfullscreen></iframe>
-          </div>
-          <div class="col">
-            <ul>
-              <li>
-                <span>
-                  <h1>Titlu
-                  </h1>
-                  <p>IMBD 10</p>
-                </span>
-              </li>
-              <hr>
-              <li>
-                <h5>descriere aaaaaaaaaaaaaaaaaaaaaaaaa</h5>
-                <h5>descriere aaaaaaaaaaaaaaaaaaaaaaaaa</h5>
-                <h5>descriere aaaaaaaaaaaaaaaaaaaaaaaaa</h5>
-                <h5>descriere aaaaaaaaaaaaaaaaaaaaaaaaa</h5>
-                <h5>descriere aaaaaaaaaaaaaaaaaaaaaaaaa</h5>
-              </li>
-              <hr>
-              <li>
-                <button class="btn btn-primary-warning">add</button>
-              </li>
-              <hr>
-              <li>
-                <h4> director</h4>
-              </li>
-              <hr>
-              <li>
-                <h4> writers</h4>
-              </li>
-              <hr>
-              <li>
-                <h4> stars</h4>
-              </li>
-            </ul>
-            <hr>
-
-          </div>
-        </div>
-        <div class="row">
-          <h1>Photos</h1>
-        </div>
-        <div class="row">
-
-          <div class="col">
-            <p><img src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt=""></p>
-          </div>
-          <div class="col">
-            <p><img src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt=""></p>
-          </div>
-          <div class="col">
-            <p><img src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt=""></p>
-          </div>
-          <div class="col">
-            <p><img src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt=""></p>
-          </div>
-          <div class="col">
-            <p><img src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt=""></p>
-          </div>
-        </div>
-
+        <form class="form-inline active-cyan-4">
+          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+          <i class="fas fa-search lupa" aria-hidden="true"></i>
+        </form>
 
       </div>
-      <hr>
-    </body>
-    <app-footer></app-footer>
+      <div class="col" style="margin-left: 30%; ">
+        <label for="sort">Sort by:</label>
+        <button class="sort btn btn-primary-danger">Sort</button>
+      </div>
+    </div>
+    <div class=" row">
+      <div class="col">
+        <app-movie-item></app-movie-item>
+      </div>
+      <div class="col">
+        <app-movie-item></app-movie-item>
+      </div>
+      <div class="col">
+        <app-movie-item></app-movie-item>
+      </div>
+      <div class="col">
+        <app-movie-item></app-movie-item>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <app-movie-item></app-movie-item>
+      </div>
+      <div class="col">
+        <app-movie-item></app-movie-item>
+      </div>
+      <div class="col">
+        <app-movie-item></app-movie-item>
+      </div>
+      <div class="col">
+        <app-movie-item></app-movie-item>
+      </div>
+    </div>
+
   </div>
-</div>
+
+
+</body>
+
+<app-footer></app-footer>

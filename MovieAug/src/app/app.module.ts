@@ -20,7 +20,7 @@ import { AddMovieComponent } from './administrator/add-movie/add-movie.component
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SlickModule } from 'ngx-slick';
-
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,11 +44,13 @@ import { SlickModule } from 'ngx-slick';
     BrowserModule,
     AppRoutingModule,
     CarouselModule.forRoot(),
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    Ng2CarouselamosModule
 
 
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
