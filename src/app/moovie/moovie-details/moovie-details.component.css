@@ -1,0 +1,81 @@
+.container {
+    padding-top: 200px;
+}
+
+.myBody {
+    background-color: black;
+}
+
+.movieCategory {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+    color: #FFFFFF;
+    opacity: 0.6;
+    margin-top: -29px;
+}
+
+.movieTitle {
+    font-family: Campton;
+    font-size: 48px;
+    line-height: 60px;
+    /* or 125% */
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.movieDescription {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+.movieDirector {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+    color: #FFFFFF;
+    opacity: 0.6
+}
+
+.txtMovieDir {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+    color: #FFFFFF;
+}
+
+.originalSource {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    opacity: 0.6;
+    margin-top: 19px;
+}
+
+.myBtn {
+    width: 176px;
+    height: 48px;
+    background: #F5044C;
+    border-radius: 8px;
+    margin-bottom: 53px;
+}
+
+/* 
+.myCol {
+    padding-left: 100px;
+} */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1426px;
+    }
+}

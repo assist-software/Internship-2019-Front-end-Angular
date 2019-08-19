@@ -7,19 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoovieDetailsComponent implements OnInit {
   trailerMovie = 'my movie';
-  movie = 
-    {
-      image: 'imagine',
-      title: 'some text',
-      trailerUrl: 'some text',
-      source: 'some text',
-      coverUrl: 'some text',
-      description: 'some text',
-      category: 'some text',
-      score: 10,
-      date: 12321
-    };
-  constructor() {}
+  movie = {
+    image: 'assets/img/anonymus_finger_goouGu.com.jpg',
+    title: 'The Hustle',
+    trailerUrl: 'some text',
+    source: 'some text',
+    coverUrl: 'some text',
+    // tslint:disable-next-line:max-line-length
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Recusandae iusto soluta, voluptas nihil consectetur, saepe quasi dolor, molestiae iste officia voluptates quos repudiandae omnis labore? In alias eius ipsum voluptatibus',
+    category: 'Comedy',
+    score: 10,
+    date: 12321,
+    director: 'Denis'
+  };
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
