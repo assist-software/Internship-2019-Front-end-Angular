@@ -12,11 +12,13 @@ import { AuthenticationService } from "@app/_services";
 })
 export class AuthComponent implements OnInit {
   isLoginMode = true;
-  test = 1;
-  onSwitchMode() {
-    this.isLoginMode = !this.isLoginMode;
-  }
-  loginForm: FormGroup;
+  isResetMode = false;
+  isRegisterMode = false;
+
+  accCreated = false;
+  emailSent = false;
+
+  authForms: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
@@ -36,7 +38,8 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
+    this.authForms = this.formBuilder.group({
+      fullName: [""],
       email: ["", Validators.required],
       password: ["", Validators.required]
     });
@@ -47,29 +50,88 @@ export class AuthComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get f() {
-    return this.loginForm.controls;
+    return this.authForms.controls;
   }
 
   onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.loginForm.invalid) {
+    if (this.authForms.invalid) {
       return;
     }
 
     this.loading = true;
-    this.authenticationService
-      .login(this.f.email.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.error = error;
-          this.loading = false;
-        }
-      );
+    if (this.isLoginMode) {
+      this.authenticationService
+        .login(this.f.email.value, this.f.password.value)
+        .pipe(first())
+        .subscribe(
+          data => {
+            console.log(data);
+            this.router.navigate([this.returnUrl]);
+          },
+          error => {
+            this.error = error;
+            this.loading = false;
+          }
+        );
+    }
+    if (this.isRegisterMode) {
+      this.authenticationService
+        .register(
+          this.f.fullName.value,
+          this.f.email.value,
+          this.f.password.value
+        )
+        .pipe(first())
+        .subscribe(
+          data => {
+            this.router.navigate([this.returnUrl]);
+            if (data.result == "true") {
+              this.accCreated = true;
+            }
+            this.loading = false;
+          },
+          error => {
+            this.error = error;
+            this.loading = false;
+          }
+        );
+    }
+    if (this.isResetMode) {
+      this.authenticationService
+        .reset(this.f.email.value)
+        .pipe(first())
+        .subscribe(
+          data => {
+            if (data.result == "true") {
+              this.emailSent = true;
+            }
+            this.loading = false;
+          },
+          error => {
+            this.error = error;
+            this.loading = false;
+          }
+        );
+    }
+  }
+  resetMode() {
+    this.isResetMode = true;
+    this.isRegisterMode = false;
+    this.isLoginMode = false;
+  }
+  registerMode() {
+    this.isResetMode = false;
+    this.isRegisterMode = true;
+    this.isLoginMode = false;
+    this.authForms.reset();
+  }
+  loginMode() {
+    this.authForms.reset();
+    this.isResetMode = false;
+    this.isRegisterMode = false;
+    this.isLoginMode = true;
   }
 }

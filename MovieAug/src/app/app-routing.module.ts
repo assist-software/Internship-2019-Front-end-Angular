@@ -20,12 +20,12 @@ const routes: Routes = [
     path: "adminMoviesList",
     component: ListMoviesAdminComponent,
     canActivate: [AuthGuard]
-  }
-  // { path: "**", redirectTo: "Auth" }
+  },
+  { path: "**", redirectTo: "" }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
