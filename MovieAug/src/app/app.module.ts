@@ -25,7 +25,6 @@ import { HeaderAdminComponent } from "./administrator/header-admin/header-admin.
 import { ListMoviesAdminComponent } from "./administrator/list-movies-admin/list-movies-admin.component";
 import { AuthComponent } from "./auth/auth.component";
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,5 +60,6 @@ import { AuthComponent } from "./auth/auth.component";
     fakeBackendProvider
   ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
