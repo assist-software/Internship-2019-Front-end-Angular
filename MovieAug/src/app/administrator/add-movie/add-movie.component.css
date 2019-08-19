@@ -1,5 +1,5 @@
 .section1 {
-  width: 55%;
+  width: 60%;
   margin: 0 auto;
 
 }
@@ -7,10 +7,6 @@
 .left {
   width: 49%;
   float: left;
-}
-
-.required {
-  color: red;
 }
 
 .right {
