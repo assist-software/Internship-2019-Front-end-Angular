@@ -2,7 +2,7 @@
     <app-header-bar></app-header-bar>
 </ng-template> -->
 <div
-    *ngIf="!(router.url === '/login' || router.url === '/reset-password' || router.url === '/register' || router.url === '/admin-moovie')">
+    *ngIf="showNavbar()">
     <app-header-bar></app-header-bar>
 </div>
 <div

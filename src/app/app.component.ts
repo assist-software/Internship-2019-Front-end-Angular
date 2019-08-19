@@ -7,13 +7,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  condition = false;
-  public href;
+  listAdress = ['/login', '/reset-password', '/register', '/admin-moovie'];
+  showNav: boolean;
 
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
-    this.href = this.router.url;
-    console.log('acest link: ' + this.router.url);
+  }
+
+  showNavbar() {
+    if (this.listAdress.indexOf(this.router.url) === -1) {
+      return this.showNav = true;
+    } else {
+      return this.showNav = false;
+    }
+
   }
 }

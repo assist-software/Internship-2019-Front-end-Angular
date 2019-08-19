@@ -1,15 +1,21 @@
 .container {
     background-color: black;
-    padding: 0;
-    margin: 0;
-    max-width: 200vw;
-    max-height: 200hw;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
+    /* padding: 0;
+    margin: 0; */
+    /* max-width: 200vw; */
+    /* max-height: 200hw; */
+    /* z-index: -1; */
+    width: 100%;
+    /* height: 140vh; */
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.myContainer {
+    margin-right: 48px;
+    /* margin: auto; */
 }
 
-.blog .carousel-indicators {
+/* .blog .carousel-indicators {
     left: 0;
     top: auto;
     bottom: -40px;
@@ -24,7 +30,7 @@
 
 .blog .carousel-indicators .active {
     background: #707070;
-}
+} */
 
 .col-md-12 {
     top: 100px;
@@ -45,4 +51,79 @@
     border-radius: 50%;
     border: 1px rgb(255, 255, 255);
     z-index: 999;
+}
+
+.carouselbuttons {
+    margin-top: 138px;
+    margin-left: 350px;
+}
+
+.Button1 {
+    width: 32px;
+    height: 32px;
+    border-color: #F5044C;
+    background: #F5044C;
+    border-radius: 8px;
+}
+
+.Button2 {
+    width: 32px;
+    height: 32px;
+    background: #F5044C;
+    border-color: #F5044C;
+    border-radius: 8px;
+}
+
+.watchlistbutton {
+    margin-top: 360px;
+    margin-left: 80px;
+    background: #F5044C;
+    border-color: #F5044C;
+    border-radius: 4.81818px;
+    position: absolute;
+    color: white;
+}
+
+.notemovie {
+    margin-top: 360px;
+    margin-left: 220px;
+    background: #FF9A03;
+    border-radius: 5px;
+    border-color: #FF9A03;
+    position: absolute;
+    color: white;
+}
+
+.title-movie {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 80px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.details-movie {
+    font-family: Campton;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+.recent-added {
+    margin-left: 3%;
+    position: absolute;
+    width: 256px;
+    height: 69px;
+    top: 1144px;
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 80px;
+    color: #FFFFFF;
+}
+
+img {
+    width: 90%;
+    margin: auto;
 }
