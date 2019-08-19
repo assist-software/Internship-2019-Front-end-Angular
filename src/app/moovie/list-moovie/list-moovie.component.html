@@ -31,8 +31,8 @@
         <div class="col-md-3" *ngFor="let movie of moviesArray">
           <!-- assets/img/anonymous_finger_goouGu.com.jpg -->
           <!-- style="background-image: url('myPicture')" -->
-          <!-- [style.background-image]='backgoundImage' style="background-image: url('backgoundImage')"  -->
-          <div class="pictureContainer" style="background-color: red;">
+          <!-- [style.background-image]='backgoundImage' style="background-image: url('assets/img/anonymous_finger_goouGu.com.jpg')"  -->
+          <div class="pictureContainer" [style.background-image]="backgroundImage">
             <button class="btn btnRemove">Remove</button>
             <button class="btn btnScore">{{movie.score}}</button>
           </div>

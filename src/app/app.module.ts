@@ -4,8 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-
+import { SlickModule } from 'ngx-slick';
+// import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +27,7 @@ import { NewMoovieComponent } from './new-moovie/new-moovie.component';
 import { HiglightMoovieComponent } from './homePage/higlight-moovie/higlight-moovie.component';
 import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-of-next-moovie.component';
 import { AdminNavBarComponent } from './administration/admin-nav-bar/admin-nav-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +55,11 @@ import { AdminNavBarComponent } from './administration/admin-nav-bar/admin-nav-b
     FormsModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    NgbModule,
+    BrowserAnimationsModule,
+    CarouselModule.forRoot(),
+    SlickModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

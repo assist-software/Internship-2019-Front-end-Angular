@@ -7,7 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./list-moovie.component.css']
 })
 export class ListMoovieComponent implements OnInit {
-  backgoundImage: any;
+  backgroundImage: any;
   myPicture = 'assets/img/anonymous_finger_goouGu.com.jpg';
   moviesArray = [
     // [ngStyle]="{'background-image': 'url(' + photo + ')'}"
@@ -79,8 +79,10 @@ export class ListMoovieComponent implements OnInit {
     }
   ];
   constructor(private sanitizer: DomSanitizer) {
-    this.backgoundImage = this.sanitizer.bypassSecurityTrustStyle("'background-image': 'url(" + this.myPicture + ")'");
-    console.log(this.backgoundImage);
+    // this.backgoundImage = this.sanitizer.bypassSecurityTrustStyle("'background-image': 'url(" + this.myPicture + ")'");
+
+    this.backgroundImage = this.sanitizer.bypassSecurityTrustStyle( `url(${this.myPicture})` );
+    console.log(this.backgroundImage);
   }
 
   ngOnInit() {

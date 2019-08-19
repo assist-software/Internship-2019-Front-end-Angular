@@ -1,0 +1,53 @@
+
+
+.container {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    max-width: 200vw;
+    max-height: 200hw;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+.blog .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -40px;
+
+}
+
+
+.blog .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.blog .carousel-indicators .active {
+background: #707070;
+}
+
+.col-md-12 {
+    top: 100px;
+    left: 50px;
+
+}
+.carousel {
+    top: 100px;
+    left: 2%;
+}
+.Previous {
+    height: 100px;
+    width: 100px;
+    outline: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px rgb(255, 255, 255);
+    z-index: 999;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 100px;
+} 
