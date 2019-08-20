@@ -24,6 +24,8 @@ import { AddMovieComponent } from "./administrator/add-movie/add-movie.component
 import { HeaderAdminComponent } from "./administrator/header-admin/header-admin.component";
 import { ListMoviesAdminComponent } from "./administrator/list-movies-admin/list-movies-admin.component";
 import { AuthComponent } from "./auth/auth.component";
+import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './administrator/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { AuthComponent } from "./auth/auth.component";
     AddMovieComponent,
     HeaderAdminComponent,
     ListMoviesAdminComponent,
-    AuthComponent
+    AuthComponent,
+    ContactComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

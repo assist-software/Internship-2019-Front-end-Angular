@@ -1,42 +1,64 @@
-<div class="col-lg-11" style="left: 5%">
-  <div class="section1">
-    <form [formGroup]="profileForm">
-      <h5 class="title">{{titleModal}}</h5><br>
-      <div class="left">
-        <h5 class="text">Movie title</h5><br>
-        <input type="text" formControlName="title" [(ngModel)]="this.movies.title" class="tbox" name="mobieTitle"><br>
+<div class="section1">
+  <form [formGroup]="addMovie" (ngSubmit)="createMovie()">
+    <h5 class="title">{{titleModal}}</h5><br>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="title" class="text">Movie title<span class="requiredField">*</span></label><br>
+        <input type="text" formControlName="title" [(ngModel)]="this.movies.title" class="tbox" name="title"><br>
       </div>
-      <div class="right">
-        <h5 class="text">Trailer URL</h5><br>
+
+      <div class="form-group col-6">
+        <label for="TrailerURL" class="text">Trailer URL<span class="requiredField">*</span></label><br>
         <input type="text" formControlName="trailer" [(ngModel)]="this.movies.trailer" class="tbox"
           name="TrailerURL"><br>
       </div>
-      <h5 class="text">Original source</h5><br>
-      <input type="text" formControlName="source" [(ngModel)]="this.movies.source" name="originalSource"
-        class="tboxLong"><br>
-      <h5 class="text">Cover URL</h5><br>
-      <input type="value" formControlName="coverURL" [(ngModel)]="this.movies.coverURL" name="coverURL"
-        class="tboxLong"><br>
-      <h5 class="text">Description</h5><br>
-      <textarea rows="4" formControlName="description" [(ngModel)]="this.movies.description"
-        name="description"></textarea>
-      <div class="left">
-        <h5 class="text">Category</h5><br>
-        <select class="selector" formControlName="Category" [(ngModel)]="this.movies.Category" name="mobieTitle">
+    </div>
+
+
+    <div class="form-row">
+      <div class="form-group col-12">
+        <label for="originalSource" class="text">Original source<span class="requiredField">*</span></label><br>
+        <input type="text" formControlName="source" [(ngModel)]="this.movies.source" name="originalSource"
+          class="tbox"><br>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12">
+        <label for="coverURL" class="text">Cover URL</label><br>
+        <input type="value" formControlName="coverURL" [(ngModel)]="this.movies.coverURL" name="coverURL"
+          class="tbox"><br>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12 myTag">
+        <label for="description" class="text">Description</label><br>
+        <textarea rows="5" class="form-control" formControlName="description" [(ngModel)]="this.movies.description"
+          name="description"></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-7">
+        <label for="movieTitle" class="text">Category<span class="requiredField">*</span></label><br>
+        <select class="selector" formControlName="Category" [(ngModel)]="this.movies.Category" name="movieTitle">
           <option *ngFor="let gen of genMovies" [value]="gen.id">{{gen.name}}</option>
 
         </select><br>
       </div>
-      <div class="right">
-        <h5 class="text">IMDB Score</h5><br>
+      <div class="form-group col-5">
+        <label for="TrailerURL" class="text">IMDB Score</label><br>
         <input type="text" class="tbox" formControlName="IMDBScore" [(ngModel)]="this.movies.IMDBScore"
           name="TrailerURL"><br>
       </div>
-      <h5 class="text">Release date</h5><br>
-      <input type="value" formControlName="ReleaseDate" [(ngModel)]="this.movies.ReleaseDate" name="coverURL"
-        class="tboxLong"><br>
-      <button (click)="createMovie()" class="btn buttonAdauga">{{titleModal}}</button>
-
-    </form>
-  </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12">
+        <label for="coverURL" class="text">Release date</label><br>
+        <input type="value" formControlName="ReleaseDate" [(ngModel)]="this.movies.ReleaseDate" name="coverURL"
+          class="tbox"><br>
+      </div>
+    </div>
+    <div class="form-row">
+      <button [disabled]="!addMovie.valid" class="btn buttonAdauga">{{titleModal}}</button>
+    </div>
+  </form>
 </div>

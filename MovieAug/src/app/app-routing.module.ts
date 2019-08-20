@@ -6,6 +6,8 @@ import { AddMovieComponent } from "./administrator/add-movie/add-movie.component
 import { ListMoviesAdminComponent } from "./administrator/list-movies-admin/list-movies-admin.component";
 import { AuthComponent } from "./auth/auth.component";
 import { AuthGuard } from "@app/_helper";
+import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './administrator/profile/profile.component';
 
 const routes: Routes = [
   { path: "login", component: AuthComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { path: "addMovie", component: AddMovieComponent, canActivate: [AuthGuard] },
+  { path: "contact", component: ContactComponent, canActivate: [AuthGuard] },
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
   {
     path: "adminMoviesList",
     component: ListMoviesAdminComponent,
@@ -28,4 +32,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,17 +1,10 @@
 .section1 {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
-
 }
 
-.left {
-  width: 49%;
-  float: left;
-}
-
-.right {
-  width: 49%;
-  float: right;
+.requiredField {
+  color: red;
 }
 
 .title {
@@ -27,49 +20,28 @@
 }
 
 .text {
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 2px;
-  color: dimgray;
+  color: #010103;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
-  display: inline-block;
   opacity: 0.7;
-  text-align: left !important;
+  align-items: center;
+  line-height: 21px;
 }
 
 .tbox {
   height: 48px;
-  left: 0px;
-  right: 0px;
-  top: 43px;
-  border: 1px solid #9C9B9B;
-  box-sizing: border-box;
-  border-radius: 8px;
   width: 100%;
-}
-
-.tboxLong {
-  text-align: center;
-  height: 48px;
-  left: 0px;
-  right: 0px;
-  top: 43px;
   border: 1px solid #9C9B9B;
-  box-sizing: border-box;
   border-radius: 8px;
-  width: 100%;
 }
 
 textarea {
-  height: 159px;
-  left: 440px;
-  right: 440px;
-  top: 881px;
-
-  border: 1px solid #9C9B9B;
-  box-sizing: border-box;
-  border-radius: 8px;
+  height: 48%;
   width: 100%;
+  border: 1px solid #9C9B9B;
+  border-radius: 8px;
 }
 
 .buttonAdauga {
@@ -79,8 +51,10 @@ textarea {
   color: white;
   background: #F5044C;
   border-radius: 8px;
-  margin-top: 15%;
-  margin-bottom: 10%;
+  margin-top: 10%;
+  line-height: 25px;
+  font-family: Campton;
+  font-size: 18px;
 }
 
 .cancel {

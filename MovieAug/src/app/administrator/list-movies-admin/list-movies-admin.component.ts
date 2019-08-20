@@ -38,7 +38,7 @@ export class ListMoviesAdminComponent implements OnInit {
 
     this.movieID = id;
     console.log("Delete", this.movieID);
-    this.modalRef = this.modalService.show(template, { class: '.col-md-3 .modal-sm' });
+    this.modalRef = this.modalService.show(template);
   }
   UpdateMovie(template: TemplateRef<any>, id) {
     const initialState = {

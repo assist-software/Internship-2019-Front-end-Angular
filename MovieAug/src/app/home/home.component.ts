@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { RestApiService } from '../shared/rest-api.service';
 
 @Component({
   selector: "app-home",
@@ -8,9 +9,13 @@ import { Component, OnInit } from "@angular/core";
 
 })
 export class HomeComponent implements OnInit {
+  MaxIMDB = 0;
   items: Array<any> = []
-
-  constructor() {
+  movies: any = [];
+  movieItem: any = [];
+  constructor(public restApi: RestApiService,
+    private route: ActivatedRoute,
+    private router: Router, ) {
     this.items = [
       { name: '../../assets/img/left-arrow.png' },
       { name: '../../assets/img/left-arrow.png' },
@@ -24,7 +29,24 @@ export class HomeComponent implements OnInit {
       { name: '../../assets/img/left-arrow.png' },
     ]
   }
-  ngOnInit() { }
+  ngOnInit() {
+    this.loadMovie()
+  }
 
-
+  loadMovie() {
+    return this.restApi.getMovies().subscribe((data: {}) => {
+      this.movies = data;
+      for (let movie of this.movies) {
+        if (movie.IMDBScore > this.MaxIMDB) {
+          console.log(this.MaxIMDB);
+          this.MaxIMDB = movie.IMDBScore;
+        }
+      }
+      for (let movie of this.movies) {
+        if (movie.IMDBScore == this.MaxIMDB) {
+          this.movieItem = movie;
+        }
+      }
+    })
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from "../../shared/rest-api.service";
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-movie',
@@ -25,22 +25,23 @@ export class AddMovieComponent implements OnInit {
   id: number;
   idMovie: string;
   titltControl: FormControl;
-  profileForm = new FormGroup({
-    id: new FormControl(Math.floor(Math.random() * 1000)),
-    title: new FormControl(''),
-    trailer: new FormControl(''),
-    source: new FormControl(''),
-    coverURL: new FormControl(''),
-    description: new FormControl(''),
-    Category: new FormControl(''),
-    IMDBScore: new FormControl(''),
-    ReleaseDate: new FormControl(''),
-  });
+  addMovie: FormGroup;
 
   constructor(public restApi: RestApiService) { }
 
   ngOnInit() {
     this.loadMovie(localStorage.getItem('movie'));
+    this.addMovie = new FormGroup({
+      id: new FormControl(Math.floor(Math.random() * 1000)),
+      title: new FormControl('', Validators.required),
+      trailer: new FormControl('', Validators.required),
+      source: new FormControl('', Validators.required),
+      coverURL: new FormControl(''),
+      description: new FormControl(''),
+      Category: new FormControl('', Validators.required),
+      IMDBScore: new FormControl(''),
+      ReleaseDate: new FormControl(''),
+    });
   }
   loadMovie(id) {
     if (id == "-1") {
@@ -60,21 +61,16 @@ export class AddMovieComponent implements OnInit {
     console.log("adauga");
     this.idMovie = localStorage.getItem('movie');
     if (this.idMovie == "-1") {
-      console.log(this.profileForm.value);
-      this.restApi.createMovie(this.profileForm.value as any).subscribe();
+      console.log(this.addMovie.value);
+      this.restApi.createMovie(this.addMovie.value as any).subscribe();
     }
     else {
       console.log("Intra in update");
       this.loadMovie(this.idMovie);
-      this.restApi.updateMovie(this.idMovie, this.profileForm.value).subscribe(data => {
+      this.restApi.updateMovie(this.idMovie, this.addMovie.value).subscribe(data => {
       })
     }
     window.location.reload();
   }
-  // updateMovie(id) {
-  //   console.log("ID Add-movie:", id);
-  //   this.restApi.updateEmployee(id, this.profileForm.value).subscribe(data => {
-  //   })
-  // }
 
 }

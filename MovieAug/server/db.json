@@ -1,59 +1,47 @@
 {
-  "movie": [
-    {
+  "movie": [{
       "id": 3,
       "title": "Tony Stark",
       "trailer": "sdegterhterherhrth",
       "source": "001-123-4567",
       "coverURL": "Tony Stark",
-      "description": "20/04/04.2019",
+      "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
       "Category": "Adventure",
-      "IMDBScore": "sdegterhterherhrth",
-      "ReleaseDate": "001-123-4567"
+      "IMDBScore": "5",
+      "ReleaseDate": "12/08/2019"
     },
     {
       "id": 4,
       "title": "Fantastic Beasts",
       "trailer": "sdegterhterherhrth",
       "source": "001-123-4567",
-      "coverURL": "Tony Stark",
-      "description": "20/04/04.2019",
+      "coverURL": "assets/img/left-arrow.png",
+      "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
       "Category": "Fantasy",
-      "IMDBScore": "sdegterhterherhrth",
-      "ReleaseDate": "001-123-4567"
+      "IMDBScore": "6",
+      "ReleaseDate": "28/08/2019"
     },
     {
       "id": 5,
       "title": "Moonlight Beas",
       "trailer": "sdegterhterherhrth",
       "source": "001-123-4567",
-      "coverURL": "Tony Stark",
-      "description": "20/04/04.2019",
+      "coverURL": "assets/img/81B2m2WVzkL._SX342_.jpg",
+      "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
       "Category": "Fantasy",
-      "IMDBScore": "sdegterhterherhrth",
-      "ReleaseDate": "001-123-4567"
+      "IMDBScore": "7",
+      "ReleaseDate": "02/08/2019"
     },
     {
       "id": 667,
-      "title": "TestModificatFinal",
+      "title": "TestModificat",
       "trailer": "ery",
       "source": "ery",
-      "coverURL": "ery",
-      "description": "ery",
-      "Category": "Documantar",
+      "coverURL": "assets/img/81B2m2WVzkL._SX342_.jpg",
+      "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
+      "Category": "Fantasy",
       "IMDBScore": "5",
-      "ReleaseDate": "34/43/1234"
-    },
-    {
-      "id": 316,
-      "title": "AdaugFinal",
-      "trailer": "dg",
-      "source": "ery",
-      "coverURL": "35435",
-      "description": "etgdfg",
-      "Category": "Animatie",
-      "IMDBScore": "5",
-      "ReleaseDate": "12/12/1212"
+      "ReleaseDate": "12/04/2019"
     }
   ]
 }

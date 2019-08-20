@@ -15,6 +15,23 @@
   line-height: 25px;
 }
 
+.ModalDeleteCancel {
+  width: 176px;
+  height: 48px;
+  background: #f5044c;
+
+  border: 1px solid #010103;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: Campton;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  margin-right: 10px;
+  align-items: center;
+}
+
 .section1 {
   margin-bottom: 10%;
   margin-top: 10%;
@@ -49,12 +66,6 @@ ul {
   list-style-type: none;
 }
 
-.vertical-align-center {
-  /* To center vertically */
-  display: table-cell;
-  vertical-align: middle;
-  pointer-events: none;
-}
 
 .delete p {
   font-family: Campton;
@@ -90,4 +101,18 @@ li {
   float: right;
   margin-top: 3%;
   margin-right: 3%;
+}
+
+.modalDelet {
+  top: 25%;
+}
+
+.modal-body,
+.modal-header {
+  border: none !important;
+}
+
+.modal-footer {
+  border: none;
+  margin-right: 43px;
 }
