@@ -30,37 +30,18 @@
         <button class="sort btn btn-primary-danger">Sort</button>
       </div>
     </div>
-    <div class=" row">
-      <div class="col">
-        <app-movie-item></app-movie-item>
-      </div>
-      <div class="col">
-        <app-movie-item></app-movie-item>
-      </div>
-      <div class="col">
-        <app-movie-item></app-movie-item>
-      </div>
-      <div class="col">
-        <app-movie-item></app-movie-item>
-      </div>
-    </div>
+
 
     <div class="row">
-      <div class="col">
-        <app-movie-item></app-movie-item>
-      </div>
-      <div class="col">
-        <app-movie-item></app-movie-item>
-      </div>
-      <div class="col">
-        <app-movie-item></app-movie-item>
-      </div>
-      <div class="col">
-        <app-movie-item></app-movie-item>
+      <div class="col-sm-3" *ngFor="let movie of movies">
+        <p>
+          <app-movie-item [movie]="movie"></app-movie-item>
+
+        </p>
       </div>
     </div>
-
   </div>
+
 
 
 </body>

@@ -24,6 +24,7 @@ import { AddMovieComponent } from "./administrator/add-movie/add-movie.component
 import { HeaderAdminComponent } from "./administrator/header-admin/header-admin.component";
 import { ListMoviesAdminComponent } from "./administrator/list-movies-admin/list-movies-admin.component";
 import { AuthComponent } from "./auth/auth.component";
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AuthComponent } from "./auth/auth.component";
     HeaderAdminComponent,
     ListMoviesAdminComponent,
     AuthComponent
+
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { AuthComponent } from "./auth/auth.component";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OrderModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

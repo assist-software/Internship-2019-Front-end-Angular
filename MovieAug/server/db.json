@@ -1,6 +1,85 @@
 {
   "movie": [
     {
+      "id": 13,
+      "title": "Tony Stark",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/2020",
+      "Category": "Adventure",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 14,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 10,
+      "title": "Mihaela",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 11,
+      "title": "Tony Stark",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Adventure",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 10,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 93,
+      "title": "Tony Stark",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Adventure",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 24,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    }
+  ],
+  "movieUser": [
+    {
       "id": 3,
       "title": "Tony Stark",
       "trailer": "sdegterhterherhrth",
@@ -8,52 +87,41 @@
       "coverURL": "Tony Stark",
       "description": "20/04/04.2019",
       "Category": "Adventure",
-      "IMDBScore": "sdegterhterherhrth",
+      "IMDBScore": "9",
       "ReleaseDate": "001-123-4567"
     },
     {
-      "id": 4,
+      "id": 14,
       "title": "Fantastic Beasts",
       "trailer": "sdegterhterherhrth",
       "source": "001-123-4567",
       "coverURL": "Tony Stark",
       "description": "20/04/04.2019",
       "Category": "Fantasy",
-      "IMDBScore": "sdegterhterherhrth",
+      "IMDBScore": "9",
       "ReleaseDate": "001-123-4567"
     },
     {
-      "id": 5,
-      "title": "Moonlight Beas",
+      "id": 10,
+      "title": "Mihaela",
       "trailer": "sdegterhterherhrth",
       "source": "001-123-4567",
       "coverURL": "Tony Stark",
       "description": "20/04/04.2019",
       "Category": "Fantasy",
-      "IMDBScore": "sdegterhterherhrth",
+      "IMDBScore": "9",
       "ReleaseDate": "001-123-4567"
     },
     {
-      "id": 667,
-      "title": "TestModificatFinal",
-      "trailer": "ery",
-      "source": "ery",
-      "coverURL": "ery",
-      "description": "ery",
-      "Category": "Documantar",
-      "IMDBScore": "5",
-      "ReleaseDate": "34/43/1234"
-    },
-    {
-      "id": 316,
-      "title": "AdaugFinal",
-      "trailer": "dg",
-      "source": "ery",
-      "coverURL": "35435",
-      "description": "etgdfg",
-      "Category": "Animatie",
-      "IMDBScore": "5",
-      "ReleaseDate": "12/12/1212"
+      "id": 10,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
     }
   ]
 }

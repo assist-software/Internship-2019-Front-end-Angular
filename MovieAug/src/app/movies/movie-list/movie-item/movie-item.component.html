@@ -1,19 +1,19 @@
 <div>
   <div class="container">
     <img src="../../../../assets/img/img1.jpg" alt="img">
-    <button class="btn1 btn btn-primary-danger">Remove</button>
-    <button class="no-click btn2 btn btn-primary-danger">8.8</button>
+    <button (click)="deleteMovie(movie.id)" class="btn1 btn btn-primary-danger">Remove</button>
+    <button class="no-click btn2 btn btn-primary-danger">{{movie.IMDBScore}}</button>
   </div>
   <div class="row">
     <ul style="list-style: none">
       <li>
-        <h3>titlu</h3>
+        <h4>{{movie.title}}</h4>
       </li>
       <li>
-        <p>Release date</p>
+        <p>Release date: {{movie.ReleaseDate}}</p>
       </li>
       <li>
-        <p>gen</p>
+        <p>{{movie.Category}}</p>
       </li>
     </ul>
   </div>

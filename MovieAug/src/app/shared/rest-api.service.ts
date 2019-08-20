@@ -22,6 +22,13 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
+  getMoviesUser(): Observable<movie> {
+    return this.http.get<movie>(this.apiURL + '/movieUser')
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
   getMovie(id): Observable<movie> {
     return this.http.get<movie>(this.apiURL + '/movie/' + id)
       .pipe(
@@ -31,6 +38,13 @@ export class RestApiService {
   }
   deleteMovie(id) {
     return this.http.delete<movie>(this.apiURL + '/movie/' + id, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  deleteMovieUser(id) {
+    return this.http.delete<movie>(this.apiURL + '/movieUser/' + id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

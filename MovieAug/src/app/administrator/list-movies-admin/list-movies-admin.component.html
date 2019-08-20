@@ -16,19 +16,19 @@
 <div *ngFor="let movie of movies" class="service_box">
   <div class="section2"><br>
     <ul class="row">
-      <li class="columns">
+      <li class="col">
         <h1><img src="../../../assets/image 11.png" class="photoMovi" alt="Moovie"></h1>
       </li>
-      <li class="columns">
+      <li class="col">
         <p>{{movie.title}}</p>
       </li>
-      <li class="columns">
+      <li class="col">
         <p>{{movie.ReleaseDate}}</p>
       </li>
-      <li class="columns">
+      <li class="col">
         <p>{{movie.Category}}</p>
       </li>
-      <li class="columns buttonsModify">
+      <li class="col buttonsModify">
         <div class="row">
           <div class="col">
             <img src="../../../assets/Vector.png" (click)="deleteMovieModal(delete, movie.id)" class="photoMovi"
@@ -48,6 +48,8 @@
   </button>
   <app-add-movie></app-add-movie>
   <h5 class="cancel " aria-label="Close" (click)="modalRef.hide()">Cancel </h5>
+
+
 </ng-template>
 <ng-template #delete>
   <button type="button" class="close pull-right " aria-label="Close" (click)="modalRef.hide()">
