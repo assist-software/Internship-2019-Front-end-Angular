@@ -1,45 +1,21 @@
 .container {
     background-color: black;
-    /* padding: 0;
-    margin: 0; */
-    /* max-width: 200vw; */
-    /* max-height: 200hw; */
-    /* z-index: -1; */
-    width: 100%;
-    /* height: 140vh; */
-    margin-right: 0px;
-    margin-left: 0px;
+    /* padding-left: 500px;
+    padding-right: 500px; */
 }
+
+.myContainer2 {
+    background-color: black;
+    padding-top: 138px;
+    padding-bottom: 46px;
+    padding-left: 100px;
+}
+
 .myContainer {
-    margin-right: 48px;
-    /* margin: auto; */
-}
-
-/* .blog .carousel-indicators {
-    left: 0;
-    top: auto;
-    bottom: -40px;
-}
-
-.blog .carousel-indicators li {
-    background: #a3a3a3;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-}
-
-.blog .carousel-indicators .active {
-    background: #707070;
-} */
-
-.col-md-12 {
-    top: 100px;
-    left: 50px;
-}
-
-.carousel {
-    top: 100px;
-    left: 2%;
+    padding-right: 100px;
+    padding-left: 100px;
+    background-color: black;
+    padding-bottom: 200px;
 }
 
 .Previous {
@@ -53,9 +29,8 @@
     z-index: 999;
 }
 
-.carouselbuttons {
-    margin-top: 138px;
-    margin-left: 350px;
+.carouselbutton {
+    margin-top: 32px;
 }
 
 .Button1 {
@@ -75,23 +50,25 @@
 }
 
 .watchlistbutton {
-    margin-top: 360px;
-    margin-left: 80px;
-    background: #F5044C;
+    position: absolute;
+    top: 360px;
+    left: 80px;
     border-color: #F5044C;
     border-radius: 4.81818px;
-    position: absolute;
     color: white;
 }
 
 .notemovie {
-    margin-top: 360px;
-    margin-left: 220px;
-    background: #FF9A03;
+    position: absolute;
+    top: 360px;
+    left: 220px;
     border-radius: 5px;
     border-color: #FF9A03;
-    position: absolute;
     color: white;
+}
+
+.imageMovie {
+    position: relative;
 }
 
 .title-movie {
@@ -113,10 +90,10 @@
 
 .recent-added {
     margin-left: 3%;
-    position: absolute;
-    width: 256px;
-    height: 69px;
-    top: 1144px;
+    /* position: absolute; */
+    /* width: 256px;
+    height: 69px; */
+    /* top: 1144px; */
     font-family: Campton;
     font-size: 18px;
     line-height: 80px;

@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  listAdress = ['/login', '/reset-password', '/register', '/admin-moovie'];
+  listAdressNav = ['/login', '/reset-password', '/register', '/admin-moovie'];
+  listAdressFot = ['/login', '/reset-password', '/register'];
   showNav: boolean;
 
   constructor(public router: Router) { }
@@ -16,11 +17,17 @@ export class AppComponent implements OnInit {
   }
 
   showNavbar() {
-    if (this.listAdress.indexOf(this.router.url) === -1) {
+    if (this.listAdressNav.indexOf(this.router.url) === -1) {
       return this.showNav = true;
     } else {
       return this.showNav = false;
     }
-
+  }
+  showFooterbar() {
+    if (this.listAdressNav.indexOf(this.router.url) === -1) {
+      return this.showNav = true;
+    } else {
+      return this.showNav = false;
+    }
   }
 }
