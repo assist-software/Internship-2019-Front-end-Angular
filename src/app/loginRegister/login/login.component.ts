@@ -9,9 +9,10 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  returnUrl: string;
+  // returnUrl: string;
   loginForm: FormGroup;
   type = 'password';
+
 
   constructor(
     private router: Router,
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     });
     this.authenticationService.logout();
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   get f() { return this.loginForm.controls; }
@@ -38,14 +39,16 @@ export class LoginComponent implements OnInit {
     }
   }
   onSubmit() {
-    console.log(this.loginForm.value.email, this.loginForm.value.password);
+    // console.log(this.loginForm.value.email, this.loginForm.value.password);
     this.authenticationService.login(this.loginForm.value.email, this.loginForm.value.password)
-    .subscribe(
+      .subscribe(
         data => {
-            this.router.navigate([this.returnUrl]);
+          console.log('emial' + data);
+          // this.router.navigate([this.returnUrl]);
+          this.router.navigate(['/']);
         },
         error => {
-            console.log('error', error);
+          console.log('Nu ne-am logat: ' + error);
         });
   }
 }

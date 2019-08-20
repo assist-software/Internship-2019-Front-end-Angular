@@ -28,12 +28,18 @@ import { NewMoovieComponent } from './new-moovie/new-moovie.component';
 import { HiglightMoovieComponent } from './homePage/higlight-moovie/higlight-moovie.component';
 import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-of-next-moovie.component';
 import { AdminNavBarComponent } from './administration/admin-nav-bar/admin-nav-bar.component';
-import { HttpClientModule  } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { ErrorInterceptor } from './models/error.interceptor';
+import { UserService } from './services/user.service';
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 
 @NgModule({
@@ -68,11 +74,20 @@ import { ErrorInterceptor } from './models/error.interceptor';
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     SlickModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: (tokenGetter),
+        whitelistedDomains: ['example.com'],
+        blacklistedRoutes: ['example.com/examplebadroute/']
+      }
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    UserService
+
   ],
   bootstrap: [AppComponent]
 })
