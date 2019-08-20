@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { SlickModule } from 'ngx-slick';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 // import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,7 +60,8 @@ import { AdminNavBarComponent } from './administration/admin-nav-bar/admin-nav-b
     NgbModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

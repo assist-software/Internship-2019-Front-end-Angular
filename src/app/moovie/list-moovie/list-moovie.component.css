@@ -1,6 +1,7 @@
 .pictureContainer {
     height: 416px;
     position: relative;
+    border-radius: 20px;
 }
 
 .btnRemove {
@@ -18,10 +19,14 @@
     color: #FFFFFF;
 }
 
+.mt-0 {
+    position: relative;
+}
+
 .positionSearcBtn {
     position: absolute;
     top: 20px;
-    right: 368px;
+    left: 337px;
 }
 
 .btnScore {
@@ -60,19 +65,13 @@ h5 {
 
 .searchBtn {
     margin-top: 200px;
-    display: flex;
+    /* display: flex; */
     /* margin-left: -40px; */
-    align-items: right;
+    /* align-items: right; */
 }
 
 .col-md-6 {
     padding: 0;
-}
-
-.btnRight {
-    /* display: flex;
-    align-items: center; */
-    margin-left: 26%;
 }
 
 .emailWrite {
@@ -84,10 +83,16 @@ h5 {
 }
 
 .mySelect {
+    width: 176px;
+    height: 56px;
     border: 1px solid #F5044C;
     box-sizing: border-box;
     border-radius: 5px;
     background-color: transparent;
+}
+
+.containerCat {
+    margin-left: 100px;
 }
 
 .mr-sm-2 {
@@ -95,9 +100,10 @@ h5 {
     height: 56px;
 }
 
+/* 
 .mt-0 {
     margin-left: 16%;
-}
+} */
 
 @media (min-width: 1200px) {
     .container {

@@ -23,13 +23,14 @@ export class CarouselMoovieComponent {
     { img: './../../assets/pictures/image113.png' }
   ];
 
-  slideConfig = { slidesToShow: 4, slidesToScroll: 4 ,arrows: false, 
-    centerPadding: '0px' ,centerMode: true, adaptiveHeight: true,};
+  slideConfig = {
+    slidesToShow: 4, slidesToScroll: 4, arrows: false,
+    centerPadding: 'auto', centerMarging: '0px', centerMode: true, adaptiveHeight: true,
+  };
 
   constructor() { }
 
 
-  // slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
 
   addSlide() {
     this.slides.push({ img: 'http://placehold.it/350x150/777777' });
@@ -56,19 +57,3 @@ export class CarouselMoovieComponent {
     console.log('beforeChange');
   }
 }
-
-
-// addSlide() {
-//   this.slides.push({ img: './../../assets/pictures/image113.png' });
-// }
-
-// removeSlide() {
-//   this.slides.length = this.slides.length - 1;
-// }
-
-// afterChange(e) {
-//   console.log('afterChange');
-// }
-
-// }
-
