@@ -1,24 +1,23 @@
-<div class="container">
+<div class="myContainer2">
     <div class="row">
         <div class="col-md-6">
             <p class="recent-added">Recent added movies (4/10)</p>
         </div>
-        <div class="col-md-6">
-            <div class="carouselbuttons">
+        <div class="col-md-5 text-right">
+            <div class="carouselbutton">
                 <button class="Button1" (click)="slickModal.slickPrev()">
-                    <div class="icon"> <img src="./../../../assets/pictures/icon1.png" alt=""> </div>
+                    <div class="icons"> <img src="./../../../assets/pictures/icon1.png" alt=""> </div>
                 </button>
                 <button class="Button2" (click)="slickModal.slickNext()">
-                    <div class="icon"> <img src="./../../../assets/pictures/icon2.png" alt=""> </div>
+                    <div class="icons"> <img src="./../../../assets/pictures/icon2.png" alt=""> </div>
                 </button>
             </div>
         </div>
     </div>
-
 </div>
 <div class="myContainer">
     <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
-        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide imageMovie">
             <button class="watchlistbutton">Add to watchlist</button>
             <button class="notemovie">8.2</button>
             <img [src]="slide.img" alt="">

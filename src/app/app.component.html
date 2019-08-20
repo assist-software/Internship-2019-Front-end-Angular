@@ -1,13 +1,11 @@
-<!-- <ng-template [ngIf]="condition">
-    <app-header-bar></app-header-bar>
-</ng-template> -->
-<div
-    *ngIf="showNavbar()">
+<div *ngIf="showNavbar()">
     <app-header-bar></app-header-bar>
 </div>
-<div
-    *ngIf="router.url === '/admin-moovie'">
+<div *ngIf="router.url === '/admin-moovie'">
     <app-admin-nav-bar></app-admin-nav-bar>
 </div>
 <router-outlet></router-outlet>
-<app-footer-bar></app-footer-bar>
+<!-- 
+<div *ngIf="showFooterbar()">
+    <app-footer-bar></app-footer-bar>
+</div> -->

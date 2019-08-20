@@ -28,6 +28,12 @@ import { NewMoovieComponent } from './new-moovie/new-moovie.component';
 import { HiglightMoovieComponent } from './homePage/higlight-moovie/higlight-moovie.component';
 import { ListOfNextMoovieComponent } from './homePage/list-of-next-moovie/list-of-next-moovie.component';
 import { AdminNavBarComponent } from './administration/admin-nav-bar/admin-nav-bar.component';
+import { HttpClientModule  } from '@angular/common/http';
+
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './services/jwt.interceptor';
+import { ErrorInterceptor } from './models/error.interceptor';
 
 
 @NgModule({
@@ -51,6 +57,7 @@ import { AdminNavBarComponent } from './administration/admin-nav-bar/admin-nav-b
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
@@ -63,7 +70,10 @@ import { AdminNavBarComponent } from './administration/admin-nav-bar/admin-nav-b
     SlickModule.forRoot(),
     BsDatepickerModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
