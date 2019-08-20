@@ -17,37 +17,41 @@
     </h1>
     <h3 *ngIf="isResetMode">We will send you over email the instructions in order to get your password reseted.</h3>
   </div>
-  <form [formGroup]="authForms" class="col-md-12 col-xd-12 col-sm-12" #authForm="ngForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="authForms" class="col-md-12 col-xd-12 col-sm-12" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <input *ngIf="isRegisterMode" type="text" formControlName="fullName" class="form-control" name="fullName"
-        required="isRegisterMode" placeholder="Full name" />
+        placeholder="Full name" />
       <div *ngIf="submitted && f.email.errors" class="invalid-feedback"></div>
     </div>
     <div class="form-group">
-      <input type="email" formControlName="email" class="form-control" name="email" required email
-        placeholder="Email adress" />
+      <input type="email" formControlName="email" class="form-control" name="email" placeholder="Email adress" />
       <div *ngIf="submitted && f.email.errors" class="invalid-feedback"></div>
     </div>
     <div class="form-group">
       <input *ngIf="!isResetMode" type="password" formControlName="password" class="form-control" name="password"
-        required="!isResetMode" minlength="6" placeholder="Password" />
+        placeholder="Password" />
       <div *ngIf="submitted && f.password.errors" class="invalid-feedback"></div>
       <p class="text-right" (click)="resetMode()">Forgot password?</p>
     </div>
-    <button *ngIf="isLoginMode" [disabled]="loading" class="btn btn-pink" [disabled]="!authForm.valid">
+    <button *ngIf="isLoginMode" [disabled]="loading" class="btn btn-pink"
+      [disabled]="f.email.errors || f.password.errors">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       Login
     </button>
-    <button *ngIf="isRegisterMode" [disabled]="loading" class="btn btn-pink" [disabled]="!authForm.valid">
+    <button *ngIf="isRegisterMode" [disabled]="loading" class="btn btn-pink"
+      [disabled]="f.email.errors || f.password.errors || f.fullName.errors">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       Register
     </button>
-    <button *ngIf="isResetMode" [disabled]="loading" class="btn btn-pink" [disabled]="!authForm.valid">
+    <button *ngIf="isResetMode" [disabled]="loading" class="btn btn-pink" [disabled]="f.email.errors">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       Reset
     </button>
     <p *ngIf="isLoginMode" (click)="registerMode()">Don’t have an account? <u>Let’s create one</u></p>
     <p *ngIf="isRegisterMode || isResetMode" (click)="loginMode()">Already have an account? <u>Log in</u></p>
     <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
+    <div *ngIf="emailSent" class="alert alert-success mt-3 mb-0">Email sent.</div>
+    <div *ngIf="accCreated" class="alert alert-success mt-3 mb-0">Account created.</div>
+
   </form>
 </div>
