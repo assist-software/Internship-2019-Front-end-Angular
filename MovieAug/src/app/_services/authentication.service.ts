@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpResponse } from "@angular/common/http";
+import { HttpClient, HttpResponse, HttpHeaders } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
@@ -30,21 +30,36 @@ export class AuthenticationService {
         { email: email, password: password },
         { observe: "response" }
       )
-      .subscribe(res => {
-        const helper = new JwtHelperService();
-        const decodedToken = helper.decodeToken(
-          res.headers.get("Authorization")
-        );
-        console.log(decodedToken);
-      });
-    // .pipe(
-    //   map((res: HttpResponse<any>) => {
-    //     console.log(res.headers.getAll("authorization"));
-    //     // localStorage.setItem("currentUser", JSON.stringify(user));
-    //     // this.currentUserSubject.next(user);
-    //     // return user;
-    //   })
-    // );
+      .pipe(
+        map(res => {
+          const jwtToken = res.headers.get("Authorization");
+          const helper = new JwtHelperService();
+          const decodedToken = helper.decodeToken(jwtToken);
+          const user = new User(
+            decodedToken.id,
+            email,
+            decodedToken.sub,
+            jwtToken.substr(7)
+          );
+          localStorage.setItem("currentUser", JSON.stringify(user));
+          this.currentUserSubject.next(user);
+        })
+      );
+
+    // .subscribe(res => {
+    //   const jwtToken = res.headers.get("Authorization");
+    //   const helper = new JwtHelperService();
+
+    //   const decodedToken = helper.decodeToken(jwtToken);
+    //   return { name: decodedToken.sub, email: email, token: jwtToken };
+    // });
+
+    // map(res => {
+    //   console.log(res);
+    //   console.log(res.headers.get("Authorization"));
+    // localStorage.setItem("currentUser", JSON.stringify(user));
+    // this.currentUserSubject.next(user);
+    // return user;
   }
   register(
     name: string,
@@ -61,20 +76,22 @@ export class AuthenticationService {
       })
       .pipe(
         map(user => {
+          console.log(user);
           return user;
         })
       );
   }
   reset(email: string) {
-    return this.http
-      .post<any>(`${environment.apiUrl}/reset-password`, email)
-      .pipe(
-        map(user => {
-          this.currentUserSubject.next(user);
-          return user;
-        })
-      );
+    return this.http.post<any>(`${environment.apiUrl}/reset-password`, email);
   }
+  // reset(email: string) {
+  //   const headers = new HttpHeaders();
+  //   headers.append("Content-Type", "text/plain");
+  //   return this.http
+  //     .post<any>(`${environment.apiUrl}/reset-password`, email, {
+  //       headers: headers
+  //     });
+  // }
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem("currentUser");

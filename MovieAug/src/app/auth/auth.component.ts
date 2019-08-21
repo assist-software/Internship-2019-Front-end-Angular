@@ -8,6 +8,8 @@ import {
 } from "@angular/forms";
 import { first } from "rxjs/operators";
 import { AuthenticationService } from "@app/_services";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { User } from "@app/_models";
 
 @Component({
   selector: "app-auth",
@@ -27,6 +29,7 @@ export class AuthComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   error = "";
+  succes = "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -61,6 +64,7 @@ export class AuthComponent implements OnInit {
     this.submitted = true;
 
     this.error = "";
+    this.succes = "";
     this.emailSent = false;
     this.accCreated = false;
 
@@ -71,21 +75,31 @@ export class AuthComponent implements OnInit {
 
     this.loading = true;
     if (this.isLoginMode) {
-      this.authenticationService.login(
-        this.f.email.value,
-        this.f.password.value
-      );
-      // .pipe(first())
-      // .subscribe(
-      //   data => {
-      //     console.log(data);
-      //     this.router.navigate([this.returnUrl]);
-      //   },
-      //   error => {
-      //     this.error = error;
-      //     this.loading = false;
-      //   }
-      // );
+      this.authenticationService
+        .login(this.f.email.value, this.f.password.value)
+        .subscribe(
+          res => {
+            this.router.navigate([this.returnUrl]);
+          },
+          error => {
+            console.log(error);
+            if (error.status == 401) this.error = "Email or password wrong.";
+            else this.error = error;
+          }
+        );
+
+      //     .subscribe(
+      //       data => {
+      //         console.log("lgmod first");
+      //         console.log(data);
+      //         this.router.navigate([this.returnUrl]);
+      //       },
+      //       error => {
+      //         console.log("test error");
+      //         this.error = error;
+      //         this.loading = false;
+      //       }
+      //     );
     }
     if (this.isRegisterMode) {
       this.authenticationService
@@ -98,12 +112,9 @@ export class AuthComponent implements OnInit {
         .pipe(first())
         .subscribe(
           data => {
-            this.router.navigate([this.returnUrl]);
-            if (data.result == true) {
-              console.log("test");
-              this.accCreated = true;
-            }
+            this.accCreated = true;
             this.loading = false;
+            this.router.navigate([this.returnUrl]);
           },
           error => {
             this.error = error;
@@ -114,13 +125,10 @@ export class AuthComponent implements OnInit {
     if (this.isResetMode) {
       this.authenticationService
         .reset(this.f.email.value)
-        .pipe(first())
+
         .subscribe(
           data => {
-            console.log(data);
-            if (data.result === true) {
-              this.emailSent = true;
-            }
+            this.emailSent = true;
             this.loading = false;
           },
           error => {

@@ -50,8 +50,10 @@
     <p *ngIf="isLoginMode" (click)="registerMode()">Don’t have an account? <u>Let’s create one</u></p>
     <p *ngIf="isRegisterMode || isResetMode" (click)="loginMode()">Already have an account? <u>Log in</u></p>
     <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
-    <div *ngIf="emailSent" class="alert alert-success mt-3 mb-0">Email sent.</div>
+    <div *ngIf="emailSent" class="alert alert-success mt-3 mb-0">Password reseted.Check email!</div>
     <div *ngIf="accCreated" class="alert alert-success mt-3 mb-0">Account created.</div>
+
+
 
   </form>
 </div>
