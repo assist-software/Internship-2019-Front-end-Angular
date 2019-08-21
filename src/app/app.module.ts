@@ -34,6 +34,7 @@ import { HttpClientModule  } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { ErrorInterceptor } from './models/error.interceptor';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ErrorInterceptor } from './models/error.interceptor';
     HiglightMoovieComponent,
     ListOfNextMoovieComponent,
     HomePageComponent,
-    AdminNavBarComponent
+    AdminNavBarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

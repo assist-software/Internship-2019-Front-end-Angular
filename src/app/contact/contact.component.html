@@ -1,0 +1,41 @@
+<div class="container-contact">
+    <div class="container-form">
+        <h2 class="titleForm">Contact us</h2>
+  <form [formGroup]="contact" (ngSubmit)="contactFunction()">
+    <div class="form-row">
+      <div class="form-group col-12">
+        <br />
+        <input formname="name" placeholder="  Name"  />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12">
+        <br />
+        <input formemail="email" placeholder="  Email"/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12">
+        <br />
+        <select class="selectCategory" name="category">
+          <option value="Feedback">Feedback</option>
+          <option value="bugreport">Report a bug</option>
+          <option value="featrequest">Feature request</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12 myTag">
+        <label for="description">Description</label>
+        <textarea class="form-control" placeholder="Description" name="description" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <button class="myBtn" >
+        Send
+      </button>
+    </div>
+  </form>
+  </div>
+</div>

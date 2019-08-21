@@ -10,6 +10,7 @@ import { AdminMoovieComponent } from './administration/admin-moovie/admin-moovie
 import { ListMoovieComponent } from './moovie/list-moovie/list-moovie.component';
 import { MoovieDetailsComponent } from './moovie/moovie-details/moovie-details.component';
 import { NewMoovieComponent } from './new-moovie/new-moovie.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,9 @@ const routes: Routes = [
   { path: 'admin-moovie', component: AdminMoovieComponent },
   { path: 'list-moovie', component: ListMoovieComponent },
   { path: 'movie-details', component: MoovieDetailsComponent },
-  { path: 'new-movie', component: NewMoovieComponent }
+  { path: 'new-movie', component: NewMoovieComponent },
+  { path: 'contact', component: ContactComponent }
+
 ];
 
 @NgModule({
