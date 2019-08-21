@@ -5,7 +5,9 @@
 .container {
     padding-top: 120px;
 }
-
+.theme-green .bs-datepicker-head {
+    background-color: red!important;
+}
 .txtTitle {
     font-family: Campton;
     font-size: 48px;

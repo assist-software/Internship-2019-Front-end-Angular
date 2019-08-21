@@ -36,6 +36,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { ErrorInterceptor } from './models/error.interceptor';
 import { UserService } from './services/user.service';
+import { MoviesServices } from 'src/app/services/movies.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -86,7 +87,8 @@ export function tokenGetter() {
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    UserService
+    UserService,
+    MoviesServices
 
   ],
   bootstrap: [AppComponent]

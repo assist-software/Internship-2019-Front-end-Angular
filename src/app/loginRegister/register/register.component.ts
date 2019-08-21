@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, RequiredValidator, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { ReceiveMessage } from 'src/app/models/receive.model';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,8 @@ import { UserService } from 'src/app/services/user.service';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   test = 'un test';
+  emailTaken = false;
+  createAccount = false;
 
   constructor(private userService: UserService) {
   }
@@ -23,17 +26,25 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    this.emailTaken = false;
+    this.createAccount = false;
     console.log('register' + this.registerForm.value.name);
     // tslint:disable-next-line:max-line-length
     this.userService.register(this.registerForm.value.email, this.registerForm.value.password, this.registerForm.value.password, this.registerForm.value.name)
       .subscribe(
-        data => {
-          // console.log('Registration successful', data.errorCode);
+        (data: ReceiveMessage) => {
+          // this.receive = data;
+          console.log('Received data:', data.errorMessage);
+          if (data.errorMessage === 'Email is already taken') {
+            console.log('ne pare rau dar este luat');
+            this.emailTaken = true;
+          } else {
+            this.createAccount = true;
+          }
         },
         error => {
-          // this.alertService.error(error);
           console.log('eror' + error);
-          // this.loading = false;
+          // Something's wrong
         });
   }
 }

@@ -12,17 +12,16 @@ import { MoovieDetailsComponent } from './moovie/moovie-details/moovie-details.c
 import { NewMoovieComponent } from './new-moovie/new-moovie.component';
 import { AuthGuard } from './services/auth.guard';
 
-
 const routes: Routes = [
-  { path: '', component: HomePageComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomePageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'reset-password', component: ResetPassComponent },
   { path: 'add-moovie', component: AddMoovieComponent },
   { path: 'admin-moovie', component: AdminMoovieComponent, canActivate: [AuthGuard] },
-  { path: 'list-moovie', component: ListMoovieComponent, canActivate: [AuthGuard] },
-  { path: 'movie-details', component: MoovieDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'new-movie', component: NewMoovieComponent, canActivate: [AuthGuard] }
+  { path: 'list-moovie', component: ListMoovieComponent },
+  { path: 'movie-details', component: MoovieDetailsComponent },
+  { path: 'new-movie', component: NewMoovieComponent }
 ];
 
 @NgModule({

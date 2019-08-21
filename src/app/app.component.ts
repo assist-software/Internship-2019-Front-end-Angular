@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     }
   }
   showFooterbar() {
-    if (this.listAdressNav.indexOf(this.router.url) === -1) {
+    if (this.listAdressFot.indexOf(this.router.url) === -1) {
       return this.showNav = true;
     } else {
       return this.showNav = false;

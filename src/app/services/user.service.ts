@@ -12,4 +12,8 @@ export class UserService {
         return this.http.post(`${environment.apiUrl}/signup`, { email, password, confirmPassword, name });
     }
 
+    resetPassword(email: string) {
+        return this.http.post(`${environment.apiUrl}/reset-password`, { email });
+    }
+
 }
