@@ -8,17 +8,17 @@
   </div>
 </div> -->
 
-<header>
+<header style="background: black">
   <div class="container ">
     <app-header></app-header>
     <div class="row containerHeader">
       <div class="col">
         <ul>
           <li>
-            <h1>{{movieItem.title}}</h1>
+            <h1 style="color:white">{{movieItem.title}}</h1>
           </li>
           <li>
-            <p>{{movieItem.description}}</p>
+            <p style="color:white">{{movieItem.description}}</p>
           </li>
           <br>
           <li>
@@ -53,20 +53,23 @@
 
 
   <div class="row">
-
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
-    </div>
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
-    </div>
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
-    </div>
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    <div class="col-sm-3" *ngFor="let movie of movies">
+      <app-movie-item></app-movie-item>
     </div>
   </div>
+  <!-- <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div>
+    <div class="col">
+      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    </div> -->
+
   <div class="row">
 
     <div class="col">

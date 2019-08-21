@@ -1,59 +1,57 @@
 <app-header-admin></app-header-admin>
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-6 sidenav">
-      <div class="divImgUser">
-        <img [src]="file !== undefined ? 'assets/' + file.name : '' +  '/assets/default-user.png'" class="imagUser"
-          alt="pozaUser" />
-      </div>
-    </div>
-    <div class="col-6 sidenav">
-      <!-- forma pentru administartor -->
-      <form>
-        <div class="MyForm">
-          <div class="form-row">
-            <div class="col-12">
-              <label for="NameAdmin" class="text">Name</label><br>
-              <input type="text" name="NameAdmin" class="tbox"><br>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class=" col-12">
-              <label for="emailAdmin" class="text">Email</label><br>
-              <input type="value" name="emailAdmin" class="tbox"><br>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-12">
-              <label for="password" class="text">Password</label><br>
-              <input type="value" name="password" class="tbox"><br>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-12">
-              <label for="confirmPassword" class="text">Confirm Password</label><br>
-              <input type="value" name="confirmPassword" class="tbox"><br>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-12">
-              <label for="file" class="text">Photo</label><br>
-              <input type="file" (change)="handleFileSelect($event)" name="file" class="" accept="image/*">
-            </div>
-          </div>
-          <!-- butoane -->
-          <div class="form-row">
-            <div class="form-group col-6">
-              <button class="btn buttonAdauga">Log out</button>
-            </div>
 
-            <div class="form-group col-6">
-              <button class="btn buttonAdauga">Save</button>
-            </div>
+<div class="row content">
+  <div class=" sidenav">
+
+    <!-- forma pentru administartor -->
+    <form [formGroup]="UpdateUserForm" (ngSubmit)="UpdateUserSubmit()">
+      <div class="MyForm">
+        <div class="divImgUser">
+          <img [src]="file !== undefined ? 'assets/' + file.name : '' +  '/assets/default-user.png'" class="imagUser"
+            alt="pozaUser" />
+        </div>
+        <div class="form-row">
+          <div class="col-12">
+            <label for="NameAdmin" class="text">Name</label><br>
+            <input type="text" formControlName="NameAdmin" name="NameAdmin" class="tbox"><br>
           </div>
         </div>
-      </form>
-    </div>
+        <div class="form-row">
+          <div class=" col-12">
+            <label for="emailAdmin" class="text">Email</label><br>
+            <input type="value" formControlName="emailAdmin" name="emailAdmin" class="tbox"><br>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-12">
+            <label for="password" class="text">Password</label><br>
+            <input type="password" formControlName="password" name="password" class="tbox"><br>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-12">
+            <label for="confirmPassword" class="text">Confirm Password</label><br>
+            <input type="password" formControlName="confirmPassword" name="confirmPassword" class="tbox"><br>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-12">
+            <label for="file" class="text">Photo</label><br>
+            <input type="file" formControlName="file" (change)="handleFileSelect($event)" name="file" class=""
+              accept="image/*">
+          </div>
+        </div>
+        <!-- butoane -->
+        <div class="form-row">
+          <div class="form-group col-6">
+            <button (click)="logOut()" class="btn buttonAdauga">Log out</button>
+          </div>
+          <div class="form-group col-6">
+            <button [disabled]="!UpdateUserForm.valid" class="btn buttonAdauga">Save</button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 <app-footer></app-footer>

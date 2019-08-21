@@ -1,25 +1,27 @@
 .sidenav {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   height: 100%;
+  margin-left: 20%;
+  width: 60%;
 }
 
 .row.content {
-  height: 100%;
-  margin-bottom: 5%;
+  height: 130%;
 }
 
 .divImgUser {
   /* background-color: aqua; */
-  width: 50%;
-  height: 50%;
+  width: 150px;
+  height: 150px;
   position: relative;
-  margin-top: 20%;
-  margin-left: 20%;
+  margin-top: 40px;
+  margin-left: 35%;
 }
 
 .imagUser {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
 }
 
 .text {
@@ -41,7 +43,7 @@
 }
 
 .myForm {
-  margin-top: 15%;
+  margin-top: 30px;
   margin-left: 20%;
   width: 60%;
 }
@@ -57,4 +59,21 @@
   line-height: 25px;
   font-family: Campton;
   font-size: 18px;
+}
+
+@media (max-width: 999px) {
+
+  .sidenav {
+    align-items: center;
+  }
+
+  .myForm {
+    margin-left: 10%;
+    width: 100%;
+  }
+
+  .divImgUser {
+    align-items: center;
+  }
+
 }

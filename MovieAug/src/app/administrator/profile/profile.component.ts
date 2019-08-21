@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RestApiService } from "../../shared/rest-api.service";
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -8,12 +11,53 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class ProfileComponent implements OnInit {
   public file: File;
   public fileslogo: File;
-  addMovie: FormGroup;
+  UpdateUserForm: FormGroup;
+  NameAdmin: FormControl;
+  emailAdmin: FormControl;
+  password: FormControl;
+  confirmPassword: FormControl;
+  user: any = [];
+  private IdUser;
   public imagePath;
   imgURL: any;
-  constructor() { }
+
+  constructor(
+    private rout: Router,
+    public restApi: RestApiService,
+    public fb: FormBuilder
+  ) { }
 
   ngOnInit() {
+    this.IdUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    this.UpdateUserForm = new FormGroup({
+      id: new FormControl(this.IdUser.id),
+      NameAdmin: new FormControl('', Validators.required),
+      emailAdmin: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required),
+      file: new FormControl('')
+    });
+    this.loadMovie(this.IdUser.id);
+    console.log("In real time", this.UpdateUserForm);
+  }
+  loadMovie(id) {
+    return this.restApi.getUser(id).subscribe((data: {}) => {
+      this.user = data;
+      console.log("Din DB:", this.user);
+      // this.UpdateUserForm = this.fb.group({
+      //   'NameAdmin': this.user.NameAdmin,
+      //   'emailAdmin': this.user.emailAdmin,
+      //   'password': this.user.password,
+      //   'confirmPassword': ''
+      // });
+    })
+  }
+  UpdateUserSubmit() {
+    console.log("modified user", this.UpdateUserForm.value);
+    this.restApi.updateUser(this.IdUser.id, this.UpdateUserForm.value).subscribe(data => {
+    })
+    window.location.reload();
   }
   preview(files) {
     console.log("Add img");
@@ -24,8 +68,11 @@ export class ProfileComponent implements OnInit {
       this.imgURL = reader.result;
     }
   }
+  logOut() {
+    localStorage.removeItem("currentUser");
+    window.location.reload();
+  }
   handleFileSelect(evt) {
-    console.log("Am intrat in add img", evt);
     var files = evt.target.files;
     this.file = files[0];
     if (files && this.file) {
@@ -34,7 +81,6 @@ export class ProfileComponent implements OnInit {
       reader.readAsBinaryString(this.file);
       this.fileslogo = this.file
     }
-    console.log("Am iesit din add img", this.fileslogo);
   }
   _handleReaderLoaded(readerEvt) {
     var binaryString = readerEvt.target.result;

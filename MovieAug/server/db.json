@@ -2,7 +2,7 @@
   "movie": [{
       "id": 3,
       "title": "Tony Stark",
-      "trailer": "sdegterhterherhrth",
+      "trailer": "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
       "source": "001-123-4567",
       "coverURL": "Tony Stark",
       "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
@@ -13,7 +13,7 @@
     {
       "id": 4,
       "title": "Fantastic Beasts",
-      "trailer": "sdegterhterherhrth",
+      "trailer": "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
       "source": "001-123-4567",
       "coverURL": "assets/img/left-arrow.png",
       "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
@@ -24,9 +24,9 @@
     {
       "id": 5,
       "title": "Moonlight Beas",
-      "trailer": "sdegterhterherhrth",
+      "trailer": "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
       "source": "001-123-4567",
-      "coverURL": "assets/img/81B2m2WVzkL._SX342_.jpg",
+      "coverURL": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj31pPuppPkAhUC6aQKHRnZA_IQjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fwww.kisspng.com%252Fpng-user-logo-information-service-design-6499157%252F%26psig%3DAOvVaw0Bbv4tmYg6Y0G37a_ZPJF0%26ust%3D1566454167600585&psig=AOvVaw0Bbv4tmYg6Y0G37a_ZPJF0&ust=1566454167600585",
       "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
       "Category": "Fantasy",
       "IMDBScore": "7",
@@ -35,13 +35,46 @@
     {
       "id": 667,
       "title": "TestModificat",
-      "trailer": "ery",
+      "trailer": "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
       "source": "ery",
       "coverURL": "assets/img/81B2m2WVzkL._SX342_.jpg",
       "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
       "Category": "Fantasy",
       "IMDBScore": "5",
       "ReleaseDate": "12/04/2019"
+    }
+  ],
+  "user": [{
+      "id": 4,
+      "NameAdmin": "TestModificat",
+      "emailAdmin": "test@test.test",
+      "password": "Mihaela",
+      "confirmPassword": "UpdateUserSubmit",
+      "file": ""
+    },
+    {
+      "id": 1,
+      "NameAdmin": "",
+      "emailAdmin": "",
+      "password": "",
+      "confirmPassword": "Suceava33",
+      "file": ""
+    },
+    {
+      "id": 2,
+      "email": "test@test.test",
+      "name": "Test",
+      " token": "fake-jwt-token",
+      "password": "Mihaela",
+      "rol": "admin"
+    },
+    {
+      "id": 3,
+      "email": "test@test.test",
+      "name": "Test",
+      " token": "fake-jwt-token",
+      "password": "Mihaela",
+      "rol": "admin"
     }
   ]
 }

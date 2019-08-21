@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { RestApiService } from '../shared/rest-api.service';
 
@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   items: Array<any> = []
   movies: any = [];
   movieItem: any = [];
+  movie: any = [];
   constructor(public restApi: RestApiService,
     private route: ActivatedRoute,
     private router: Router, ) {

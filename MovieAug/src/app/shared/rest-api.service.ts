@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { movie } from '../shared/movie';
+import { user } from '../shared/user';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 @Injectable({
@@ -29,6 +30,13 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
+  getUser(id): Observable<user> {
+    return this.http.get<user>(this.apiURL + '/user/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
   deleteMovie(id) {
     return this.http.delete<movie>(this.apiURL + '/movie/' + id, this.httpOptions)
       .pipe(
@@ -45,6 +53,13 @@ export class RestApiService {
   }
   updateMovie(id, movie): Observable<movie> {
     return this.http.put<movie>(this.apiURL + '/movie/' + id, JSON.stringify(movie), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  updateUser(id, user): Observable<user> {
+    return this.http.put<user>(this.apiURL + '/user/' + id, JSON.stringify(user), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
