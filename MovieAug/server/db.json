@@ -1,6 +1,5 @@
 {
-  "movie": [
-    {
+  "movie": [{
       "id": 13,
       "title": "Tony Stark",
       "trailer": "sdegterhterherhrth",
@@ -78,23 +77,11 @@
       "ReleaseDate": "001-123-4567"
     }
   ],
-  "movieUser": [
-    {
-      "id": 3,
-      "title": "Tony Stark",
-      "trailer": "sdegterhterherhrth",
-      "source": "001-123-4567",
-      "coverURL": "Tony Stark",
-      "description": "20/04/04.2019",
-      "Category": "Adventure",
-      "IMDBScore": "9",
-      "ReleaseDate": "001-123-4567"
-    },
-    {
+  "movieUser": [{
       "id": 14,
       "title": "Fantastic Beasts",
       "trailer": "sdegterhterherhrth",
-      "source": "001-123-4567",
+      "source": "https://www.imdb.com/title/tt3741700/mediaviewer/rm3629213184",
       "coverURL": "Tony Stark",
       "description": "20/04/04.2019",
       "Category": "Fantasy",
@@ -102,7 +89,7 @@
       "ReleaseDate": "001-123-4567"
     },
     {
-      "id": 10,
+      "id": 11,
       "title": "Mihaela",
       "trailer": "sdegterhterherhrth",
       "source": "001-123-4567",
@@ -113,13 +100,35 @@
       "ReleaseDate": "001-123-4567"
     },
     {
-      "id": 10,
-      "title": "Fantastic Beasts",
+      "id": 17,
+      "title": "Mihaela",
       "trailer": "sdegterhterherhrth",
       "source": "001-123-4567",
       "coverURL": "Tony Stark",
       "description": "20/04/04.2019",
       "Category": "Fantasy",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 93,
+      "title": "Tony Stark",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Adventure",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 16,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Action",
       "IMDBScore": "9",
       "ReleaseDate": "001-123-4567"
     }

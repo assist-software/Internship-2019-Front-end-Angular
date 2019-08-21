@@ -53,41 +53,49 @@
 <br>
 <br>
 <br>
-
-
-<div class="row d-flex justify-content-center ">
-
-
+<div class="container">
   <div class="row">
-
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+    <div class="col-sm-5">
+      <h1>See what movies come next month</h1>
     </div>
     <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+      <label for="sdropdownBasic1">Sort by:</label>
     </div>
     <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
-    </div>
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Sort</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="sendFilter1()">ReleaseDate</button>
+          <button ngbDropdownItem (click)="sendFilter2()">IMDBScore</button>
+          <button ngbDropdownItem (click)="sendFilter()">title</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
 
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
-    </div>
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
-    </div>
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
-    </div>
-    <div class="col">
-      <p><img src="../../assets/img/img1.jpg" alt="movie"></p>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let movie of movies   ">
+      <div>
+        <div class="container">
+          <img src="../../../../assets/img/img1.jpg" alt="img">
+          <button (click)="addMovieWatchlist(movie.id)" class="btn1 btn btn-primary-danger">Add to Watch</button>
+          <button class="no-click btn2 btn btn-primary-danger">{{movie.IMDBScore}}</button>
+        </div>
+        <div class="row">
+          <ul style="list-style: none">
+            <li>
+              <h4>{{movie.title}}</h4>
+            </li>
+            <li>
+              <p>Release date: {{movie.ReleaseDate}}</p>
+            </li>
+            <li>
+              <p>{{movie.Category}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 <app-footer></app-footer>

@@ -47,3 +47,50 @@ i {
 body {
   scroll-behavior: smooth;
 }
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn1 {
+  position: absolute;
+  top: 88%;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f5044c;
+  color: white;
+  width: 40%;
+
+
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+
+.container .btn2 {
+  text-align: center;
+  background-color: #ff9a03;
+  color: white;
+  position: absolute;
+  top: 88%;
+
+  left: 80%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 16%;
+
+
+}
+
+.no-click {
+  pointer-events: none;
+}
