@@ -1,0 +1,116 @@
+.container {
+    background-color: black;
+    /* padding-left: 500px;
+    padding-right: 500px; */
+}
+
+.myContainer2 {
+    background-color: black;
+    padding-top: 138px;
+    padding-bottom: 46px;
+    padding-left: 100px;
+}
+
+.myContainer {
+    padding-right: 100px;
+    padding-left: 100px;
+    background-color: black;
+    padding-bottom: 200px;
+}
+
+.Previous {
+    height: 100px;
+    width: 100px;
+    outline: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px rgb(255, 255, 255);
+    z-index: 999;
+}
+
+.carouselbutton {
+    margin-top: 32px;
+}
+
+.Button1 {
+    width: 32px;
+    height: 32px;
+    border-color: #F5044C;
+    background: #F5044C;
+    border-radius: 8px;
+}
+
+.Button2 {
+    width: 32px;
+    height: 32px;
+    background: #F5044C;
+    border-color: #F5044C;
+    border-radius: 8px;
+}
+
+.imageslide .watchlistbutton {
+    position: absolute;
+    border-color: #F5044C;
+    border-radius: 4.81818px;
+    color: white;
+    background: #F5044C;
+    position: absolute;
+    top: 67%;
+    left: 55%;
+    transform: translate(-60%, -50%);
+    -ms-transform: translate(-60%, -50%);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.notemovie {
+    position: absolute;
+    top: 64%;
+    left: 220px;
+    border-radius: 5px;
+    border-color: #FF9A03;
+    color: white;
+    Background: #FF9A03;
+}
+
+.imageMovie {
+    position: relative;
+}
+
+.title-movie {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 80px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.details-movie {
+    font-family: Campton;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+.recent-added {
+    margin-left: 3%;
+    /* position: absolute; */
+    /* width: 256px;
+    height: 69px; */
+    /* top: 1144px; */
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 80px;
+    color: #FFFFFF;
+}
+
+img {
+    width: 90%;
+    margin: auto;
+ 
+}

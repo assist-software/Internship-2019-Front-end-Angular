@@ -3,8 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://192.168.151.223:8080',
+  // apiUrl: 'http://192.168.151.218:8080',
+
+  // movieUrl: 'http://192.168.151.226:3500',
+  // movieUrl: 'http://192.168.151.218:8080'
+  movieUrl: 'http://192.168.151.223:8080'
+
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

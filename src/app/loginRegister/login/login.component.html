@@ -1,0 +1,24 @@
+<div class="container-login">
+    <p class="titleMoovie"><img class="imagMoovie"src="assets/img/moovie-watchers_logo.png" alt="No found!"></p>
+    <div class="container-form">
+        <div class="container-gray"></div>
+        <h2 class="titleForm">Log in to your account</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <input class="spaceInput" type="email" name="email" placeholder="Email" formControlName="email"><br>
+            <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" class="wrong">Please insert a valid email!<br></span>
+            
+            <input class="spaceInput" type="{{type}}" name="password" placeholder="Password" formControlName="password">
+            <i id="pass-status" class="fa fa-eye myEye" aria-hidden="true" (click)="showPassword()"></i><br>
+            <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" class="wrong1">Please insert a valid password!<br></span>
+
+            <span *ngIf="authenticationDate" class="wrong12">Your date for authentication is wrong!<br></span>
+            <div class="container-forgot" ><span [routerLink]="['/reset-password']">Forgot password?</span></div>
+
+            <button type="submit" class="btnLog" [disabled]="!loginForm.valid">Log in</button>
+            
+        </form>
+        <p class="textDown">Don't have an account? <a [routerLink]="['/register']"><u> Let's create one!</u> </a></p>
+    </div>
+    <br>
+</div>
