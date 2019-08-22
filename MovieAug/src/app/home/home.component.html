@@ -77,26 +77,7 @@
 
     <div class="row">
       <div class="col-sm-3" *ngFor="let movie of movies   ">
-        <div>
-          <div class="container">
-            <img src="../../../../assets/img/img1.jpg" alt="img">
-            <button (click)="addMovieWatchlist(movie.id)" class="btn1 btn btn-primary-danger">Add to Watch</button>
-            <button class="no-click btn2 btn btn-primary-danger">{{movie.IMDBScore}}</button>
-          </div>
-          <div class="row">
-            <ul style="list-style: none">
-              <li>
-                <h4>{{movie.title}}</h4>
-              </li>
-              <li>
-                <p>Release date: {{movie.ReleaseDate}}</p>
-              </li>
-              <li>
-                <p>{{movie.Category}}</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <app-movie-item [movie]="movie"></app-movie-item>
       </div>
     </div>
   </div>

@@ -20,8 +20,6 @@ export class HomeComponent implements OnInit {
   movieID: number;
   nameDrop = 'Sort';
 
-
-
   constructor(public restApi: RestApiService,
     private route: ActivatedRoute,
     private router: Router,
@@ -59,6 +57,7 @@ export class HomeComponent implements OnInit {
       }
     })
   }
+
   sendFilter(sort: string) {
     if (sort === 'titlu') {
       this.movies.sort(this.sortFilterTitle)

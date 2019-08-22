@@ -29,8 +29,9 @@ export class MovieItemComponent implements OnInit {
     })
     window.location.reload();
   }
-  MoviShow() {
-    this.rout.navigate(['movieDetail']);
+  MoviShow(id) {
+    console.log("Am ajuns in MovieShow");
+    this.rout.navigate(['movieDetail/' + id]);
   }
   loadMovie() {
 

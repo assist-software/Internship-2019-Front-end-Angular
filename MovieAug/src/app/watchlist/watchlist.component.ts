@@ -22,8 +22,6 @@ export class WatchlistComponent implements OnInit {
     public restApi: RestApiService,
     private orderPipe: OrderPipe
 
-
-
   ) { }
 
 
