@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "addMovie", component: AddMovieComponent, canActivate: [AuthGuard] },
   { path: "contact", component: ContactComponent, canActivate: [AuthGuard] },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: "movieDetail", component: MovieDetailComponent, canActivate: [AuthGuard] },
+  { path: "movieDetail/:id", component: MovieDetailComponent, canActivate: [AuthGuard] },
   {
     path: "adminMoviesList",
     component: ListMoviesAdminComponent,

@@ -1,5 +1,5 @@
 <app-header-admin></app-header-admin>
-<!-- first page-->z
+<!-- first page-->
 <div class="row section1">
   <div class="col input-group">
     <input type="search" placeholder="  Search for a movie..." aria-describedby="button-addon1" class="search">
@@ -17,7 +17,7 @@
   <div class="section2"><br>
     <ul class="row">
       <li class="col">
-        <h1><img src="../../../assets/image 11.png" class="photoMovi" alt="Moovie"></h1>
+        <img src="../../../assets/image 11.png" class="photoMovi" alt="Moovie">
       </li>
       <li class="col">
         <p>{{movie.title}}</p>
@@ -42,6 +42,7 @@
     </ul>
   </div>
 </div>
+
 
 <!-- modalul pentru adaugarea sau editarea unui film -->
 <ng-template #template let-modal let-c="close" let-d="dismiss">

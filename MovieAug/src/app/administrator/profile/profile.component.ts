@@ -17,10 +17,10 @@ export class ProfileComponent implements OnInit {
   password: FormControl;
   confirmPassword: FormControl;
   user: any = [];
+  Error: string;
   private IdUser;
   public imagePath;
   imgURL: any;
-
   constructor(
     private rout: Router,
     public restApi: RestApiService,
@@ -45,19 +45,19 @@ export class ProfileComponent implements OnInit {
     return this.restApi.getUser(id).subscribe((data: {}) => {
       this.user = data;
       console.log("Din DB:", this.user);
-      // this.UpdateUserForm = this.fb.group({
-      //   'NameAdmin': this.user.NameAdmin,
-      //   'emailAdmin': this.user.emailAdmin,
-      //   'password': this.user.password,
-      //   'confirmPassword': ''
-      // });
     })
   }
   UpdateUserSubmit() {
-    console.log("modified user", this.UpdateUserForm.value);
-    this.restApi.updateUser(this.IdUser.id, this.UpdateUserForm.value).subscribe(data => {
-    })
-    window.location.reload();
+
+    if (this.UpdateUserForm.value.confirmPassword !== this.UpdateUserForm.value.password) {
+      this.Error = " Password and confirmpassword must be the same";
+    }
+    else {
+      this.restApi.updateUser(this.IdUser.id, this.UpdateUserForm.value).subscribe(data => {
+      })
+      window.location.reload();
+    }
+
   }
   preview(files) {
     console.log("Add img");

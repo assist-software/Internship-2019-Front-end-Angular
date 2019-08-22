@@ -12,20 +12,24 @@
         </div>
         <div class="form-row">
           <div class="col-12">
+            <label class="errormessage">{{Error}}</label><br>
             <label for="NameAdmin" class="text">Name</label><br>
-            <input type="text" formControlName="NameAdmin" name="NameAdmin" class="tbox"><br>
+            <input type="text" formControlName="NameAdmin" [(ngModel)]="user.NameAdmin" name="NameAdmin"
+              class="tbox"><br>
           </div>
         </div>
         <div class="form-row">
           <div class=" col-12">
             <label for="emailAdmin" class="text">Email</label><br>
-            <input type="value" formControlName="emailAdmin" name="emailAdmin" class="tbox"><br>
+            <input type="value" formControlName="emailAdmin" [(ngModel)]="user.emailAdmin" name="emailAdmin"
+              class="tbox"><br>
           </div>
         </div>
         <div class="form-row">
           <div class="col-12">
             <label for="password" class="text">Password</label><br>
-            <input type="password" formControlName="password" name="password" class="tbox"><br>
+            <input type="password" formControlName="password" [(ngModel)]="user.password" name="password"
+              class="tbox"><br>
           </div>
         </div>
         <div class="form-row">

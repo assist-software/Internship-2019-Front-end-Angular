@@ -9,6 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class RestApiService {
   apiURL = 'http://localhost:3000';
+  apiURLDB = '192.168.151.195:8080/signup';
   constructor(private http: HttpClient) { }
   // Http Options
   httpOptions = {

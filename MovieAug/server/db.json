@@ -1,5 +1,6 @@
 {
-  "movie": [{
+  "movie": [
+    {
       "id": 3,
       "title": "Tony Stark",
       "trailer": "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
@@ -44,16 +45,17 @@
       "ReleaseDate": "12/04/2019"
     }
   ],
-  "user": [{
-      "id": 4,
-      "NameAdmin": "TestModificat",
+  "user": [
+    {
+      "id": 1,
+      "NameAdmin": "TestModificat4",
       "emailAdmin": "test@test.test",
       "password": "Mihaela",
-      "confirmPassword": "UpdateUserSubmit",
+      "confirmPassword": "Suceava33",
       "file": ""
     },
     {
-      "id": 1,
+      "id": 4,
       "NameAdmin": "",
       "emailAdmin": "",
       "password": "",

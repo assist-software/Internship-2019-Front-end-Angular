@@ -1,14 +1,61 @@
-body {
+.body {
   background-color: black;
   color: white;
+}
 
+.container {
+  margin-top: 60px;
+}
+
+.category {
+  font-family: Campton;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+  color: #FFFFFF;
+  opacity: 0.6;
+  margin-top: -29px;
+}
+
+.director {
+  font-family: Campton;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+  color: #FFFFFF;
+  opacity: 0.6
+}
+
+.txtMovie {
+  color: white !important;
+}
+
+.description {
+  font-family: Campton;
+  font-size: 18px;
+  line-height: 25px;
+  color: #FFFFFF;
+  margin-right: 50px;
+}
+
+.title {
+  font-family: Campton;
+  font-size: 48px;
+  line-height: 60px;
+  /* or 125% */
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
 }
 
 button {
-  width: 50%;
-  background-color: red;
-  color: white;
+  width: 176px;
+  height: 48px;
+  background: #F5044C;
+  border-radius: 8px;
+  margin-bottom: 53px;
 }
+
 
 ul {
   list-style-type: none;

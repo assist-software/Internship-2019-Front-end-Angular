@@ -5,6 +5,13 @@
   width: 60%;
 }
 
+.errormessage {
+  color: red;
+  margin-top: 10px;
+  margin-bottom: -8px;
+  opacity: 0.6;
+}
+
 .row.content {
   height: 130%;
 }
