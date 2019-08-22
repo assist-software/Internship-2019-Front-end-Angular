@@ -15,31 +15,25 @@
 
 <div *ngFor="let movie of movies" class="service_box">
   <div class="section2"><br>
-    <ul class="row">
-      <li class="col">
+    <div class="row">
+      <div class="col-2 ">
         <img src="../../../assets/image 11.png" class="photoMovi" alt="Moovie">
-      </li>
-      <li class="col">
+      </div>
+      <div class="col-3 ">
         <p>{{movie.title}}</p>
-      </li>
-      <li class="col">
+      </div>
+      <div class="col-3  ">
         <p>{{movie.ReleaseDate}}</p>
-      </li>
-      <li class="col">
+      </div>
+      <div class="col-2  ">
         <p>{{movie.Category}}</p>
-      </li>
-      <li class="col buttonsModify">
-        <div class="row">
-          <div class="col">
-            <img src="../../../assets/Vector.png" (click)="deleteMovieModal(delete, movie.id)" class="photoMovi"
-              alt="Moovie">
-          </div>
-          <div class="col">
-            <img src="../../../assets/Edit.png" (click)="UpdateMovie(template, movie.id)" class="edit" alt="Moovie">
-          </div>
-        </div>
-      </li>
-    </ul>
+      </div>
+      <div class="col-1   buttonsModify">
+        <img src="../../../assets/Vector.png" (click)="deleteMovieModal(delete, movie.id)" class="photoMovi"
+          alt="Moovie">
+        <img src="../../../assets/Edit.png" (click)="UpdateMovie(template, movie.id)" class="edit" alt="Moovie">
+      </div>
+    </div>
   </div>
 </div>
 

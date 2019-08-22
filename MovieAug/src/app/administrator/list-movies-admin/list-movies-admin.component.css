@@ -5,6 +5,10 @@
   cursor: pointer;
 }
 
+.photoMovi {
+  cursor: pointer;
+}
+
 .cancel {
   text-align: center;
   align-items: center;
@@ -65,10 +69,6 @@
   box-shadow: 2px 2px 10px 2px rgb(214, 207, 207);
 }
 
-ul {
-  list-style-type: none;
-}
-
 
 .delete p {
   font-family: Campton;
@@ -86,10 +86,6 @@ ul {
 .edit {
   float: right;
   margin-left: 5%;
-}
-
-li {
-  margin-right: 10%;
 }
 
 .buttonsModify {
@@ -119,3 +115,5 @@ li {
   border: none;
   margin-right: 43px;
 }
+
+@media (max-width: 999px) {}

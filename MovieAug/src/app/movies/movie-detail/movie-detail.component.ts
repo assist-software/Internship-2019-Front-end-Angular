@@ -24,7 +24,7 @@ export class MovieDetailComponent implements OnInit {
       for (let movie of this.movies) {
         if (movie.id == this.currentURL) {
           this.currentMovie = movie;
-          console.log("Film curent :", this.currentMovie);
+          console.log("Film curent trailer :", this.currentMovie);
         }
       }
     })
