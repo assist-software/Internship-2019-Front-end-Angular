@@ -16,19 +16,27 @@ body {
   width: 60%;
 }
 
-input {
 
+.md-form {
+  position: relative;
+}
+
+
+input {
 
   background-color: #1D1D23;
   border-radius: 5px;
   color: white;
+  position: absolute;
+
 
 
 
 }
 
-.lupa {
-  position: absolute;
+i {
+  position: relative;
+  color: white;
 
 }
 

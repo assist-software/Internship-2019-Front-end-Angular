@@ -8,17 +8,19 @@
           <h1>Welcome to your</h1>
         </li>
         <li>
-          <h1>Watchlist page.</h1>
+          <h1>Watchlist page</h1>
         </li>
       </ul>
     </div>
     <div class="row ">
       <div class="col">
 
-        <div class="md-form">
-          <input type="search" [(ngModel)]="searchText" placeholder="Search text">
-          <i class="fas fa-search lupa" aria-hidden="true"></i>
-        </div>
+
+        <input type="search" [(ngModel)]="searchText" placeholder="Search movie...">
+
+        <i class="fas fa-search"></i>
+
+
 
       </div>
 
@@ -26,15 +28,24 @@
 
         <div class="row">
           <div class="col">
-            <label for="sdropdownBasic1">Sort by:</label>
           </div>
+          <label for="sdropdownBasic1">Sort by:</label>
           <div class="col">
             <div ngbDropdown class="d-inline-block">
-              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Sort</button>
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{nameDrop}}</button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button ngbDropdownItem (click)="sendFilter1()">ReleaseDate</button>
-                <button ngbDropdownItem (click)="sendFilter2()">IMDBScore</button>
-                <button ngbDropdownItem (click)="sendFilter()">title</button>
+                <button ngbDropdownItem (click)="sendFilter('data')">ReleaseDate</button>
+                <button ngbDropdownItem (click)="sendFilter('score')">IMDBScore</button>
+                <button ngbDropdownItem (click)="sendFilter('titlu')">title</button>
+                <div ngbDropdown class="d-inline-block">
+                  <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Genre</button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem (click)="sendFilter('Action')">Action</button>
+                    <button ngbDropdownItem (click)="sendFilter('Adventure')">Adventure</button>
+                    <button ngbDropdownItem (click)="sendFilter('Horror')">Horror</button>
+                    <button ngbDropdownItem (click)="sendFilter('Fantasy')">Fantasy</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
