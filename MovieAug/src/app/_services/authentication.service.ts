@@ -32,6 +32,7 @@ export class AuthenticationService {
       )
       .pipe(
         map(res => {
+          
           const jwtToken = res.headers.get("Authorization");
           const helper = new JwtHelperService();
           const decodedToken = helper.decodeToken(jwtToken);

@@ -8,8 +8,6 @@ import {
 } from "@angular/forms";
 import { first } from "rxjs/operators";
 import { AuthenticationService } from "@app/_services";
-import { JwtHelperService } from "@auth0/angular-jwt";
-import { User } from "@app/_models";
 
 @Component({
   selector: "app-auth",
@@ -40,7 +38,7 @@ export class AuthComponent implements OnInit {
     // redirect to home if already logged in
 
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(["/home"]);
+      this.router.navigate(["/"]);
     }
   }
 
@@ -74,6 +72,7 @@ export class AuthComponent implements OnInit {
     }
 
     this.loading = true;
+
     if (this.isLoginMode) {
       this.authenticationService
         .login(this.f.email.value, this.f.password.value)
@@ -82,24 +81,10 @@ export class AuthComponent implements OnInit {
             this.router.navigate([this.returnUrl]);
           },
           error => {
-            console.log(error);
-            if (error.status == 401) this.error = "Email or password wrong.";
-            else this.error = error;
+            this.error = error.error.message;
+            this.loading = false;
           }
         );
-
-      //     .subscribe(
-      //       data => {
-      //         console.log("lgmod first");
-      //         console.log(data);
-      //         this.router.navigate([this.returnUrl]);
-      //       },
-      //       error => {
-      //         console.log("test error");
-      //         this.error = error;
-      //         this.loading = false;
-      //       }
-      //     );
     }
     if (this.isRegisterMode) {
       this.authenticationService
@@ -114,10 +99,10 @@ export class AuthComponent implements OnInit {
           data => {
             this.accCreated = true;
             this.loading = false;
-            this.router.navigate([this.returnUrl]);
+            this.loginMode();
           },
           error => {
-            this.error = error;
+            this.error = error.error.message;
             this.loading = false;
           }
         );
@@ -130,9 +115,10 @@ export class AuthComponent implements OnInit {
           data => {
             this.emailSent = true;
             this.loading = false;
+            this.loginMode();
           },
           error => {
-            this.error = error;
+            this.error = error.error.message;
             this.loading = false;
           }
         );
@@ -140,8 +126,6 @@ export class AuthComponent implements OnInit {
   }
   loginMode() {
     this.error = "";
-    this.emailSent = false;
-    this.accCreated = false;
 
     this.isLoginMode = true;
     this.isResetMode = false;
@@ -168,7 +152,8 @@ export class AuthComponent implements OnInit {
     this.isResetMode = false;
     this.isLoginMode = false;
 
-    this.authForms.controls["fullName"].setValidators([Validators.required]);
+    this.authForms.controls["fullName"].setValidators([Validators.required,Validators.minLength(1),
+      Validators.maxLength(50)]);
     this.authForms.controls["fullName"].updateValueAndValidity();
 
     this.authForms.controls["password"].setValidators([

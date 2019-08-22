@@ -9,11 +9,10 @@ import { AuthGuard } from "@app/_helper";
 
 const routes: Routes = [
   { path: "login", component: AuthComponent },
-  { path: "", component: HomeComponent, canActivate: [AuthGuard] },
+  { path: "", component: HomeComponent },
   {
     path: "watchlist",
-    component: WatchlistComponent,
-    canActivate: [AuthGuard]
+    component: WatchlistComponent
   },
   { path: "addMovie", component: AddMovieComponent, canActivate: [AuthGuard] },
   {
@@ -28,4 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

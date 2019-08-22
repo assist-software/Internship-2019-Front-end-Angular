@@ -17,6 +17,8 @@
     </h1>
     <h3 *ngIf="isResetMode">We will send you over email the instructions in order to get your password reseted.</h3>
   </div>
+  <div *ngIf="accCreated" class="alert alert-success mt-3 mb-0">Account created.</div>
+  <div *ngIf="emailSent" class="alert alert-success mt-3 mb-0">Password reseted.Check email!</div>
   <form [formGroup]="authForms" class="col-md-12 col-xd-12 col-sm-12" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <input *ngIf="isRegisterMode" type="text" formControlName="fullName" class="form-control" name="fullName"
@@ -50,10 +52,6 @@
     <p *ngIf="isLoginMode" (click)="registerMode()">Don’t have an account? <u>Let’s create one</u></p>
     <p *ngIf="isRegisterMode || isResetMode" (click)="loginMode()">Already have an account? <u>Log in</u></p>
     <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
-    <div *ngIf="emailSent" class="alert alert-success mt-3 mb-0">Password reseted.Check email!</div>
-    <div *ngIf="accCreated" class="alert alert-success mt-3 mb-0">Account created.</div>
-
-
 
   </form>
 </div>
