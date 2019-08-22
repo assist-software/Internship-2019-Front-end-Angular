@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { BsDatepickerConfig } from 'ngx-bootstrap';
 
 
 @Component({
@@ -8,6 +9,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./list-of-next-moovie.component.css']
 })
 export class ListOfNextMoovieComponent implements OnInit {
+
+  bsConfig: Partial<BsDatepickerConfig>;
+
   backgroundImage: any;
   myPicture = 'assets/img/anonymous_finger_goouGu.com.jpg';
   moviesArray = [
@@ -79,6 +83,9 @@ export class ListOfNextMoovieComponent implements OnInit {
       date: 333333
     }
   ];
+
+
+
   constructor(private sanitizer: DomSanitizer) {
     // this.backgoundImage = this.sanitizer.bypassSecurityTrustStyle("'background-image': 'url(" + this.myPicture + ")'");
 
@@ -87,6 +94,7 @@ export class ListOfNextMoovieComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.bsConfig = Object.assign({}, { containerClass: 'theme-red' });
   }
 
 }

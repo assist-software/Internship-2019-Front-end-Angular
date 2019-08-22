@@ -18,6 +18,12 @@
             <span class="wrong1" *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">
                 Enter a valid password!<br>
             </span>
+            <span class="wrong12" *ngIf="emailTaken">
+                Email is already taken! Please try another email!
+            </span>
+            <span class="corect" *ngIf="createAccount">
+                Your account has been created
+            </span>
             <button
                 [ngClass]="[registerForm.get('password').touched || registerForm.get('email').touched || registerForm.get('name').touched ? 'btnLog2' : 'btnLog' ]"
                 type="submit" [disabled]="!registerForm.valid">

@@ -5,5 +5,5 @@ export interface User {
     name: string;
     password: string;
     confirmPassword: string;
-    token?: string;
+    token: string;
 }

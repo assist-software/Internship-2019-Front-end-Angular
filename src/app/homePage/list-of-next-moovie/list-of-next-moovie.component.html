@@ -5,13 +5,13 @@
                 <p class="txtTitle">See what movies are coming next month</p>
             </div>
             <div class="col-md-6">
-                <div class="form-row" >
+                <div class="form-row">
                     <p class="txtFilter">Filter by</p>
                     <select name="categori" id="">
                         <option value="default">Default</option>
                     </select>
                     <div class="col-xs-12 col-12 col-md-4 form-group">
-                        <input type="text" placeholder="Any date" class="form-control" bsDatepicker>
+                        <input type="text" placeholder="Any date" class="form-control theme-red" [bsConfig]="bsConfig" bsDatepicker>
                     </div>
                 </div>
             </div>

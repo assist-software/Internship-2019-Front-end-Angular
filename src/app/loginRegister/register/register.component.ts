@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, RequiredValidator, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { ReceiveMessage } from 'src/app/models/receive.model';
 
 @Component({
   selector: 'app-register',
@@ -9,8 +11,10 @@ import { FormGroup, FormControl, FormBuilder, RequiredValidator, Validators } fr
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   test = 'un test';
+  emailTaken = false;
+  createAccount = false;
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit() {
@@ -22,11 +26,25 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.warn(this.registerForm.value);
-    this.test = this.registerForm.value.name;
-    console.warn(this.registerForm.value);
-    console.log(this.test);
+    this.emailTaken = false;
+    this.createAccount = false;
+    console.log('register' + this.registerForm.value.name);
+    // tslint:disable-next-line:max-line-length
+    this.userService.register(this.registerForm.value.email, this.registerForm.value.password, this.registerForm.value.password, this.registerForm.value.name)
+      .subscribe(
+        (data: ReceiveMessage) => {
+          // this.receive = data;
+          console.log('Received data:', data.errorMessage);
+          if (data.errorMessage === 'Email is already taken') {
+            console.log('ne pare rau dar este luat');
+            this.emailTaken = true;
+          } else {
+            this.createAccount = true;
+          }
+        },
+        error => {
+          console.log('eror' + error);
+          // Something's wrong
+        });
   }
-  get name() { return this.registerForm.get('name'); }
-
 }

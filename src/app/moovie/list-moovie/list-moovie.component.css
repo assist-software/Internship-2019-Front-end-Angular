@@ -92,7 +92,7 @@ h5 {
 }
 
 .containerCat {
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 
 .mr-sm-2 {
@@ -107,6 +107,6 @@ h5 {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1471px;
+        max-width: 1240px;
     }
 }

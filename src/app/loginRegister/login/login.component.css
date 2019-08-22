@@ -71,6 +71,7 @@
 .container-login {
     height: 100%;
     background-color: black;
+    overflow: auto;
 }
 
 .textDown {
@@ -108,9 +109,21 @@
     margin-left: -24%;
 }
 
+.wrong12 {
+    color: red;
+    text-align: left;
+    margin-left: -15%;
+    font-size: 17px;
+}
+
 .myEye {
     position: absolute;
-    top: 55.3%;
+    top: 28.3%;
+    left: 461px;
+}
+
+form {
+    position: relative;
 }
 
 .fa-eye:before {
