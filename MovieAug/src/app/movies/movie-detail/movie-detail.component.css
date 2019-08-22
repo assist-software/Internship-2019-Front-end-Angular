@@ -3,6 +3,11 @@
   color: white;
 }
 
+.section2 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .container {
   margin-top: 60px;
 }
@@ -17,11 +22,28 @@
   margin-top: -29px;
 }
 
+.OriginalSource {
+  text-align: center;
+  text-decoration-line: underline;
+  font-size: 18px;
+  line-height: 25px;
+  color: #FFFFFF;
+  opacity: 0.6;
+  margin-top: 10px;
+  width: 70%;
+}
+
+.trailerURL {
+  background: linear-gradient(0deg, rgba(36, 36, 36, 0.3), rgba(36, 36, 36, 0.3));
+  border-radius: 20px;
+  width: 80%;
+  height: 80%;
+}
+
 .director {
   font-family: Campton;
   font-size: 18px;
   line-height: 25px;
-  /* identical to box height */
   color: #FFFFFF;
   opacity: 0.6
 }
@@ -66,7 +88,12 @@ iframe {
   height: 80%;
 }
 
-img {
+.nota {
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.ListPhoto {
   width: 100px;
   height: auto;
 }

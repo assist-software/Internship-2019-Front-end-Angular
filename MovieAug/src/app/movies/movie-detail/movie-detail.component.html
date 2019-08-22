@@ -3,13 +3,14 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <iframe class="embed-responsive-item" src='https://www.youtube.com/embed/zpOULjyy-n8?rel=0'
+        <iframe class="embed-responsive-item trailerURL" src='https://www.youtube.com/embed/zpOULjyy-n8?rel=0'
           allowfullscreen></iframe>
+        <p class="OriginalSource">See original source</p>
       </div>
       <div class="col">
-        <h4 class="title">{{currentMovie.title}}</h4>
+        <h4 class="title">{{currentMovie.title}} <span class="nota"> Nota</span></h4>
         <br />
-        <h6 class="category">{{currentMovie.Category}}</h6> <br>
+        <h6 class="category">{{currentMovie.Category}} <span>1h 33min</span> </h6> <br>
         <p class="description">{{currentMovie.description}}</p> <br>
         <button class="btn ">Add to watchlist</button><br>
         <p class="director"> Director: <span class="txtMovie">Chris Addison</span></p>
@@ -25,7 +26,7 @@
       </div>
       <div class="row">
         <div class="col" *ngFor="let i of [1,2,3,4,5]">
-          <p><img src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt=""></p>
+          <p><img class="ListPhoto" src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt=""></p>
         </div>
       </div>
     </div>
