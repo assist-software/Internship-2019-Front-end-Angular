@@ -1,7 +1,7 @@
 <div class="myContainer2">
     <div class="row">
         <div class="col-md-6">
-            <p class="recent-added">Recent added movies (4/10)</p>
+            <p class="recent-added">Recent added movies (4/{{totalslides}})</p>
         </div>
         <div class="col-md-5 text-right">
             <div class="carouselbutton">
@@ -21,12 +21,12 @@
             
             <div class="imageslide">
                 <button class="watchlistbutton">Add to watchlist</button>
-                <button class="notemovie">8.2</button>
-                <img [src]="slide.img" alt="">
+                <button class="notemovie">{{slide.score}}</button>
+                <img [src]="slide.image" alt="">
             </div>
-            <h1 class="title-movie">Moonlight</h1>
-            <p class="details-movie">Realese date:20/03/2019</p>
-            <p class="details-movie">Action Drama</p>
+            <h1 class="title-movie">{{slide.title}}</h1>
+            <p class="details-movie">Realese date: {{slide.date}}</p>
+            <p class="details-movie">{{slide.category[0].name}}</p>
         </div>
     </ngx-slick>
 </div>

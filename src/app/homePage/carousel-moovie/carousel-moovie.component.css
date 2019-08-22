@@ -50,30 +50,35 @@
 }
 
 .imageslide .watchlistbutton {
+    font-family: Campton;
     position: absolute;
     border-color: #F5044C;
     border-radius: 4.81818px;
     color: white;
     background: #F5044C;
     position: absolute;
-    top: 67%;
+    top: 90%;
     left: 55%;
     transform: translate(-60%, -50%);
     -ms-transform: translate(-60%, -50%);
-    font-size: 16px;
+    font-size: 14px;
     border: none;
     cursor: pointer;
     text-align: center;
+    line-height: 28px;
 }
 
-.notemovie {
+.imageslide .notemovie {
+    font-family: Campton;
     position: absolute;
-    top: 64%;
-    left: 220px;
+    top: 86.5%;
+    left: 75%;
     border-radius: 5px;
     border-color: #FF9A03;
     color: white;
     Background: #FF9A03;
+    font-size: 14px;
+    line-height: 22px;
 }
 
 .imageMovie {
@@ -109,8 +114,11 @@
     color: #FFFFFF;
 }
 
-img {
+.imageslide img {
     width: 90%;
     margin: auto;
- 
+    height: auto;
+}
+.imageslide{
+    position: relative;
 }
