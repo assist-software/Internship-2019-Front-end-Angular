@@ -25,20 +25,16 @@ export class AddMoovieComponent implements OnInit {
       date: new FormControl('')
     });
 
-    this.movieService.currentMessage.subscribe(message => {
-      this.message = message;
-      console.log(this.message, 'am incercat');
-    });
-  }
-
-  newMessage(message: any) {
-    this.movieService.changeMessage(message);
-  }
-  addMovieFunction() {
-    console.log(this.addMovie.value);
-    this.newMessage(this.addMovie.value);
+    // this.movieService.currentMessage.subscribe(message => {
+    //   this.message = message;
+    //   console.log(this.message, 'am incercat');
   }
 
 
-
+  // newMessage(message: any) {
+  //   this.movieService.changeMessage(message);
+  // }
+  // addMovieFunction() {
+  //   console.log(this.addMovie.value);
+  // this.newMessage(this.addMovie.value);
 }

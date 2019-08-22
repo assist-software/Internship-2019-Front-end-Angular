@@ -35,6 +35,7 @@ export class CarouselMoovieComponent {
   addSlide() {
     this.slides.push({ img: 'http://placehold.it/350x150/777777' });
   }
+  
 
   removeSlide() {
     this.slides.length = this.slides.length - 1;

@@ -49,22 +49,31 @@
     border-radius: 8px;
 }
 
-.watchlistbutton {
+.imageslide .watchlistbutton {
     position: absolute;
-    top: 360px;
-    left: 80px;
     border-color: #F5044C;
     border-radius: 4.81818px;
     color: white;
+    background: #F5044C;
+    position: absolute;
+    top: 67%;
+    left: 55%;
+    transform: translate(-60%, -50%);
+    -ms-transform: translate(-60%, -50%);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
 }
 
 .notemovie {
     position: absolute;
-    top: 360px;
+    top: 64%;
     left: 220px;
     border-radius: 5px;
     border-color: #FF9A03;
     color: white;
+    Background: #FF9A03;
 }
 
 .imageMovie {
@@ -103,4 +112,5 @@
 img {
     width: 90%;
     margin: auto;
+ 
 }

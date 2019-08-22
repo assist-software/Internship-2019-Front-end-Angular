@@ -11,6 +11,8 @@ import { ListMoovieComponent } from './moovie/list-moovie/list-moovie.component'
 import { MoovieDetailsComponent } from './moovie/moovie-details/moovie-details.component';
 import { NewMoovieComponent } from './new-moovie/new-moovie.component';
 import { AuthGuard } from './services/auth.guard';
+import { ContactComponent } from './contact/contact.component';
+
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'admin-moovie', component: AdminMoovieComponent, canActivate: [AuthGuard] },
   { path: 'list-moovie', component: ListMoovieComponent },
   { path: 'movie-details', component: MoovieDetailsComponent },
-  { path: 'new-movie', component: NewMoovieComponent }
+  { path: 'new-movie', component: NewMoovieComponent },
+  { path: 'contact', component: ContactComponent }
+
 ];
 
 @NgModule({

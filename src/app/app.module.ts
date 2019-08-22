@@ -41,6 +41,7 @@ import { MoviesServices } from 'src/app/services/movies.service';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ export function tokenGetter() {
     HiglightMoovieComponent,
     ListOfNextMoovieComponent,
     HomePageComponent,
-    AdminNavBarComponent
+    AdminNavBarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

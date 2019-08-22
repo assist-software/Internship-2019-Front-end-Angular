@@ -18,9 +18,11 @@
 <div class="myContainer">
     <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
         <div ngxSlickItem *ngFor="let slide of slides" class="slide imageMovie">
-            <button class="watchlistbutton">Add to watchlist</button>
-            <button class="notemovie">8.2</button>
-            <img [src]="slide.img" alt="">
+            <div class="imageslide">
+                <button class="watchlistbutton">Add to watchlist</button>
+                <button class="notemovie">8.2</button>
+                <img [src]="slide.img" alt="">
+            </div>
             <h1 class="title-movie">Moonlight</h1>
             <p class="details-movie">Realese date:20/03/2019</p>
             <p class="details-movie">Action Drama</p>
