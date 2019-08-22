@@ -1,28 +1,29 @@
-<div class="container">
-  <div class="header">
-    <h1>
-      <img src="../../../assets/img/moovie-watchers_logo.png" alt="Moovie" />
-    </h1>
+<div class="wrapper">
+  <div class="logo">
+    <img src="../../../assets/img/moovie-watchers_logo.png" width="254px" alt="Moovie" />
   </div>
   <hr class="loginbar" />
-  <div class="col-md-12 col-xd-12 col-sm-12">
-    <h1 *ngIf="isLoginMode" class="text-center text-white">
-      Log in to your account
-    </h1>
-    <h1 *ngIf="isRegisterMode" class="text-center text-white">
-      Let’s create your account
-    </h1>
-    <h1 *ngIf="isResetMode" class="text-center text-white">
-      Reset password
-    </h1>
-    <h3 *ngIf="isResetMode">We will send you over email the instructions in order to get your password reseted.</h3>
-  </div>
-  <div *ngIf="accCreated" class="alert alert-success mt-3 mb-0">Account created.</div>
-  <div *ngIf="emailSent" class="alert alert-success mt-3 mb-0">Password reseted.Check email!</div>
-  <form [formGroup]="authForms" class="col-md-12 col-xd-12 col-sm-12" (ngSubmit)="onSubmit()">
+  <form [formGroup]="authForms" (ngSubmit)="onSubmit()" class="form-signin">
+    <div class="form-signin-heading">
+      <h1 *ngIf=" isLoginMode">
+        Log in to your account
+      </h1>
+      <h1 *ngIf="isRegisterMode">
+        Let’s create your account
+      </h1>
+      <h1 *ngIf="isResetMode">
+        Reset password
+      </h1>
+      <p class="text-grey px-5" *ngIf="isResetMode">We will send you over email the instructions in
+        order to get your
+        password reseted.</p>
+    </div>
+    <div *ngIf="accCreated" class="alert alert-success mt-3 mb-0">Account created.</div>
+    <div *ngIf="emailSent" class="alert alert-success mt-3 mb-0">Password reseted.Check email!</div>
+    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
     <div class="form-group">
       <input *ngIf="isRegisterMode" type="text" formControlName="fullName" class="form-control" name="fullName"
-        placeholder="Full name" />
+        autofocus="" placeholder="Full name" />
       <div *ngIf="submitted && f.email.errors" class="invalid-feedback"></div>
     </div>
     <div class="form-group">
@@ -33,7 +34,9 @@
       <input *ngIf="!isResetMode" type="password" formControlName="password" class="form-control" name="password"
         placeholder="Password" />
       <div *ngIf="submitted && f.password.errors" class="invalid-feedback"></div>
-      <p class="text-right" (click)="resetMode()">Forgot password?</p>
+      <p class="text-right my-3">
+        <a [routerLink]="" class="text-grey" (click)="resetMode()">Forgot password?</a>
+      </p>
     </div>
     <button *ngIf="isLoginMode" [disabled]="loading" class="btn btn-pink"
       [disabled]="f.email.errors || f.password.errors">
@@ -45,13 +48,21 @@
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       Register
     </button>
-    <button *ngIf="isResetMode" [disabled]="loading" class="btn btn-pink" [disabled]="f.email.errors">
+    <button *ngIf="isResetMode" [disabled]="loading" class="btn btn-pink" [disabled]=" f.email.errors">
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
       Reset
     </button>
-    <p *ngIf="isLoginMode" (click)="registerMode()">Don’t have an account? <u>Let’s create one</u></p>
-    <p *ngIf="isRegisterMode || isResetMode" (click)="loginMode()">Already have an account? <u>Log in</u></p>
-    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
 
+    <div class="forgot text-grey text-center my-4">
+      <p *ngIf="isLoginMode" class="text-grey">Don’t have an account? <a [routerLink]="" class="text-grey"
+          (click)="registerMode()">Let’s
+          create
+          one</a>
+      </p>
+      <p *ngIf=" isRegisterMode || isResetMode" class="text-grey">Already have an
+        account?
+        <a [routerLink]="" class="text-grey" (click)="loginMode()">Log
+          in</a></p>
+    </div>
   </form>
 </div>
