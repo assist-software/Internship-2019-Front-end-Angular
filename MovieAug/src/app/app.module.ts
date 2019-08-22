@@ -26,6 +26,10 @@ import { ListMoviesAdminComponent } from "./administrator/list-movies-admin/list
 import { AuthComponent } from "./auth/auth.component";
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './administrator/profile/profile.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { FilterPipe } from './filter.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,9 @@ import { ProfileComponent } from './administrator/profile/profile.component';
     ListMoviesAdminComponent,
     AuthComponent,
     ContactComponent,
-    ProfileComponent
+    ProfileComponent,
+    FilterPipe
+
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,10 @@ import { ProfileComponent } from './administrator/profile/profile.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OrderModule,
+    NgbModule,
+    FilterPipeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
