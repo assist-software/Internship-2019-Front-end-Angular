@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { MoviesServices } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-admin-moovie',
@@ -8,6 +9,8 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class AdminMoovieComponent implements OnInit {
   modalRef: BsModalRef;
+
+  message;
 
   listMovies = [
     {
@@ -34,9 +37,16 @@ export class AdminMoovieComponent implements OnInit {
     }
   ];
   constructor(
-    private modalService: BsModalService) { }
+    private modalService: BsModalService,
+    private moviesService: MoviesServices
+  ) { }
 
   ngOnInit() {
+    this.moviesService.currentMessage.subscribe(message => {
+      this.message = message;
+      this.listMovies.push(this.message);
+      console.log(this.message);
+    });
   }
 
   confirm(): void {

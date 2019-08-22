@@ -5,8 +5,11 @@
 export const environment = {
   production: false,
   apiUrl: 'http://192.168.151.223:8080',
-  // apiUrl : 'http://192.168.151.218:8080',
-  movieUrl: 'http://192.168.151.226:3500',
+  // apiUrl: 'http://192.168.151.218:8080',
+
+  // movieUrl: 'http://192.168.151.226:3500',
+  // movieUrl: 'http://192.168.151.218:8080'
+  movieUrl: 'http://192.168.151.223:8080'
 
 };
 

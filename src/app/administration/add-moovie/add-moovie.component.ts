@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MoviesServices } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-add-moovie',
@@ -8,9 +9,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddMoovieComponent implements OnInit {
   addMovie: FormGroup;
+  message: string;
 
-
-  constructor() { }
+  constructor(private movieService: MoviesServices) { }
 
   ngOnInit() {
     this.addMovie = new FormGroup({
@@ -23,10 +24,19 @@ export class AddMoovieComponent implements OnInit {
       score: new FormControl(''),
       date: new FormControl('')
     });
+
+    this.movieService.currentMessage.subscribe(message => {
+      this.message = message;
+      console.log(this.message, 'am incercat');
+    });
   }
 
+  newMessage(message: any) {
+    this.movieService.changeMessage(message);
+  }
   addMovieFunction() {
     console.log(this.addMovie.value);
+    this.newMessage(this.addMovie.value);
   }
 
 
