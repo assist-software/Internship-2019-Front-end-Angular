@@ -1,10 +1,10 @@
 <div class="allPage">
-  <div class="myContainer">
-    <div class="col-md-9">
-      <h5>Welcome to your Watchlist page.</h5>
+  <div class="container">
+    <div class="col-md-5">
+      <p class="titlePage">Welcome to your Watchlist page.</p>
     </div>
   </div>
-  <div class="container searchBtn">
+  <div class="container topMargin">
     <div class="row">
       <div class="col-md-6">
         <div class="md-form mt-0">
@@ -14,9 +14,7 @@
       </div>
       <div class="col-md-3"></div>
       <div class="col-md-3">
-        <!-- float-left  -->
         <div class="form-group row">
-          <!-- <div class="containerCat"> -->
           <div class="col-ms-4">
             <label for="staticEmail" class="col-form-label emailWrite">Sort by</label>
           </div>
@@ -25,7 +23,6 @@
               <option>Default select</option>
             </select>
           </div>
-          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -33,13 +30,13 @@
   <div class="container" style="margin-top: 50px;">
     <div>
       <div class="row">
-        <div class="col-md-3" *ngFor="let movie of moviesArray; let image of backgroundImage">
+        <div class="col-md-3 position" *ngFor="let movie of moviesArray">
           <!-- <div class="pictureContainer" [style.background-image]="image"> -->
-            <img src="" alt="orice">
-            <button class="btn btnRemove">Remove</button>
-            <button class="btn btnScore">{{movie.imdbScore}}</button>
+          <img [src]="movie.coverUrl" alt="orice" [routerLink]="['/movie-details', movie.id]">
+          <button class="btn btnRemove">Remove</button>
+          <button class="btn btnScore">{{movie.imdbScore}}</button>
           <!-- </div> -->
-          <p>{{ movie.title }}</p>
+          <p class="titleMovie">{{ movie.title }}</p>
           <p>{{ movie.category[0].name }}</p>
         </div>
       </div>

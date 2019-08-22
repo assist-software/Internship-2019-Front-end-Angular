@@ -3,14 +3,8 @@
   <div class="container firstContainer">
     <div class="row">
       <div class="col-md-6">
-        <div class="md-form mt-0">
-          <input
-            class="form-control mr-sm-2 searchBtn"
-            type="text"
-            placeholder="Search for a movie"
-          />
+          <input class="form-control mr-sm-2 searchBtn" type="text" placeholder="Search for a movie" />
           <span class="fa fa-search positionSearcBtn"></span>
-        </div>
       </div>
       <div class="col-md-6 btnRight">
         <button class="btn" (click)="lgModal.show()">Add new</button>
@@ -20,53 +14,29 @@
   <div class="container twoContainer">
     <div class="row myRow" *ngFor="let movie of listMovies">
       <div class="col-2 " style="cursor: pointer">
-        <img
-          class="imgMovie rounded mx-auto d-block"
-          src="assets/img/Ellipse.png"
-          width="80px"
-          height="80px"
-        />
+        <img class="imgMovie rounded mx-auto d-block" [src]="movie.coverUrl" width="80px" height="80px" />
       </div>
 
       <div class="col-3 align1 textTitle">{{ movie.title }}</div>
-      <div class="col-2 align textInfo">{{ movie.date }}</div>
-      <div class="col-2 align textInfo">{{ movie.category }}</div>
+      <div class="col-2 align textInfo">{{ movie.releaseDate }}</div>
+      <div class="col-2 align textInfo">{{ movie.category[0].name }}</div>
       <div class="col align"></div>
       <div class="col-2 align myPicture">
-        <img
-          class="positionImgRec"
-          src="assets/img/Vector (1).png"
-          alt="Recicle"
-          (click)="openModal(template)"
-        /><img
-          class="positionImgEdit"
-          src="assets/img/Vector (2).png"
-          alt="Edit"
-        />
+        <img class="positionImgRec" src="assets/img/Vector (1).png" alt="Recicle"
+          (click)="openModal(template, movie.id)" /><img class="positionImgEdit" src="assets/img/Vector (2).png"
+          alt="Edit" />
       </div>
     </div>
   </div>
 </div>
 
 <!-- pentru adaugarea unui film -->
-<div
-  bsModal
-  #lgModal="bs-modal"
-  class="modal fade"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="dialog-sizes-name1"
->
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header modal1  text-center">
         <h4 class="modal-title">Add movie</h4>
-        <button
-          type="button"
-          class="close pull-right xPosition"
-          (click)="lgModal.hide()"
-          aria-label="Close"
-        >
+        <button type="button" class="close pull-right xPosition" (click)="lgModal.hide()" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -81,12 +51,7 @@
 <ng-template #template class="modalDelet">
   <div class="text-center">
     <div class="modal-header ">
-      <button
-        type="button"
-        class="close pull-right"
-        aria-label="Close"
-        (click)="modalRef.hide()"
-      >
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -94,10 +59,10 @@
       <p class="modalText">Are you sure you want to delete this movie?</p>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn cancelBtn" (click)="confirm()">
+      <button type="button" class="btn cancelBtn" (click)="decline()">
         Cancel
       </button>
-      <button type="button" class="btn deletBtn" (click)="decline()">
+      <button type="button" class="btn deletBtn" (click)="confirm()">
         Delete
       </button>
     </div>
