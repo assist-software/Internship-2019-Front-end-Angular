@@ -1,15 +1,32 @@
-.container-header{
-   position: relative;
-   margin: auto;
-   
-   padding: 10px;
+header {
+  width: 100%;
+  height: 10%;
+  background-color: transparent;
 }
-h1{
-    display: inline;
-    padding-left: 5%;
-    padding-right: 5%;
+
+a {
+  color: #ffffff;
 }
-button{
-    margin-left: 5%;
-    margin-right: 5%;
+
+img {
+  width: 60%;
+  height: auto;
+
+}
+
+.nav-item {
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: auto;
+  height: auto;
+}
+
+
+.navbar {
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  display: block !important;
 }

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Campton;
+  src: url(assets/Campton-LightDEMO.otf) format("opentype");
+}
+
+/* * {
+  font-family: 'Campton', 'arial', sans-serif;
+} */
+
+body {
+  background-color: black;
+}

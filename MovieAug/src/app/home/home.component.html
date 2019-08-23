@@ -1,0 +1,84 @@
+<!-- <div class="row ">
+  <div class="col-md-9">
+    <app-header></app-header>
+
+    <app-movies></app-movies>
+    <app-footer></app-footer>
+
+  </div>
+</div> -->
+
+<header style="background: black">
+  <div class="container ">
+    <app-header></app-header>
+    <div class="row containerHeader">
+      <div class="col">
+        <ul>
+          <li>
+            <h1 style="color:white">{{movieItem.title}}</h1>
+          </li>
+          <li>
+            <p style="color:white">{{movieItem.description}}</p>
+          </li>
+          <br>
+          <li>
+            <button class="btn btn-primary-danger">Watch triler</button>
+            <button class="btn btn-primary-secondary"><i class="fas fa-plus"></i>Add to list</button>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <P><img src="assets/img/81B2m2WVzkL._SX342_.jpg" alt="Movie" class="rounded"></P>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center ">
+      <p> <i class="arrow down"></i></p>
+    </div>
+  </div>
+</header>
+<br>
+<br>
+<br>
+
+<div>
+
+
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <h1>See what movies come next month</h1>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <label for="sdropdownBasic1">Sort by:</label>
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{nameDrop}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="sendFilter('data')">ReleaseDate</button>
+          <button ngbDropdownItem (click)="sendFilter('score')">IMDBScore</button>
+          <button ngbDropdownItem (click)="sendFilter('titlu')">title</button>
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Genre</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="sendFilter('Action')">Action</button>
+              <button ngbDropdownItem (click)="sendFilter('Adventure')">Adventure</button>
+              <button ngbDropdownItem (click)="sendFilter('Horror')">Horror</button>
+              <button ngbDropdownItem (click)="sendFilter('Fantasy')">Fantasy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let movie of movies   ">
+        <app-movie-item [movie]="movie"></app-movie-item>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

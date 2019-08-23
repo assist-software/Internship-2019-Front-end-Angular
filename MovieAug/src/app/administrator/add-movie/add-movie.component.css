@@ -1,0 +1,77 @@
+.section1 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.requiredField {
+  color: red;
+}
+
+.title {
+  position: relative;
+  height: 60px;
+  text-align: center;
+  top: 10%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 36px;
+  line-height: 60px;
+  margin-bottom: 20%;
+
+}
+
+.text {
+  margin-top: 15px;
+  margin-bottom: 2px;
+  color: #010103;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  opacity: 0.7;
+  align-items: center;
+  line-height: 21px;
+}
+
+.tbox {
+  height: 48px;
+  width: 100%;
+  border: 1px solid #9C9B9B;
+  border-radius: 8px;
+}
+
+textarea {
+  height: 48%;
+  width: 100%;
+  border: 1px solid #9C9B9B;
+  border-radius: 8px;
+}
+
+.buttonAdauga {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: #F5044C;
+  border-radius: 8px;
+  margin-top: 10%;
+  line-height: 25px;
+  font-family: Campton;
+  font-size: 18px;
+}
+
+.cancel {
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10%;
+  font-family: Campton;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.selector {
+  height: 48px;
+  background-color: white;
+  width: 100%;
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+}

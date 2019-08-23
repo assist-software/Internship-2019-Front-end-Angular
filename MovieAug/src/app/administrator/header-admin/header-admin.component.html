@@ -1,0 +1,31 @@
+<nav class="container-header  mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+  <h1><img src="assets/img/moovie-watchers_logo.png" alt="Moovie"></h1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/adminMoviesList" href="#">Movies
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item avatar dropdown">
+        <a class="nav-link " aria-haspopup="true" aria-expanded="false">
+          <img src="assets/default-user.png" class="rounded-circle z-depth-0" alt="avatar image">
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Mihaela
+        </a>
+        <div class="dropdown-menu dropdown-secondary">
+          <a class="dropdown-item" (click)="logOut()" href="#">Log out</a>
+          <a class="dropdown-item" routerLink="/profile" href="#">Profile</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->

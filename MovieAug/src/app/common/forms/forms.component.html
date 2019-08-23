@@ -1,0 +1,78 @@
+<div class="containeru">
+  <div class="container-black">
+    <div class="header">
+      <h1><img src="../../../assets/img/moovie-watchers_logo.png" alt="Movie"></h1>
+    </div>
+    <hr class="loginbar">
+    <div [ngSwitch]="location">
+      <ul *ngSwitchCase="'/register'">
+        <li>
+          <h2>Register Page</h2>
+          <hr>
+        </li>
+        <li> <input class="form-control" type="text" placeholder="Nume" name="name" id="name"></li>
+        <li> <input class="form-control" type="email" placeholder="email" name="email" id="email"></li>
+        <li> <input class="form-control" type="password" placeholder="password" name="pass" id="pass"></li>
+        <li>
+          <hr>
+        </li>
+        <li> <button class="btn btn-primary-warning">Register</button></li>
+        <li>
+          <hr>
+        </li>
+        <li>
+          <span>
+            <p>Already have a account?<a routerLink="/"> Log in</a> </p>
+
+          </span>
+        </li>
+
+      </ul>
+      <ul *ngSwitchCase="'/'">
+        <li>
+          <h2>Login</h2>
+          <hr>
+        </li>
+        <li> <input class="form-control" type="email" placeholder="email" name="email" id="email"></li>
+        <li> <input class="form-control" type="password" placeholder="password" name="pass" id="pass"></li>
+        <li>
+          <hr>
+        </li>
+        <li> <button class="btn btn-primary-warning" (click)="onLogin()">Login</button></li>
+        <li>
+          <hr>
+        </li>
+        <li>
+          <span>
+            <a routerLink="/register">Create an account</a>
+            <hr>
+            <a routerLink="/reset-password">Reset the password</a>
+          </span>
+        </li>
+
+      </ul>
+      <ul *ngSwitchCase="'/reset-password'">
+        <li>
+          <h2>Reset password</h2>
+          <hr>
+        </li>
+        <li> <input class="form-control" type="email" placeholder="email" name="email" id="email"></li>
+        <li>
+          <hr>
+        </li>
+        <li> <button class="btn btn-primary-warning">Reset</button></li>
+        <li>
+          <hr>
+        </li>
+        <li>
+          <span>
+            <a routerLink="/register">Create an account</a>
+            <hr>
+            <a routerLink="/">Log in</a>
+          </span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>

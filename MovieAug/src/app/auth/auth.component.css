@@ -1,0 +1,159 @@
+/* 
+
+.header {
+  background-color: black;
+}
+
+h1.header {
+  text-align: center;
+
+}
+
+h2 {
+  color: white;
+  margin: 10%;
+}
+
+p {
+
+  color: white;
+}
+
+input {
+  background-color: black;
+  color: white;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+
+}
+
+
+button {
+  background-color: #f5044c;
+  color: white;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+li {
+  margin: 1%;
+  border: 10px;
+}
+
+img {
+  margin-top: 10%;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 5%;
+
+
+}
+
+
+
+div.input {
+  text-align: center;
+}
+
+a {
+  text-decoration-color: #f5044c;
+  color: #f5044c;
+} */
+
+/* 
+
+input[type="email"] {
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+input[type="password"] {
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+
+.contrainer{
+  display: flex;
+  justify-content: center;
+} */
+
+hr {
+  /* border-color: rgb(48, 40, 40); */
+  border-color: red;
+  border-width: 8px;
+}
+
+.wrapper {
+  margin: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+
+  transform: translate(-50%);
+
+}
+
+.form-signin {
+  max-width: 560px;
+  /* margin: 0, auto; */
+  padding: 52px 96px 32px 96px;
+  background-color: #0a0a0a;
+  position: absolute;
+}
+
+.form-signin-heading {
+  position: relative;
+  margin-bottom: 50px;
+  font-size: 48px;
+  line-height: 60px;
+  /* or 125% */
+  /* display: flex; */
+  /* align-items: center; */
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  border: 1px solid #9C9B9B;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #000;
+  color: #9C9B9B;
+  background: #000;
+}
+
+
+.btn-pink {
+  color: white;
+  background-color: #F5044C;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.text-grey {
+  color: #9C9B9B;
+}
+
+p {
+  font-size: 14px;
+  line-height: 19px;
+}
