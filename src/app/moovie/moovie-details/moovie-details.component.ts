@@ -11,8 +11,8 @@ import { MoviesServices } from 'src/app/services/movies.service';
 export class MoovieDetailsComponent implements OnInit {
   trailerMovie = 'my movie';
   idReceived: any;
-  movie: Movie[] = [];
-  movieToShow: any = [];
+  movieToShow: Movie;
+  morePictures: any;
   // movie = {
   //   image: 'assets/img/anonymus_finger_goouGu.com.jpg',
   //   title: 'The Hustle',
@@ -33,31 +33,20 @@ export class MoovieDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.idReceived = this.route.snapshot.paramMap.get('id');
+
     console.log(this.movieToShow);
-    console.log('id-ul este', this.idReceived);
-    this.moviesServices.getMovies()
+
+    this.moviesServices.getMovie(this.idReceived)
       .subscribe(
-        data => {
-          this.movie = data;
-          this.idReceived = +this.idReceived;
-          this.movieToShow = this.movie.find(id => id.id === this.idReceived);
-
-          // console.log('lista dupa cautatre', this.movieToShow);
-          // console.log('lista dupa cautatre', this.movieToShow.imdbId);
-
+        (data: any) => {
+          this.movieToShow = data;
+          // this.idReceived = +this.idReceived;
+          // this.movieToShow = this.movie.find(id => id.id === this.idReceived);
+          // this.morePictures = this.movieToShow.images;
         },
         error => {
           console.log('error', error);
         }
       );
-
-    // this.movieToShow = this.movie.filter(x => x.id === idReceived)[0];
-    // console.log(this.movieToShow);
   }
-
-  // searchId(id) {
-  //   // console.log('id-ul este', id);
-  //   return id === this.idReceived;
-  // }
-
 }

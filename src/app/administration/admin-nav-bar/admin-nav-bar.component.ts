@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 @Component({
   selector: 'app-admin-nav-bar',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminNavBarComponent implements OnInit {
   userName = 'Mihai';
-  constructor() { }
+  constructor(private authentication: AuthenticationService) { }
 
   ngOnInit() {
+  }
+
+  logOutFunc() {
+    this.authentication.logout();
   }
 
 }

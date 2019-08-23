@@ -40,3 +40,8 @@ hr {
     margin-left: 10px;
     color: black;
 }
+
+span{
+    cursor: pointer;
+  }
+  

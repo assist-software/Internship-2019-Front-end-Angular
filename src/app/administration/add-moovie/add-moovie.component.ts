@@ -58,28 +58,31 @@ export class AddMoovieComponent implements OnInit {
 
   Submit() {
     console.log(this.movie);
-    // this.addMovie.value.releaseDate = String(this.addMovie.value.releaseDate);
+    // this.addMovie.value.releaseDate = String(this.addMovie.value.releaseDate);\
+
     this.addMovie.value.imdbScore = +this.addMovie.value.imdbScore;
-    const mapped = this.addMovie.value.category;
+
+    const mapped = [this.addMovie.value.category];
     this.addMovie.value.category = mapped;
+
 
     console.log('afisam mapped', mapped);
 
     console.log(this.addMovie.value);
 
-    this.movieService.postMovie(this.addMovie.value)
-      .subscribe(
-        data => {
-          console.log('data', data);
-        },
-        error => {
-          console.log('error', error);
-        }
-      );
+    // this.movieService.postMovie(this.addMovie.value)
+    //   .subscribe(
+    //     data => {
+    //       console.log('data', data);
+    //     },
+    //     error => {
+    //       console.log('error', error);
+    //     }
+    //   );
 
     // console.log(this.addMovie.value);
 
-    this.newMessage(this.addMovie.value);
+    // this.newMessage(this.addMovie.value);
 
   }
 }
