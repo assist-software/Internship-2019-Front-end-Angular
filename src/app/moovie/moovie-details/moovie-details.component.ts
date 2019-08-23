@@ -40,9 +40,10 @@ export class MoovieDetailsComponent implements OnInit {
       .subscribe(
         (data: any) => {
           this.movieToShow = data;
+          console.log(this.movieToShow, 'filem');
           // this.idReceived = +this.idReceived;
           // this.movieToShow = this.movie.find(id => id.id === this.idReceived);
-          // this.morePictures = this.movieToShow.images;
+          this.morePictures = this.movieToShow.images;
         },
         error => {
           console.log('error', error);

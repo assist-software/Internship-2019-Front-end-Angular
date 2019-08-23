@@ -36,6 +36,8 @@ export class ListMoovieComponent implements OnInit {
     //       this.numberOfMOvie = this.movieArraySort.length;
     //       console.log('numarul de filme', this.numberOfMOvie);
     //       localStorage.setItem('movieWhatchlist2', JSON.stringify(this.movieArraySort));
+    //       localStorage.setItem('movieWhatchlist', JSON.stringify(this.movieArraySort));
+
     //       console.log(localStorage.getItem('movieWhatchlist2'));
     //     },
     //     error => {

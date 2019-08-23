@@ -83,9 +83,12 @@ export class ListOfNextMoovieComponent implements OnInit {
       date: 333333
     }
   ];
-
-
-
+  
+  moviefilter() {
+    this.moviesArray = this.moviesArray.filter(
+      book => book.category === "some text v1");
+  }
+  
   constructor(private sanitizer: DomSanitizer) {
     // this.backgoundImage = this.sanitizer.bypassSecurityTrustStyle("'background-image': 'url(" + this.myPicture + ")'");
 
