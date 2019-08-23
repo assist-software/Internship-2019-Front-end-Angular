@@ -2,7 +2,8 @@
 <!-- first page-->
 <div class="row section1">
   <div class="col input-group">
-    <input type="search" placeholder="  Search for a movie..." aria-describedby="button-addon1" class="search">
+    <input type="search" [(ngModel)]="searchText" placeholder="  Search for a movie..." aria-describedby="button-addon1"
+      class="search">
     <div class="input-group-append">
       <button id="button-addon1 " type="submit" class="btn btn-link text-primary lupa"><i
           class="fa fa-search "></i></button>
@@ -13,7 +14,7 @@
   </div>
 </div>
 
-<div *ngFor="let movie of movies" class="service_box">
+<div *ngFor="let movie of movies  | filter: searchText  " class="service_box">
   <div class="section2"><br>
     <div class="row">
       <div class="col-2 ">

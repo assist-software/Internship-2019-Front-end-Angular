@@ -58,4 +58,5 @@ export class ListMoviesAdminComponent implements OnInit {
     window.location.reload();
 
   }
+
 }

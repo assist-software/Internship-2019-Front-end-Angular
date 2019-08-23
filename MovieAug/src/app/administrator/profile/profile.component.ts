@@ -35,20 +35,19 @@ export class ProfileComponent implements OnInit {
       NameAdmin: new FormControl('', Validators.required),
       emailAdmin: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      confirmPassword: new FormControl('', Validators.required),
+      confirmPassword: new FormControl(''),
       file: new FormControl('')
     });
     this.loadMovie(this.IdUser.id);
     console.log("In real time", this.UpdateUserForm);
   }
   loadMovie(id) {
-    return this.restApi.getUser(id).subscribe((data: {}) => {
+    return this.restApi.getUser(id).subscribe((data) => {
       this.user = data;
       console.log("Din DB:", this.user);
     })
   }
   UpdateUserSubmit() {
-
     if (this.UpdateUserForm.value.confirmPassword !== this.UpdateUserForm.value.password) {
       this.Error = " Password and confirmpassword must be the same";
     }

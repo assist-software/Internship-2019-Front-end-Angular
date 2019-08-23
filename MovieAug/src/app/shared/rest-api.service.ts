@@ -9,7 +9,8 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class RestApiService {
   apiURL = 'http://localhost:3000';
-  apiURLDB = '192.168.151.195:8080/signup';
+  apiUserDB = 'http://192.168.151.195:8080/user';
+  apiURLDB = 'http://192.168.151.193:8080/api/movie';
   constructor(private http: HttpClient) { }
   // Http Options
   httpOptions = {
@@ -17,8 +18,17 @@ export class RestApiService {
       'Content-Type': 'application/json'
     })
   }
-  getMovies(): Observable<movie> {
-    return this.http.get<movie>(this.apiURL + '/movie')
+  // getMovies(): Observable<any> {
+  //   console.log("Am intrat in server");
+  //   return this.http.get<any>(this.apiURLDB)
+
+  //     .pipe(
+  //       retry(1),
+  //       catchError(this.handleError)
+  //     )
+  // }
+  getMovies(): Observable<any> {
+    return this.http.get<any>(this.apiURL + '/movie')
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -38,8 +48,15 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
-  getUser(id): Observable<user> {
-    return this.http.get<user>(this.apiURL + '/user/' + id)
+  // getUser(id): Observable<user> {
+  //   return this.http.get<user>(this.apiURL + '/user/' + id)
+  //     .pipe(
+  //       retry(1),
+  //       catchError(this.handleError)
+  //     )
+  // }
+  getUser(id): Observable<any> {
+    return this.http.get<any>(this.apiUserDB + '/' + id)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -92,5 +109,6 @@ export class RestApiService {
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
+    return throwError(error)
   }
 }
