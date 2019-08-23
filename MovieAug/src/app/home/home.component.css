@@ -100,3 +100,11 @@ body {
 .no-click {
   pointer-events: none;
 }
+
+.btn1 {
+
+  background-color: #f5044c;
+  color: white;
+  border-width: 5px;
+  border-color: #f5044c;
+}

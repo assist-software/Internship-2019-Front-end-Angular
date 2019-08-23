@@ -9,6 +9,7 @@ import { AuthComponent } from "./auth/auth.component";
 import { AuthGuard } from "@app/_helper";
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './administrator/profile/profile.component';
+import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
   { path: "login", component: AuthComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     component: WatchlistComponent,
     canActivate: [AuthGuard]
   },
+  { path: "category", component: CategoryComponent, canActivate: [AuthGuard] },
   { path: "addMovie", component: AddMovieComponent, canActivate: [AuthGuard] },
   { path: "contact", component: ContactComponent, canActivate: [AuthGuard] },
   { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },

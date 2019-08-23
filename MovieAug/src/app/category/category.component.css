@@ -1,0 +1,16 @@
+.container {
+  color: white;
+}
+
+button {
+  width: 100%;
+  background-color: #f5044c;
+  color: white;
+  border-width: 5px;
+  border-color: #f5044c;
+}
+
+.d-inline-block {
+  background-color: #f5044c;
+  color: white;
+}
