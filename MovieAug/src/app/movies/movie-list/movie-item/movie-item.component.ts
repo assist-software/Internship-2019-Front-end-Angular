@@ -41,8 +41,8 @@ export class MovieItemComponent implements OnInit {
         this.movieItem = movie;
 
       }
-      // console.log("Json");
-      // console.log(data);
+      console.log("Json");
+      console.log(data);
     })
   }
 }

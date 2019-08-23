@@ -10,6 +10,7 @@ import { RestApiService } from "../../shared/rest-api.service";
 })
 export class ProfileComponent implements OnInit {
   public file: File;
+  public url;
   public fileslogo: File;
   UpdateUserForm: FormGroup;
   NameAdmin: FormControl;
@@ -32,11 +33,10 @@ export class ProfileComponent implements OnInit {
 
     this.UpdateUserForm = new FormGroup({
       id: new FormControl(this.IdUser.id),
-      NameAdmin: new FormControl('', Validators.required),
-      emailAdmin: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      confirmPassword: new FormControl(''),
-      file: new FormControl('')
+      profile_picture: new FormControl('')
     });
     this.loadMovie(this.IdUser.id);
     console.log("In real time", this.UpdateUserForm);
@@ -48,14 +48,14 @@ export class ProfileComponent implements OnInit {
     })
   }
   UpdateUserSubmit() {
-    if (this.UpdateUserForm.value.confirmPassword !== this.UpdateUserForm.value.password) {
-      this.Error = " Password and confirmpassword must be the same";
-    }
-    else {
-      this.restApi.updateUser(this.IdUser.id, this.UpdateUserForm.value).subscribe(data => {
-      })
-      window.location.reload();
-    }
+    //if (this.UpdateUserForm.value.confirmPassword !== this.UpdateUserForm.value.password) {
+    // this.Error = " Password and confirmpassword must be the same";
+    //}
+    //else {
+    this.restApi.updateUser(this.IdUser.id, this.UpdateUserForm.value).subscribe(data => {
+    })
+    // window.location.reload();
+    //}
 
   }
   preview(files) {

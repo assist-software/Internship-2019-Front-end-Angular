@@ -1,6 +1,6 @@
 <app-header-admin></app-header-admin>
 
-<div class="row content">
+<div class="row content" style="background: white">
   <div class=" sidenav">
 
     <!-- forma pentru administartor -->
@@ -14,14 +14,13 @@
           <div class="col-12">
             <label class="errormessage">{{Error}}</label><br>
             <label for="NameAdmin" class="text">Name</label><br>
-            <input type="text" formControlName="NameAdmin" [(ngModel)]="user.name" name="NameAdmin" class="tbox"><br>
+            <input type="text" formControlName="name" [(ngModel)]="user.name" name="NameAdmin" class="tbox"><br>
           </div>
         </div>
         <div class="form-row">
           <div class=" col-12">
             <label for="emailAdmin" class="text">Email</label><br>
-            <input type="value" formControlName="emailAdmin" [(ngModel)]="user.email" name="emailAdmin"
-              class="tbox"><br>
+            <input type="value" formControlName="email" [(ngModel)]="user.email" name="emailAdmin" class="tbox"><br>
           </div>
         </div>
         <div class="form-row">
@@ -30,17 +29,17 @@
             <input type="password" formControlName="password" name="password" class="tbox"><br>
           </div>
         </div>
-        <div class="form-row">
+        <!-- <div class="form-row">
           <div class="col-12">
             <label for="confirmPassword" class="text">Confirm Password</label><br>
             <input type="password" formControlName="confirmPassword" name="confirmPassword" class="tbox"><br>
           </div>
-        </div>
+        </div> -->
         <div class="form-row">
           <div class="col-12">
             <label for="file" class="text">Photo</label><br>
-            <input type="file" formControlName="file" (change)="handleFileSelect($event)" name="file" class=""
-              accept="image/*">
+            <input type="file" formControlName="profile_picture" (change)="handleFileSelect($event)" name="file"
+              class="" accept="image/*">
           </div>
         </div>
         <!-- butoane -->

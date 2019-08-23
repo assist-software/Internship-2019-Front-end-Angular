@@ -44,14 +44,15 @@ export class HomeComponent implements OnInit {
   loadMovie() {
     return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
+      console.log("Din DB:", data);
       for (let movie of this.movies) {
-        if (movie.IMDBScore > this.MaxIMDB) {
+        if (movie.imdbScore > this.MaxIMDB) {
           console.log(this.MaxIMDB);
-          this.MaxIMDB = movie.IMDBScore;
+          this.MaxIMDB = movie.imdbScore;
         }
       }
       for (let movie of this.movies) {
-        if (movie.IMDBScore == this.MaxIMDB) {
+        if (movie.imdbScore == this.MaxIMDB) {
           this.movieItem = movie;
         }
       }

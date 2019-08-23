@@ -21,7 +21,9 @@ export class MovieDetailComponent implements OnInit {
   loadMovie() {
     return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
+
       for (let movie of this.movies) {
+        console.log("Film curent trailer :", data);
         if (movie.id == this.currentURL) {
           this.currentMovie = movie;
           console.log("Film curent trailer :", this.currentMovie);

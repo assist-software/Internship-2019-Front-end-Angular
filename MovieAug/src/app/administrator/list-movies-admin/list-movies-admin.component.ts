@@ -18,7 +18,7 @@ export class ListMoviesAdminComponent implements OnInit {
     public restApi: RestApiService) { }
 
   ngOnInit() {
-    this.loadMovie()
+    this.loadMovie();
   }
   // Get employees list
   loadMovie() {
@@ -55,7 +55,7 @@ export class ListMoviesAdminComponent implements OnInit {
     })
     this.modalRef.hide();
     this.modalRef = null;
-    window.location.reload();
+    //window.location.reload();
 
   }
 

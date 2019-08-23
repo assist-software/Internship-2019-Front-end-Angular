@@ -34,14 +34,16 @@ export class AddMovieComponent implements OnInit {
     this.addMovie = new FormGroup({
       id: new FormControl(Math.floor(Math.random() * 1000)),
       title: new FormControl('', Validators.required),
-      trailer: new FormControl('', Validators.required),
-      source: new FormControl('', Validators.required),
-      coverURL: new FormControl(''),
+      trailerUrl: new FormControl('', Validators.required),
+      originalSourceUrl: new FormControl('', Validators.required),
+      coverUrl: new FormControl(''),
       description: new FormControl(''),
-      Category: new FormControl('', Validators.required),
-      IMDBScore: new FormControl(''),
-      ReleaseDate: new FormControl(''),
+      categories: new FormGroup({ name: new FormControl('') }),
+      imdbScore: new FormControl(''),
+      imdbId: new FormControl('test3'),
+      releaseDate: new FormControl(''),
     });
+    console.log("test cosmin:", this.addMovie);
   }
   loadMovie(id) {
     if (id == "-1") {
@@ -61,7 +63,10 @@ export class AddMovieComponent implements OnInit {
     console.log("adauga");
     this.idMovie = localStorage.getItem('movie');
     if (this.idMovie == "-1") {
+
       console.log(this.addMovie.value);
+      const mapped = [this.addMovie.value.categories];
+      this.addMovie.value.categories = mapped;
       this.restApi.createMovie(this.addMovie.value as any).subscribe();
     }
     else {
@@ -70,7 +75,7 @@ export class AddMovieComponent implements OnInit {
       this.restApi.updateMovie(this.idMovie, this.addMovie.value).subscribe(data => {
       })
     }
-    window.location.reload();
+    //window.location.reload();
   }
 
 }

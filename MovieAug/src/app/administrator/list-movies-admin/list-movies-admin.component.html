@@ -1,72 +1,75 @@
-<app-header-admin></app-header-admin>
-<!-- first page-->
-<div class="row section1">
-  <div class="col input-group">
-    <input type="search" [(ngModel)]="searchText" placeholder="  Search for a movie..." aria-describedby="button-addon1"
-      class="search">
-    <div class="input-group-append">
-      <button id="button-addon1 " type="submit" class="btn btn-link text-primary lupa"><i
-          class="fa fa-search "></i></button>
+<div class="contain " style="background: white">
+  <app-header-admin></app-header-admin>
+  <!-- first page-->
+  <div class="row section1">
+    <div class="col input-group">
+      <input type="search" [(ngModel)]="searchText" placeholder="  Search for a movie..."
+        aria-describedby="button-addon1" class="search">
+      <div class="input-group-append">
+        <button id="button-addon1 " type="submit" class="btn btn-link text-primary lupa"><i
+            class="fa fa-search "></i></button>
+      </div>
+    </div>
+    <div class="col ">
+      <button class="btn btn-primary-warning buttonAdauga " (click)="newMovie(template)">Add new</button>
     </div>
   </div>
-  <div class="col ">
-    <button class="btn btn-primary-warning buttonAdauga " (click)="newMovie(template)">Add new</button>
+
+  <div *ngFor="let movie of movies  | filter: searchText  " class="service_box">
+    <div class="section2"><br>
+      <div class="row">
+        <div class="col-2 ">
+          <img src="../../../assets/image11.png" class="photoMovi" alt="Moovie">
+        </div>
+        <div class="col-3 ">
+          <p>{{movie.title}}</p>
+        </div>
+        <div class="col-3  ">
+          <p>{{movie.releaseDate}}</p>
+        </div>
+        <div class="col-2 ">
+          <span *ngIf="movie !== undefined">
+            <!-- <p>{{movie.categories[0].name}}</p> -->
+          </span>
+        </div>
+        <div class="col-1   buttonsModify">
+          <img src="../../../assets/Vector.png" (click)="deleteMovieModal(delete, movie.id)" class="photoMovi"
+            alt="Moovie">
+          <img src="../../../assets/Edit.png" (click)="UpdateMovie(template, movie.id)" class="edit" alt="Moovie">
+        </div>
+      </div>
+    </div>
   </div>
+
+
+  <!-- modalul pentru adaugarea sau editarea unui film -->
+  <ng-template #template let-modal let-c="close" let-d="dismiss">
+    <button type="button" class="close pull-right " aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true" class="buttonX">&times;</span>
+    </button>
+    <app-add-movie></app-add-movie>
+    <h5 class="cancel " aria-label="Close" (click)="modalRef.hide()">Cancel </h5>
+
+
+  </ng-template>
+
+  <!-- modalul pentru consirmarea de stergere a unui film -->
+  <ng-template #delete class="modalDelet">
+    <div class="text-center">
+      <div class="modal-header ">
+        <button type="button" class="close pull-right " aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true" class="buttonX">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this movie?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn  ModalDeleteCancel" (click)="modalRef.hide()">Cancel</button>
+        <button type="button" class="btn  ModalDeleteCancel" (click)="confirmDeleteMovie()">Delete</button>
+      </div>
+    </div>
+  </ng-template>
+  <!-- END ...first page-->
+  <app-footer></app-footer>
 </div>
-
-<div *ngFor="let movie of movies  | filter: searchText  " class="service_box">
-  <div class="section2"><br>
-    <div class="row">
-      <div class="col-2 ">
-        <img src="../../../assets/image11.png" class="photoMovi" alt="Moovie">
-      </div>
-      <div class="col-3 ">
-        <p>{{movie.title}}</p>
-      </div>
-      <div class="col-3  ">
-        <p>{{movie.ReleaseDate}}</p>
-      </div>
-      <div class="col-2  ">
-        <p>{{movie.Category}}</p>
-      </div>
-      <div class="col-1   buttonsModify">
-        <img src="../../../assets/Vector.png" (click)="deleteMovieModal(delete, movie.id)" class="photoMovi"
-          alt="Moovie">
-        <img src="../../../assets/Edit.png" (click)="UpdateMovie(template, movie.id)" class="edit" alt="Moovie">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- modalul pentru adaugarea sau editarea unui film -->
-<ng-template #template let-modal let-c="close" let-d="dismiss">
-  <button type="button" class="close pull-right " aria-label="Close" (click)="modalRef.hide()">
-    <span aria-hidden="true" class="buttonX">&times;</span>
-  </button>
-  <app-add-movie></app-add-movie>
-  <h5 class="cancel " aria-label="Close" (click)="modalRef.hide()">Cancel </h5>
-
-
-</ng-template>
-
-<!-- modalul pentru consirmarea de stergere a unui film -->
-<ng-template #delete class="modalDelet">
-  <div class="text-center">
-    <div class="modal-header ">
-      <button type="button" class="close pull-right " aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true" class="buttonX">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <p>Are you sure you want to delete this movie?</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn  ModalDeleteCancel" (click)="modalRef.hide()">Cancel</button>
-      <button type="button" class="btn  ModalDeleteCancel" (click)="confirmDeleteMovie()">Delete</button>
-    </div>
-  </div>
-</ng-template>
-<!-- END ...first page-->
-
-<app-footer></app-footer>
