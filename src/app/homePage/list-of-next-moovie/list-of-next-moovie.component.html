@@ -22,10 +22,12 @@
         <div>
             <div class="row">
                 <div class="col-md-3" *ngFor="let movie of moviesArray">
+                    
                     <div class="pictureContainer" [style.background-image]="backgroundImage">
                         <button class="btn btnRemove">Add to whatchlist</button>
                         <button class="btn btnScore">{{movie.score}}</button>
                     </div>
+                    
                     <p class="titleMovie">{{ movie.title }}</p>
                     <div class="groupDescription">
                         <p class="categoryMovie">Release date: {{movie.date}}</p>
