@@ -8,7 +8,7 @@
   </div>
 </div> -->
 
-<header style="background: black">
+<header>
   <div class="container ">
     <app-header></app-header>
     <div class="row containerHeader">
@@ -48,6 +48,9 @@
 <br>
 <br>
 <div class="container">
+  <app-movie-list></app-movie-list>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-sm-5">
       <h1>See what movies come next month</h1>
@@ -74,11 +77,11 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-sm-3" *ngFor="let movie of movies   ">
-        <app-movie-item [movie]="movie"></app-movie-item>
-      </div>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let movie of movies   ">
+      <app-movie-item [movie]="movie"></app-movie-item>
     </div>
   </div>
   <app-footer></app-footer>
