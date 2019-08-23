@@ -16,7 +16,10 @@ export class ContactComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     });
-    
-   
-}
+
+  }
+
+  contactFunction() {
+    console.log('Raportul tau va fi trimis');
+  }
 }

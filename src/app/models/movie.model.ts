@@ -11,5 +11,5 @@ export interface Movie {
     }];
     imdbScore: number;
     releaseDate: Date;
-    id: number;
+    id?: number;
 }

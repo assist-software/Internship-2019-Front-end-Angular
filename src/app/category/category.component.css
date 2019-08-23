@@ -1,0 +1,83 @@
+.allPage {
+    background-color: black;
+    /* padding-top: 50px; */
+}
+
+.topMargin {
+    padding-top: 200px;
+    padding-bottom: 70px;
+}
+
+.right {
+    padding-left: 26%;
+}
+
+.emailWrite {
+    margin-right: 30px;
+}
+
+.positionSrc {
+    position: relative;
+}
+
+.mr-sm-2 {
+    margin: 0px;
+    width: 330px;
+}
+
+.positionSearcBtn {
+    position: absolute;
+    top: 12px;
+    left: 303px;
+    color: black;
+}
+
+.emailWrite {
+    font-family: Campton;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.mySelect {
+    width: 176px;
+    height: 56px;
+    border: 1px solid #F5044C;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+img {
+    height: auto;
+    margin: auto;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btnScore {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 24px;
+    margin-top: 113%;
+    /* bottom: 24px; */
+    background: #FF9A03;
+    border-radius: 5px;
+    font-family: Campton;
+    font-size: 10px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.titleMovie {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 0px; 
+}

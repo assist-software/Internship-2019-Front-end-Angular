@@ -42,6 +42,7 @@ export function tokenGetter() {
   return localStorage.getItem('token');
 }
 import { ContactComponent } from './contact/contact.component';
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { ContactComponent } from './contact/contact.component';
     ListOfNextMoovieComponent,
     HomePageComponent,
     AdminNavBarComponent,
-    ContactComponent
+    ContactComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

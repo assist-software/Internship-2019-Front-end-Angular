@@ -1,15 +1,31 @@
+.positionExact {
+    margin-left: -10px;
+}
+
+.positionExact2 {
+    margin-top: 50px;
+}
+
 .pictureContainer {
     height: 416px;
     position: relative;
     border-radius: 20px;
 }
 
+img {
+    height: auto;
+    margin: auto;
+    width: 100%;
+    cursor: pointer;
+}
+
 .btnRemove {
     position: absolute;
-    width: 106px;
+    width: 50%;
+    max-width: 200px;
     height: 32px;
-    right: 63px;
-    bottom: 24px;
+    margin-top: 113%;
+    margin-left: -68%;
     background: #F5044C;
     border-radius: 4.81818px;
     font-family: Campton;
@@ -17,16 +33,19 @@
     line-height: 14px;
     text-align: center;
     color: #FFFFFF;
+    color: #FFFFFF;
 }
 
-.mt-0 {
-    position: relative;
+.topMargin {
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .positionSearcBtn {
     position: absolute;
     top: 20px;
     left: 337px;
+    color: #FFFFFF;
 }
 
 .btnScore {
@@ -34,14 +53,14 @@
     width: 32px;
     height: 32px;
     right: 24px;
-    bottom: 24px;
+    margin-top: 113%;
+    /* bottom: 24px; */
     background: #FF9A03;
     border-radius: 5px;
     font-family: Campton;
     font-size: 10px;
-    /* line-height: 80px; */
     text-align: center;
-    color: #FFFFFF
+    color: #FFFFFF;
 }
 
 .myContainer {
@@ -51,23 +70,21 @@
     padding-top: 256px;
 }
 
-h5 {
+.titlePage {
     font-family: Campton;
     font-size: 48px;
     line-height: 60px;
-    padding-left: 46px;
+    /* padding-left: 46px; */
     color: #FFFFFF;
 }
 
 .allPage {
     background-color: black;
+    padding-top: 177px;
 }
 
 .searchBtn {
     margin-top: 200px;
-    /* display: flex; */
-    /* margin-left: -40px; */
-    /* align-items: right; */
 }
 
 .col-md-6 {
@@ -77,9 +94,8 @@ h5 {
 .emailWrite {
     font-family: Campton;
     font-size: 16px;
-    line-height: 22px;
-    /* identical to box height */
     color: #FFFFFF;
+    margin-top: 10px;
 }
 
 .mySelect {
@@ -91,22 +107,31 @@ h5 {
     background-color: transparent;
 }
 
-.containerCat {
-    /* margin-left: 100px; */
-}
-
 .mr-sm-2 {
     width: 368px;
     height: 56px;
+    background: #1D1D23;
+    border-radius: 5px;
 }
-
-/* 
-.mt-0 {
-    margin-left: 16%;
-} */
 
 @media (min-width: 1200px) {
     .container {
         max-width: 1240px;
     }
+}
+
+.position {
+    position: relative;
+}
+
+.titleMovie {
+    font-family: Campton;
+    font-size: 18px;
+    line-height: 25px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 0px; 
 }
