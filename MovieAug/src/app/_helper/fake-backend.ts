@@ -39,6 +39,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return getUsers();
         case url.endsWith("/create"):
           return createUser();
+        case url.endsWith("/reset"):
+          return resetPassword();
         default:
           // pass through any requests not handled above
           return next.handle(request);
@@ -97,6 +99,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       users.push(test);
       console.log(users);
       return ok({ result: true });
+    }
+    function resetPassword() {
+      const { email } = body;
+      const user = users.find(x => x.email == email);
+      if (user) return ok({ result: true });
+      return error("Email not found");
     }
   }
 }

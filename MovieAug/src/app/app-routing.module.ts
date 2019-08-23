@@ -12,11 +12,10 @@ import { ProfileComponent } from './administrator/profile/profile.component';
 
 const routes: Routes = [
   { path: "login", component: AuthComponent },
-  { path: "", component: HomeComponent, canActivate: [AuthGuard] },
+  { path: "", component: HomeComponent },
   {
     path: "watchlist",
-    component: WatchlistComponent,
-    canActivate: [AuthGuard]
+    component: WatchlistComponent
   },
   { path: "addMovie", component: AddMovieComponent, canActivate: [AuthGuard] },
   { path: "contact", component: ContactComponent, canActivate: [AuthGuard] },

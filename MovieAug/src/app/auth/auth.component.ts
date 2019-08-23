@@ -1,8 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl
+} from "@angular/forms";
 import { first } from "rxjs/operators";
-
 import { AuthenticationService } from "@app/_services";
 
 @Component({
@@ -23,6 +27,7 @@ export class AuthComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   error = "";
+  succes = "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,17 +38,17 @@ export class AuthComponent implements OnInit {
     // redirect to home if already logged in
 
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(["/home"]);
+      this.router.navigate(["/"]);
     }
   }
 
   ngOnInit() {
-    this.authForms = this.formBuilder.group({
-      fullName: [""],
-      email: ["", Validators.required],
-      password: ["", Validators.required]
+    this.authForms = new FormGroup({
+      fullName: new FormControl(""),
+      email: new FormControl("", [Validators.email, Validators.required]),
+      password: new FormControl("")
     });
-
+    this.loginMode();
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams["returnUrl"] || "/";
   }
@@ -56,23 +61,27 @@ export class AuthComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
+    this.error = "";
+    this.succes = "";
+    this.emailSent = false;
+    this.accCreated = false;
+
     // stop here if form is invalid
     if (this.authForms.invalid) {
       return;
     }
 
     this.loading = true;
+
     if (this.isLoginMode) {
       this.authenticationService
         .login(this.f.email.value, this.f.password.value)
-        .pipe(first())
         .subscribe(
-          data => {
-            console.log(data);
+          res => {
             this.router.navigate([this.returnUrl]);
           },
           error => {
-            this.error = error;
+            this.error = error.error.message;
             this.loading = false;
           }
         );
@@ -82,19 +91,18 @@ export class AuthComponent implements OnInit {
         .register(
           this.f.fullName.value,
           this.f.email.value,
+          this.f.password.value,
           this.f.password.value
         )
         .pipe(first())
         .subscribe(
           data => {
-            this.router.navigate([this.returnUrl]);
-            if (data.result == "true") {
-              this.accCreated = true;
-            }
+            this.accCreated = true;
             this.loading = false;
+            this.loginMode();
           },
           error => {
-            this.error = error;
+            this.error = error.error.message;
             this.loading = false;
           }
         );
@@ -102,36 +110,75 @@ export class AuthComponent implements OnInit {
     if (this.isResetMode) {
       this.authenticationService
         .reset(this.f.email.value)
-        .pipe(first())
+
         .subscribe(
           data => {
-            if (data.result == "true") {
-              this.emailSent = true;
-            }
+            this.emailSent = true;
             this.loading = false;
+            this.loginMode();
           },
           error => {
-            this.error = error;
+            this.error = error.error.message;
             this.loading = false;
           }
         );
     }
   }
+  loginMode() {
+    this.error = "";
+
+    this.isLoginMode = true;
+    this.isResetMode = false;
+    this.isRegisterMode = false;
+
+    this.authForms.controls["fullName"].clearValidators();
+    this.authForms.controls["fullName"].updateValueAndValidity();
+
+    this.authForms.controls["password"].setValidators([
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(24)
+    ]);
+    this.authForms.controls["password"].updateValueAndValidity();
+
+    this.authForms.reset();
+  }
+  registerMode() {
+    this.error = "";
+    this.emailSent = false;
+    this.accCreated = false;
+
+    this.isRegisterMode = true;
+    this.isResetMode = false;
+    this.isLoginMode = false;
+
+    this.authForms.controls["fullName"].setValidators([Validators.required,Validators.minLength(1),
+      Validators.maxLength(50)]);
+    this.authForms.controls["fullName"].updateValueAndValidity();
+
+    this.authForms.controls["password"].setValidators([
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(24)
+    ]);
+    this.authForms.controls["password"].updateValueAndValidity();
+
+    this.authForms.reset();
+  }
   resetMode() {
+    this.error = "";
+    this.emailSent = false;
+    this.accCreated = false;
+
     this.isResetMode = true;
     this.isRegisterMode = false;
     this.isLoginMode = false;
-  }
-  registerMode() {
-    this.isResetMode = false;
-    this.isRegisterMode = true;
-    this.isLoginMode = false;
+
+    this.authForms.controls["fullName"].clearValidators();
+    this.authForms.controls["fullName"].updateValueAndValidity();
+    this.authForms.controls["password"].clearValidators();
+    this.authForms.controls["password"].updateValueAndValidity();
+
     this.authForms.reset();
-  }
-  loginMode() {
-    this.authForms.reset();
-    this.isResetMode = false;
-    this.isRegisterMode = false;
-    this.isLoginMode = true;
   }
 }
