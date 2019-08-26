@@ -58,6 +58,7 @@ export class MoviesServices {
     }
 
     addMovieToWhatchlist(value) {
+
         const retrieveObject = localStorage.getItem('movieWhatchlist');
         const arrayMovie = JSON.parse(retrieveObject);
 
