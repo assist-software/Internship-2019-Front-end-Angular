@@ -20,32 +20,14 @@
             </div>
         </div>
     </div>
-    <!-- <div class="container" style="margin-top: 50px;">
-        <div>
-            <div class="row">
-                <div class="col-md-3" *ngFor="let movie of moviesArray">
-                    
-                    <div class="pictureContainer" [style.background-image]="backgroundImage">
-                        <button class="btn btnRemove">Add to whatchlist</button>
-                        <button class="btn btnScore">{{movie.score}}</button>
-                    </div>
-                    
-                    <p class="titleMovie">{{ movie.title }}</p>
-                    <div class="groupDescription">
-                        <p class="categoryMovie">Release date: {{movie.date}}</p>
-                        <p class="categoryMovie">{{ movie.category }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    
     <div class="container" style="margin-top: 50px;">
         <div>
             <div class="row">
                 <div class="col-md-3 position" *ngFor="let movie of moviesArray">
                     <!-- <div class="pictureContainer" [style.background-image]="image"> -->
                     <img [src]="movie.coverUrl" alt="orice" [routerLink]="['/movie-details', movie.id]">
-                    <button class="btn btnRemove" >Add to watchlist</button>
+                    <button class="btn btnRemove" (click)="addMovie(movie)">Add to watchlist</button>
                     <button class="btn btnScore">{{movie.imdbScore}}</button>
                     <!-- </div> -->
                     <p class="titleMovie">{{ movie.title }}</p>
