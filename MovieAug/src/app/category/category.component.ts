@@ -19,6 +19,7 @@ export class CategoryComponent implements OnInit {
   movieID: number;
   nameDrop = 'Sort';
   moviees: any = [];
+
   constructor(
     public restApi: RestApiService,
     private route: ActivatedRoute,
@@ -59,6 +60,7 @@ export class CategoryComponent implements OnInit {
     } else {
       this.nameDrop = sort;
 
+
     }
   }
   sortFilterTitle(c1: movie, c2: movie) {
@@ -86,11 +88,35 @@ export class CategoryComponent implements OnInit {
 
   }
   filterFunction(): any[] {
+
     if (this.nameDrop === 'Sort') {
       return this.movies;
-    }
-    else
-      return this.movies.filter(movie => movie.categories[0].name === this.nameDrop);
 
+    }
+    else {
+
+
+      console.log(this.movies)
+      const x = [];
+      this.movies.filter(movie => {
+        if (movie.categories && movie.categories[0]) {
+          movie.categories.map(category => {
+            // console.log(movie.categories[0].name == this.nameDrop)
+            if (category.name == this.nameDrop) {
+              x.push(movie)
+            }
+
+          })
+        }
+      });
+      // console.log('XXXXXXX', x)
+      return x;
+    }
   }
 }
+// this.movieMap = this.movies.map(movie => movie.categories);
+
+// console.log(this.movieMap);
+// console.log(this.movieMap);
+// if (this.movieMap.name === this.nameDrop)
+//   return this.movies;
