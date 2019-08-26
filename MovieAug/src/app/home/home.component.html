@@ -8,7 +8,7 @@
   </div>
 </div> -->
 
-<header style="background: black">
+<header>
   <div class="container ">
     <app-header></app-header>
     <div class="row containerHeader">
@@ -48,6 +48,9 @@
 <br>
 <br>
 <div class="container">
+  <app-movie-list></app-movie-list>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-sm-5">
       <h1>See what movies come next month</h1>
@@ -62,23 +65,16 @@
           <button ngbDropdownItem (click)="sendFilter('data')">ReleaseDate</button>
           <button ngbDropdownItem (click)="sendFilter('score')">IMDBScore</button>
           <button ngbDropdownItem (click)="sendFilter('titlu')">title</button>
-          <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Genre</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem (click)="sendFilter('Action')">Action</button>
-              <button ngbDropdownItem (click)="sendFilter('Adventure')">Adventure</button>
-              <button ngbDropdownItem (click)="sendFilter('Horror')">Horror</button>
-              <button ngbDropdownItem (click)="sendFilter('Fantasy')">Fantasy</button>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-sm-3" *ngFor="let movie of movies   ">
-        <app-movie-item [movie]="movie"></app-movie-item>
-      </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-4" *ngFor="let movie of movies   ">
+      <app-movie-item [movie]="movie"></app-movie-item>
     </div>
   </div>
-  <app-footer></app-footer>
+</div>
+<app-footer></app-footer>

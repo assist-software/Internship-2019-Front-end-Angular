@@ -16,6 +16,7 @@ export class WatchlistComponent implements OnInit {
   movieItem: any = [];
   movies: any = [];
   nameDrop = 'Sort';
+  copyMovies: any[];
   filteredMoviesByGenre: any = []
 
   constructor(
@@ -28,9 +29,6 @@ export class WatchlistComponent implements OnInit {
   ngOnInit() {
     this.loadMovie();
   }
-
-
-
 
 
   deleteMovie(Id) {
@@ -46,15 +44,11 @@ export class WatchlistComponent implements OnInit {
 
     return this.restApi.getMoviesUser().subscribe((data: {}) => {
       this.movies = data;
-
+      this.copyMovies = this.movies;
       for (let movie of this.movies) {
         this.movieItem = movie;
 
-
       }
-
-      // console.log("Json");
-      // console.log(data);
     })
   }
 
@@ -74,7 +68,7 @@ export class WatchlistComponent implements OnInit {
         if (movie.Category === sort) {
           return movie
         }
-
+        ``
       });
 
       console.log(filtered)

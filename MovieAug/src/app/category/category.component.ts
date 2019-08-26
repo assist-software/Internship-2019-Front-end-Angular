@@ -6,12 +6,11 @@ import { MoviesComponent } from '@app/movies/movies.component';
 import { movie } from '@app/shared/movie';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
-
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
 })
-export class HomeComponent implements OnInit {
+export class CategoryComponent implements OnInit {
   MaxIMDB = 0;
   items: Array<any> = []
   movies: any = [];
@@ -19,24 +18,14 @@ export class HomeComponent implements OnInit {
   movie: any = [];
   movieID: number;
   nameDrop = 'Sort';
-
-  constructor(public restApi: RestApiService,
+  moviees: any = [];
+  constructor(
+    public restApi: RestApiService,
     private route: ActivatedRoute,
     private router: Router,
-    private orderPipe: OrderPipe, ) {
-    this.items = [
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-      { name: '../../assets/img/left-arrow.png' },
-    ]
-  }
+    private orderPipe: OrderPipe,
+  ) { }
+
   ngOnInit() {
     this.loadMovie()
   }
@@ -44,21 +33,19 @@ export class HomeComponent implements OnInit {
   loadMovie() {
     return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
-      console.log("Din DB:", data);
       for (let movie of this.movies) {
-        if (movie.imdbScore > this.MaxIMDB) {
+        if (movie.IMDBScore > this.MaxIMDB) {
           console.log(this.MaxIMDB);
-          this.MaxIMDB = movie.imdbScore;
+          this.MaxIMDB = movie.IMDBScore;
         }
       }
       for (let movie of this.movies) {
-        if (movie.imdbScore == this.MaxIMDB) {
+        if (movie.IMDBScore == this.MaxIMDB) {
           this.movieItem = movie;
         }
       }
     })
   }
-
   sendFilter(sort: string) {
     if (sort === 'titlu') {
       this.movies.sort(this.sortFilterTitle)
@@ -94,5 +81,21 @@ export class HomeComponent implements OnInit {
     else if (c1.IMDBScore === c2.IMDBScore) return 0
     else return 1;
   }
-}
+  filters(sort) {
 
+
+    this.movies.filter(movie => { if (movie.Category === sort) return this.moviees = movie })
+
+
+
+
+  }
+  filterFunction(): any[] {
+    if (this.nameDrop === 'Sort') {
+      return this.movies;
+    }
+    else
+      return this.movies.filter(movie => movie.Category === this.nameDrop);
+
+  }
+}

@@ -1,7 +1,7 @@
 <div>
   <div class="container">
-    <img (click)="MoviShow(movie.id)" src="../../../../assets/img/img1.jpg" alt="img">
-    <button class="btn1 btn btn-primary-danger">Remove</button>
+    <img (click)="MoviShow(movie.id)" src="{{movie.src}}" alt="img">
+    <button class="btn1 btn btn-primary-danger">{{movie.function}}</button>
     <button class="no-click btn2 btn btn-primary-danger">{{movie.IMDBScore}}</button>
   </div>
   <div class="row">
