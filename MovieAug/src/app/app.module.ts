@@ -30,6 +30,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { FilterPipe } from './filter.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
     AuthComponent,
     ContactComponent,
     ProfileComponent,
-    FilterPipe
+    FilterPipe,
+    CategoryComponent
 
   ],
   imports: [
