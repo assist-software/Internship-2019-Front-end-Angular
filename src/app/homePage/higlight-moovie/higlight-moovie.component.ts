@@ -10,7 +10,7 @@ import { MoviesServices } from '../../services/movies.service';
   styleUrls: ['./higlight-moovie.component.css']
 })
 export class HiglightMoovieComponent implements OnInit {
-
+  messageOF: string;
   backgroundImage: any[] = [];
   moviesArray: Movie[] = [];
   public movi1: Movie = {
@@ -21,18 +21,17 @@ export class HiglightMoovieComponent implements OnInit {
     description: '',
     
     category: [{
-      
       name: '',
     }],
     imdbScore: 0,
     releaseDate: null,
-    
-    images: null,
+    id: 1,
+    images: null
   };
 
   constructor(
     private sanitizer: DomSanitizer,
-    private moviesService: MoviesServices
+    private moviesService: MoviesServices,
   ) { }
 
   ngOnInit() {
@@ -42,13 +41,21 @@ export class HiglightMoovieComponent implements OnInit {
         data => {
 
           this.moviesArray = data;
-          // this.movi1 = this.moviesArray[0];
           for (const movie of this.moviesArray) {
             if (this.movi1.imdbScore < movie.imdbScore) {
               this.movi1 = movie;
             }
           }
         });
+  }
+
+  addToWhatchlist(value) {
+    const result = this.moviesService.addMovieToWhatchlist(value);
+    if (result === true) {
+      this.messageOF = 'The movie was successfully added!';
+    } else {
+      this.messageOF = 'This movie is already in Whatchlist!';
+    }
   }
 
 }

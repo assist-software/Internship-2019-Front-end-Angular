@@ -4,7 +4,7 @@ export interface Movie {
     originalSourceUrl: string;
     coverUrl: string;
     description: string;
-    imdb_id?: number;
+    imdbId?: number;
     category: [{
         name: string;
     }];

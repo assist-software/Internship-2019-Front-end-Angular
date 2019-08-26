@@ -71,4 +71,8 @@ export class AdminMoovieComponent implements OnInit {
   loadMore() {
     this.limit += 8;
   }
+
+  sendMovie(value) {
+    console.log(value);
+  }
 }
