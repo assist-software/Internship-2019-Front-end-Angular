@@ -19,7 +19,7 @@ export class HiglightMoovieComponent implements OnInit {
     originalSourceUrl: '',
     coverUrl: '',
     description: '',
-    imdbId: 1,
+    
     category: [{
       name: '',
     }],

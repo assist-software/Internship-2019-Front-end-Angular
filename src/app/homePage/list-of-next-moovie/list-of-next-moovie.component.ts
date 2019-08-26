@@ -17,78 +17,14 @@ export class ListOfNextMoovieComponent implements OnInit {
   moviesArray: Movie[] = [];
   backgroundImage: any;
   movieArraySort = [];
+  sortBy = 'Default';
   movieArrayFilter: Movie[] = [];
   categorys = [];
   myPicture = 'assets/img/anonymous_finger_goouGu.com.jpg';
-  moviesArray1 = [
-    // [ngStyle]="{'background-image': 'url(' + photo + ')'}"
-    {
-      image: 'assets/img/anonymous_finger_goouGu.com.jpg',
-      title: 'Sparta',
-      trailerUrl: 'www.google.ro',
-      source: 'www.filme-bune.ro',
-      coverUrl: 'ww.my-cover.com',
-      description: 'aceasta descriere este una foarte buna dar nu stiu despre ce e',
-      category: 'drama, triler',
-      score: 10,
-      date: 12321
-    },
-    {
-      image: 'assets/img/anonymous_finger_goouGu.com.jpg',
-      title: 'some text v1',
-      trailerUrl: 'some text v1',
-      source: 'some text v1',
-      coverUrl: 'some text v1',
-      description: 'some text v1',
-      category: 'some text v1',
-      score: 9,
-      date: 333333
-    },
-    {
-      image: 'assets/img/anonymous_finger_goouGu.com.jpg',
-      title: 'Sparta',
-      trailerUrl: 'www.google.ro',
-      source: 'www.filme-bune.ro',
-      coverUrl: 'ww.my-cover.com',
-      description: 'aceasta descriere este una foarte buna dar nu stiu despre ce e',
-      category: 'drama, triler',
-      score: 10,
-      date: 12321
-    },
-    {
-      image: 'assets/img/anonymous_finger_goouGu.com.jpg',
-      title: 'some text v1',
-      trailerUrl: 'some text v1',
-      source: 'some text v1',
-      coverUrl: 'some text v1',
-      description: 'some text v1',
-      category: 'some text v1',
-      score: 9,
-      date: 333333
-    },
-    {
-      image: 'assets/img/anonymous_finger_goouGu.com.jpg',
-      title: 'Sparta',
-      trailerUrl: 'www.google.ro',
-      source: 'www.filme-bune.ro',
-      coverUrl: 'ww.my-cover.com',
-      description: 'aceasta descriere este una foarte buna dar nu stiu despre ce e',
-      category: 'drama, triler',
-      score: 10,
-      date: 12321
-    },
-    {
-      image: 'assets/img/anonymous_finger_goouGu.com.jpg',
-      title: 'some text v1',
-      trailerUrl: 'some text v1',
-      source: 'some text v1',
-      coverUrl: 'some text v1',
-      description: 'some text v1',
-      category: 'some text v1',
-      score: 9,
-      date: 333333
-    }
-  ];
+  dateVariable = new Date();
+  month: number;
+  month1: string;
+  year: number;
 
 
   constructor(private sanitizer: DomSanitizer,
@@ -104,27 +40,58 @@ export class ListOfNextMoovieComponent implements OnInit {
     this.moviesService.getMovies()
       .subscribe(
         data => {
-          this.moviesArray = data;
+          this.movieArraySort = data;
+          this.month = this.dateVariable.getMonth()+2;
+          this.year = this.dateVariable.getFullYear();
+          
+          for (const movie of this.movieArraySort) {
+            
+            if(movie.releaseDate.substr(5,2)==this.month && movie.releaseDate.substr(0,4)==this.year)
+            {
+              this.moviesArray.push(movie);
+                
+            }
+          }
+          this.movieArraySort = this.moviesArray;
+          this.movieArrayFilter = this.moviesArray;
         })
-
-      }
-      dataChanged(value: string) {
-        if (value === 'Default') {
-          this.moviesArray = this.movieArraySort;
-        } else {
-          console.log(value);
-          this.moviesArray = this.movieArraySort.filter(movie =>
-            movie.category[0].name === value);
+    this.moviesService.getCategory()
+      .subscribe(
+        data => {
+          this.categorys = data;
+          this.categorys.push({ id: this.categorys.length + 1, name: 'Default' });
+          console.log('categor', this.categorys);
+        },
+        error => {
+          console.log('error category', error);
         }
-        console.log(this.moviesArray);
-      }
-    
-      filterMovies(value: string) {
-        this.moviesArray = this.movieArraySort.filter(movie =>
-          movie.title.toLowerCase().includes(value.toLowerCase()) ||
-          movie.category[0].name.toLowerCase().includes(value.toLowerCase()) ||
-          movie.description.toLowerCase().includes(value.toLowerCase())
-        );
-      }
-      
+      );
+      console.log(this.categorys);
+
+
+  }
+  dataChanged(value: string) {
+    if (value === 'Default') {
+      this.moviesArray = this.movieArraySort;
+      this.sortBy = null;
+    } else {
+      console.log(value);
+      this.moviesArray = this.movieArraySort.filter(movie =>
+        movie.category[0].name === value);
+        this.sortBy = value;
+    }
+    console.log(this.moviesArray);
+  }
+
+  filterMovies(value: string) {
+    this.moviesArray = this.movieArraySort.filter(movie =>
+      movie.title.toLowerCase().includes(value.toLowerCase()) ||
+      movie.category[0].name.toLowerCase().includes(value.toLowerCase()) ||
+      movie.description.toLowerCase().includes(value.toLowerCase())
+    );
+  }
+  addMovie(value) {
+    console.log(this.moviesService.addMovieToWhatchlist(value));
+  }
+
 }
