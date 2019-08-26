@@ -24,8 +24,6 @@ export class ListMoviesAdminComponent implements OnInit {
   loadMovie() {
     return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
-      console.log("Json");
-      console.log(data);
     })
   }
   newMovie(template: TemplateRef<any>) {
@@ -37,7 +35,6 @@ export class ListMoviesAdminComponent implements OnInit {
   deleteMovieModal(template: TemplateRef<any>, id) {
 
     this.movieID = id;
-    console.log("Delete", this.movieID);
     this.modalRef = this.modalService.show(template);
   }
   UpdateMovie(template: TemplateRef<any>, id) {
@@ -46,10 +43,9 @@ export class ListMoviesAdminComponent implements OnInit {
     };
     localStorage.setItem("movie", id);
     this.modalRef = this.modalService.show(template, { class: 'modal-lg', initialState });
-    console.log("id:", this.modalRef);
+
   }
   confirmDeleteMovie() {
-    console.log("test");
     this.restApi.deleteMovie(this.movieID).subscribe(data => {
       this.loadMovie()
     })

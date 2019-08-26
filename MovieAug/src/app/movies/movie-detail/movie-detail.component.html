@@ -3,8 +3,11 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <iframe class="embed-responsive-item trailerURL" [src]=" currentMovie.trailerUrl" allowfullscreen></iframe>
-        <p class="OriginalSource">See original source</p>
+        <iframe class="trailerURL" [src]="url"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a [href]="currentMovie.originalSourceUrl" target="_blank">
+          <p class=" OriginalSource">See original source</p>
+        </a>
       </div>
       <div class="col">
         <h4 class="title">{{currentMovie.title}} <span class="nota"> {{currentMovie.imdbScore}}</span></h4>

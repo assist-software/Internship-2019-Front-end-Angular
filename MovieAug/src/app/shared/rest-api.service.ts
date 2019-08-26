@@ -8,10 +8,11 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RestApiService {
-  apiURL = 'http://localhost:3000';
-  apiUserDB = 'http://192.168.151.193:8080/user';
+  apiUserDB = 'http://192.168.151.218:8090/user';
+  apiUserDBEdit = 'http://192.168.151.193:8080/api/movie';
+  apiServer = 'http://192.168.151.218:8090'
   // apiUserDBSignUP = 'http://192.168.151.193:8080/signup';
-  apiURLDB = 'http://192.168.151.193:8080/api/movie';
+  apiURLDB = 'http://192.168.151.218:8090/api/movie';
   constructor(private http: HttpClient) { }
   // Http Options
   httpOptions = {
@@ -28,34 +29,13 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
-  // getMovies(): Observable<any> {
-  //   return this.http.get<any>(this.apiURL + '/movie')
-  //     .pipe(
-  //       retry(1),
-  //       catchError(this.handleError)
-  //     )
-  // }
-  getMoviesUser(): Observable<movie> {
-    return this.http.get<movie>(this.apiURL + '/movieUser')
+  getMovie(id): Observable<any> {
+    return this.http.get<any>(this.apiURLDB + '/' + id)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
-  getMovie(id): Observable<movie> {
-    return this.http.get<movie>(this.apiURL + '/movie/' + id)
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
-  }
-  // getUser(id): Observable<user> {
-  //   return this.http.get<user>(this.apiURL + '/user/' + id)
-  //     .pipe(
-  //       retry(1),
-  //       catchError(this.handleError)
-  //     )
-  // }
   getUser(id): Observable<any> {
     return this.http.get<any>(this.apiUserDB + '/' + id)
       .pipe(
@@ -63,13 +43,6 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
-  // deleteMovie(id) {
-  //   return this.http.delete<movie>(this.apiURL + '/movie/' + id, this.httpOptions)
-  //     .pipe(
-  //       retry(1),
-  //       catchError(this.handleError)
-  //     )
-  // }
   deleteMovie(id) {
 
     return this.http.delete<any>(this.apiURLDB + '/' + id)
@@ -78,20 +51,6 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
-  deleteMovieUser(id) {
-    return this.http.delete<movie>(this.apiURL + '/movieUser/' + id, this.httpOptions)
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
-  }
-  // createMovie(movie): Observable<movie> {
-  //   return this.http.post<movie>(this.apiURL + '/movie', JSON.stringify(movie), this.httpOptions)
-  //     .pipe(
-  //       retry(1),
-  //       catchError(this.handleError)
-  //     )
-  // }
   createMovie(movie): Observable<any> {
     return this.http.post<any>(this.apiURLDB, JSON.stringify(movie), this.httpOptions)
       .pipe(
@@ -100,21 +59,14 @@ export class RestApiService {
       )
   }
   updateMovie(id, movie): Observable<movie> {
-    return this.http.put<movie>(this.apiURL + '/movie/' + id, JSON.stringify(movie), this.httpOptions)
+    return this.http.put<movie>(this.apiUserDBEdit, JSON.stringify(movie), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
-  // updateUser(id, user): Observable<user> {
-  //   return this.http.put<user>(this.apiURL + '/user/' + id, JSON.stringify(user), this.httpOptions)
-  //     .pipe(
-  //       retry(1),
-  //       catchError(this.handleError)
-  //     )
-  // }
   updateUser(id, user): Observable<any> {
-    return this.http.put<any>(this.apiUserDB + '/' + id, JSON.stringify(user), this.httpOptions)
+    return this.http.put<any>(this.apiUserDBEdit + '/' + id, JSON.stringify(user), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -122,16 +74,6 @@ export class RestApiService {
   }
   // Error handling 
   handleError(error) {
-    // let errorMessage = '';
-    // if (error.error instanceof ErrorEvent) {
-    //   // Get client-side error
-    //   errorMessage = error.error.message;
-    // } else {
-    //   // Get server-side error
-    //   errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    // }
-    // window.alert(errorMessage);
-    // return throwError(errorMessage);
     return throwError(error)
   }
 }

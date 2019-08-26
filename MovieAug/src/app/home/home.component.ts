@@ -4,6 +4,8 @@ import { RestApiService } from '../shared/rest-api.service';
 import { OrderPipe } from 'ngx-order-pipe';
 import { MoviesComponent } from '@app/movies/movies.component';
 import { movie } from '@app/shared/movie';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: "app-home",
@@ -19,11 +21,15 @@ export class HomeComponent implements OnInit {
   movie: any = [];
   movieID: number;
   nameDrop = 'Sort';
+  modalRef: BsModalRef;
+  public url;
 
   constructor(public restApi: RestApiService,
     private route: ActivatedRoute,
+    private modalService: BsModalService,
     private router: Router,
-    private orderPipe: OrderPipe, ) {
+    private orderPipe: OrderPipe,
+    private sanitizer: DomSanitizer) {
     this.items = [
       { name: '../../assets/img/left-arrow.png' },
       { name: '../../assets/img/left-arrow.png' },
@@ -44,7 +50,6 @@ export class HomeComponent implements OnInit {
   loadMovie() {
     return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
-      console.log("Din DB:", data);
       for (let movie of this.movies) {
         if (movie.imdbScore > this.MaxIMDB) {
           this.MaxIMDB = movie.imdbScore;
@@ -53,11 +58,16 @@ export class HomeComponent implements OnInit {
       for (let movie of this.movies) {
         if (movie.imdbScore == this.MaxIMDB) {
           this.movieItem = movie;
+          this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.movieItem.trailerUrl);
         }
       }
     })
   }
+  watchTriler(template: TemplateRef<any>, id) {
 
+    this.movieID = id;
+    this.modalRef = this.modalService.show(template);
+  }
   sendFilter(sort: string) {
     if (sort === 'titlu') {
       this.movies.sort(this.sortFilterTitle)

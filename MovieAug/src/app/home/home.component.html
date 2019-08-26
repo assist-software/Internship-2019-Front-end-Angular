@@ -22,13 +22,13 @@
           </li>
           <br>
           <li>
-            <button class="btn btn-primary-danger">Watch triler</button>
+            <button class="btn btn-primary-danger" (click)="watchTriler(triler, movieItem.id)">Watch triler</button>
             <button class="btn btn-primary-secondary"><i class="fas fa-plus"></i>Add to list</button>
           </li>
         </ul>
       </div>
       <div class="col">
-        <P><img src="assets/img/81B2m2WVzkL._SX342_.jpg" alt="Movie" class="rounded"></P>
+        <P><img [src]="'http://image.tmdb.org/t/p/w185' + movieItem.coverUrl" alt="Movie" class="rounded"></P>
       </div>
     </div>
     <div class="row d-flex justify-content-center ">
@@ -39,10 +39,7 @@
 <br>
 <br>
 <br>
-
 <div>
-
-
 </div>
 <br>
 <br>
@@ -70,11 +67,19 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-md-3 col-sm-4" *ngFor="let movie of movies   ">
       <app-movie-item [movie]="movie"></app-movie-item>
     </div>
   </div>
 </div>
+<ng-template #triler class="TrilerDiv">
+  <div class="text-center">
+    <div class="modal-body triler">
+
+      <iframe class="embed-responsive-item trailerURL" [src]="url" allowfullscreen></iframe>
+      <button type="button" class="btn  ModaleCancel" (click)="modalRef.hide()">Cancel</button>
+    </div>
+  </div>
+</ng-template>
 <app-footer></app-footer>

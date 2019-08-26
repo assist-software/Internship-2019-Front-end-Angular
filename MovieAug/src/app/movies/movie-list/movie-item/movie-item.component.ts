@@ -25,9 +25,9 @@ export class MovieItemComponent implements OnInit {
   deleteMovie(Id) {
     console.log("delete", Id);
     console.log("test");
-    this.restApi.deleteMovieUser(Id).subscribe(data => {
-      this.loadMovie()
-    })
+    // this.restApi.deleteMovieUser(Id).subscribe(data => {
+    //   this.loadMovie()
+    // })
     window.location.reload();
   }
   MoviShow(id) {
@@ -36,12 +36,12 @@ export class MovieItemComponent implements OnInit {
   }
   loadMovie() {
 
-    return this.restApi.getMoviesUser().subscribe((data: {}) => {
-      this.movies = data;
-      for (let movie of this.movies) {
-        this.movieItem = movie;
+    // return this.restApi.getMoviesUser().subscribe((data: {}) => {
+    //   this.movies = data;
+    //   for (let movie of this.movies) {
+    //     this.movieItem = movie;
 
-      }
-    })
+    //   }
+    // })
   }
 }

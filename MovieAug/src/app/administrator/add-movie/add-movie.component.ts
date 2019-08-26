@@ -53,9 +53,6 @@ export class AddMovieComponent implements OnInit {
       this.titleModal = "Edit movie";
       return this.restApi.getMovie(id).subscribe((data: {}) => {
         this.movies = data;
-        console.log("Json:", this.movies.title);
-        console.log("JSON END:");
-
       })
     }
   }
@@ -72,6 +69,8 @@ export class AddMovieComponent implements OnInit {
     else {
       console.log("Intra in update");
       this.loadMovie(this.idMovie);
+      const mapped = [this.addMovie.value.categories];
+      this.addMovie.value.categories = mapped;
       this.restApi.updateMovie(this.idMovie, this.addMovie.value).subscribe(data => {
       })
     }

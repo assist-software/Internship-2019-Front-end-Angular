@@ -34,22 +34,22 @@ export class WatchlistComponent implements OnInit {
   deleteMovie(Id) {
     console.log("delete", Id);
     console.log("test");
-    this.restApi.deleteMovieUser(Id).subscribe(data => {
-      this.loadMovie()
-    })
+    // this.restApi.deleteMovieUser(Id).subscribe(data => {
+    //   this.loadMovie()
+    // })
     window.location.reload();
   }
 
   loadMovie() {
 
-    return this.restApi.getMoviesUser().subscribe((data: {}) => {
-      this.movies = data;
-      this.copyMovies = this.movies;
-      for (let movie of this.movies) {
-        this.movieItem = movie;
+    // return this.restApi.getMoviesUser().subscribe((data: {}) => {
+    //   this.movies = data;
+    //   this.copyMovies = this.movies;
+    //   for (let movie of this.movies) {
+    //     this.movieItem = movie;
 
-      }
-    })
+    //   }
+    // })
   }
 
   sendFilter(sort: string) {

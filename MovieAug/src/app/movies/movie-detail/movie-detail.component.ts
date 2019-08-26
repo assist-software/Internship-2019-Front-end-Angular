@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RestApiService } from '../../shared/rest-api.service';
-
+// import { SafeResourceUrl, DomSanitizationService } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
@@ -8,27 +9,29 @@ import { RestApiService } from '../../shared/rest-api.service';
 })
 export class MovieDetailComponent implements OnInit {
   movies: any = [];
+  public url;
   currentMovie: any = [];
   currentURL = '';
-  constructor(public restApi: RestApiService, ) {
+  constructor(public restApi: RestApiService,
+    private sanitizer: DomSanitizer) {
     this.currentURL = window.location.pathname.split('/')[2];
   }
 
   ngOnInit() {
     this.loadMovie();
-    console.log("URL:", this.currentURL);
   }
   loadMovie() {
     return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
 
       for (let movie of this.movies) {
-        console.log("Film curent trailer :", data);
         if (movie.id == this.currentURL) {
           this.currentMovie = movie;
-          console.log("Film curent trailer :", this.currentMovie);
+          console.log("data:", this.currentMovie);
+          this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.currentMovie.trailerUrl);
         }
       }
     })
   }
+
 }
