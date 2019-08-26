@@ -1,6 +1,6 @@
 <!-- <h1 style="text-align: center">Add movie</h1> -->
 <div class="container">
-  <form [formGroup]="addMovie" (ngSubmit)="Submit()">
+  <form #fomr="ngForm" [formGroup]="addMovie" (ngSubmit)="Submit()">
     <div class="form-row">
       <div class="form-group col-6">
         <label for="title">Title movie<span class="star">*</span></label><br />
@@ -30,7 +30,7 @@
         <textarea class="form-control" name="description" rows="5" formControlName="description"></textarea>
       </div>
     </div>
-    <div class="form-row" >
+    <div class="form-row">
       <div class="form-group col-7" formGroupName="category">
         <label for="category">Category<span class="star">*</span></label><br />
         <select class="selectCategory" name="category" formControlName="name">
@@ -47,14 +47,15 @@
     <div class="form-row">
       <div class="form-group col-12">
         <label for="releaseDate">Release date</label><br />
-        <input name="releaseDate" />
+        <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker placement="top"
+          formControlName="releaseDate">
       </div>
     </div>
     <div class="form-row">
-      <button class="btn btn-success myBtn">
+      <button class="btn btn-success myBtn" [disabled]="!addMovie.valid">
         Add movie
       </button>
-      <button class="btn myBtnCancel">Cancel</button>
+      <button class="btn myBtnCancel" disabled>Cancel</button>
     </div>
   </form>
 </div>

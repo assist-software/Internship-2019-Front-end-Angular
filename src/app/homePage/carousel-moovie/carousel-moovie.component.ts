@@ -107,22 +107,22 @@ export class CarouselMoovieComponent {
   constructor() { }
 
 
-  addSlide() {
-    this.slides.push({
-      image: 'assets/pictures/image110.png',
-      title: 'Bunastarea',
-      trailerUrl: 'www.google.ro',
-      source: 'www.filme-bune.ro',
-      coverUrl: 'ww.my-cover.com',
-      description: 'aceasta descriere este una foarte buna dar nu stiu despre ce e',
-      category: [{
-        id: 1,
-        name: 'drama',
-      }],
-      score: 10,
-      date: '2018-08-15'
-    });
-  }
+  // addSlide() {
+  //   this.slides.push({
+  //     image: 'assets/pictures/image110.png',
+  //     title: 'Bunastarea',
+  //     trailerUrl: 'www.google.ro',
+  //     source: 'www.filme-bune.ro',
+  //     coverUrl: 'ww.my-cover.com',
+  //     description: 'aceasta descriere este una foarte buna dar nu stiu despre ce e',
+  //     category: [{
+  //       id: 1,
+  //       name: 'drama',
+  //     }],
+  //     score: 10,
+  //     date: '2018-08-15'
+  //   });
+  // }
 
 
   removeSlide() {

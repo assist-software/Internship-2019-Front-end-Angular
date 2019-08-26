@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/movie.model';
+import { MoviesServices } from '../services/movies.service';
 
 @Component({
   selector: 'app-header-bar',
@@ -10,12 +11,18 @@ export class HeaderBarComponent implements OnInit {
   numberOfMOvie = 10;
   moviesArray: Movie[] = [];
 
-  constructor() { }
+  constructor(private moviesService: MoviesServices) { }
 
   ngOnInit() {
     const retrievedObject = localStorage.getItem('movieWhatchlist');
     this.moviesArray = JSON.parse(retrievedObject);
-    this.numberOfMOvie =  this.moviesArray.length;
+    this.numberOfMOvie = this.moviesArray.length;
+    this.moviesService.currentNumber
+      .subscribe(
+        (data: number) => {
+          this.numberOfMOvie = data;
+        }
+      );
   }
 
 }
