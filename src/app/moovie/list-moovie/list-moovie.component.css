@@ -36,9 +36,30 @@ img {
     color: #FFFFFF;
 }
 
+.positionBtn {
+    margin-top: 10px;
+}
+
+.myBtn {
+    color: #F5044C;
+    border-color: #F5044C;
+}
+
+.dropdown-menu {
+    height: 158px;
+    background-color: #F5044C;
+    /* overflow-x: scroll;
+    scrollbar-color: red yellow; */
+}
+
+.dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #C7044C;
+}
+
 .topMargin {
     margin-top: 100px;
-    margin-bottom: 50px;
 }
 
 .positionSearcBtn {
@@ -133,5 +154,16 @@ img {
     -webkit-box-align: center;
     align-items: center;
     color: #ffffff;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
+}
+
+.myBtnMore {
+    width: 176px;
+    height: 48px;
+    background: #F5044C;
+    border-radius: 8px;
+    margin-bottom: 53px;
+    color: white;
+    margin: auto;
+    text-align: center;
 }

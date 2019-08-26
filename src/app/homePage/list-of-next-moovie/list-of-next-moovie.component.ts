@@ -106,25 +106,38 @@ export class ListOfNextMoovieComponent implements OnInit {
         data => {
           this.moviesArray = data;
         })
-
-      }
-      dataChanged(value: string) {
-        if (value === 'Default') {
-          this.moviesArray = this.movieArraySort;
-        } else {
-          console.log(value);
-          this.moviesArray = this.movieArraySort.filter(movie =>
-            movie.category[0].name === value);
+    this.moviesService.getCategory()
+      .subscribe(
+        data => {
+          this.categorys = data;
+          this.categorys.push({ id: this.categorys.length + 1, name: 'Default' });
+          console.log('categor', this.categorys);
+        },
+        error => {
+          console.log('error category', error);
         }
-        console.log(this.moviesArray);
-      }
-    
-      filterMovies(value: string) {
-        this.moviesArray = this.movieArraySort.filter(movie =>
-          movie.title.toLowerCase().includes(value.toLowerCase()) ||
-          movie.category[0].name.toLowerCase().includes(value.toLowerCase()) ||
-          movie.description.toLowerCase().includes(value.toLowerCase())
-        );
-      }
-      
+      );
+      console.log(this.categorys);
+
+
+  }
+  dataChanged(value: string) {
+    if (value === 'Default') {
+      this.moviesArray = this.movieArraySort;
+    } else {
+      console.log(value);
+      this.moviesArray = this.movieArraySort.filter(movie =>
+        movie.category[0].name === value);
+    }
+    console.log(this.moviesArray);
+  }
+
+  filterMovies(value: string) {
+    this.moviesArray = this.movieArraySort.filter(movie =>
+      movie.title.toLowerCase().includes(value.toLowerCase()) ||
+      movie.category[0].name.toLowerCase().includes(value.toLowerCase()) ||
+      movie.description.toLowerCase().includes(value.toLowerCase())
+    );
+  }
+
 }

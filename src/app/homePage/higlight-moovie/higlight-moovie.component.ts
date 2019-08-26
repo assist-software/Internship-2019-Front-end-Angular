@@ -14,35 +14,20 @@ export class HiglightMoovieComponent implements OnInit {
   backgroundImage: any[] = [];
   moviesArray: Movie[] = [];
   public movi1: Movie = {
-    title: "string",
-    trailerUrl: "string",
-    originalSourceUrl: "string",
-    coverUrl: "string",
-    description: "string",
-    imdbId: 1,
+    title: '',
+    trailerUrl: '',
+    originalSourceUrl: '',
+    coverUrl: '',
+    description: '',
+    
     category: [{
-      id: 1,
-      name: "string",
+      
+      name: '',
     }],
     imdbScore: 0,
-    releaseDate:null ,
-    id: 1,
-    images: null
-  };
-
-  moviehi = {
-    image: 'assets/pictures/image 4.2.png',
-    title: 'Moonlight',
-    trailerUrl: 'www.google.ro',
-    source: 'www.filme-bune.ro',
-    coverUrl: 'ww.my-cover.com',
-    description: 'A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.',
-    category: [{
-      id: 1,
-      name: 'western',
-    }],
-    score: 10,
-    date: 12321
+    releaseDate: null,
+    
+    images: null,
   };
 
   constructor(
@@ -57,7 +42,7 @@ export class HiglightMoovieComponent implements OnInit {
         data => {
 
           this.moviesArray = data;
-         // this.movi1 = this.moviesArray[0];
+          // this.movi1 = this.moviesArray[0];
           for (const movie of this.moviesArray) {
             if (this.movi1.imdbScore < movie.imdbScore) {
               this.movi1 = movie;

@@ -12,6 +12,7 @@ export class AdminMoovieComponent implements OnInit {
   modalRef: BsModalRef;
   idDeleted: number;
   message;
+  limit = 16;
 
   listMovies: Movie[] = [];
   constructor(
@@ -67,4 +68,7 @@ export class AdminMoovieComponent implements OnInit {
     console.log('id-ul la setare', id);
   }
 
+  loadMore() {
+    this.limit += 8;
+  }
 }

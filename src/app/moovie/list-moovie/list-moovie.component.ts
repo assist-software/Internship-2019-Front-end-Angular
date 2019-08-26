@@ -15,6 +15,8 @@ export class ListMoovieComponent implements OnInit {
   numberOfMOvie: number;
   movieArraySort: Movie[] = [];
   moviesArray: Movie[] = [];
+  sortBy: string;
+  limit = 16;
 
 
   message: any;
@@ -28,19 +30,7 @@ export class ListMoovieComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.moviesService.getMovies()
-    //   .subscribe(
-    //     data => {
-    //       this.moviesArray = data;
-    //       this.movieArraySort = this.moviesArray;
-    //       this.numberOfMOvie = this.movieArraySort.length;
-    //       console.log('numarul de filme', this.numberOfMOvie);
-    //       localStorage.setItem('movieWhatchlist2', JSON.stringify(this.movieArraySort));
-    //       console.log(localStorage.getItem('movieWhatchlist2'));
-    //     },
-    //     error => {
-    //       console.log('eror', error);
-    //     });
+
     const retrievedObject = localStorage.getItem('movieWhatchlist');
     this.moviesArray = JSON.parse(retrievedObject);
     this.movieArraySort = this.moviesArray;
@@ -48,7 +38,7 @@ export class ListMoovieComponent implements OnInit {
   }
 
   dataChanged(value) {
-    console.log(value);
+    this.sortBy = null;
     if (value === 'imdbScore' || value === 'releaseDate') {
       this.moviesArray.sort((a, b) => {
         if (a[value] > b[value]) { return -1; }
@@ -65,7 +55,6 @@ export class ListMoovieComponent implements OnInit {
   }
 
   filterMovies(value) {
-    console.log(value);
     this.moviesArray = this.movieArraySort.filter(movie =>
       movie.title.toLowerCase().includes(value.toLowerCase()) ||
       movie.category[0].name.toLowerCase().includes(value.toLowerCase()) ||
@@ -74,7 +63,23 @@ export class ListMoovieComponent implements OnInit {
   }
 
   removeFunc(value) {
-    console.log(value);
-    console.log(this.moviesArray);
+
+    let myVal = 0;
+    this.moviesArray.map((id, index) => {
+      if (id.id === value) {
+        myVal = index;
+        return index;
+      }
+    });
+
+    this.moviesArray.splice(myVal, 1);
+    localStorage.setItem('movieWhatchlist', JSON.stringify(this.moviesArray));
+
+    this.moviesService.numberMovieWhatchlist(this.moviesArray.length);
   }
+
+  loadMore() {
+    this.limit += 8;
+  }
+
 }

@@ -3,13 +3,16 @@ import { environment } from 'src/environments/environment';
 import { Observable, Subject } from 'rxjs';
 import { Movie } from '../models/movie.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { hostViewClassName } from '@angular/compiler';
 
 @Injectable()
 
 export class MoviesServices {
     private messageSource = new Subject<Movie>();
     currentMessage = this.messageSource.asObservable();
+
+    private numberMovie = new Subject<number>();
+    currentNumber = this.numberMovie.asObservable();
+
 
     constructor(private http: HttpClient) { }
 
@@ -50,4 +53,26 @@ export class MoviesServices {
         this.messageSource.next(message);
     }
 
+    numberMovieWhatchlist(value: number) {
+        this.numberMovie.next(value);
+    }
+
+    addMovieToWhatchlist(value) {
+        const retrieveObject = localStorage.getItem('movieWhatchlist');
+        const arrayMovie = JSON.parse(retrieveObject);
+
+        if (
+            arrayMovie.some(
+                movie => {
+                    return movie.id === value.id && movie.name === value.name;
+                })
+        ) {
+            return false;
+        } else {
+            arrayMovie.push(value);
+            localStorage.setItem('movieWhatchlist', JSON.stringify(arrayMovie));
+            this.numberMovieWhatchlist(arrayMovie.length);
+            return true;
+        }
+    }
 }
