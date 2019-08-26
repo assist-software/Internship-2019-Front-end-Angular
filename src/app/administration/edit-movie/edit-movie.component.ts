@@ -21,27 +21,14 @@ export class EditMovieComponent implements OnInit {
   name;
   imdbScore;
   releaseDate;
+  id;
+  imdbId;
 
 
   idReceived: string;
   addMovie: FormGroup;
   message: string;
-  movie: any;
-  movie1 = {
-    title: 'Spider man',
-    trailerUrl: 'https://www.youtube.com/watch?v=O7zvehDxttM',
-    originalSourceUrl: 'https://www.youtube.com/watch?v=O7zvehDxttM',
-    coverUrl: 'coveruutl',
-    imdbId: '223',
-    imdbScore: 8.7,
-    description: 'Spider man spider man',
-    releaseDate: Date.now,
-    category: [
-      {
-        name: 'Action'
-      }
-    ]
-  };
+  movie: Movie;
 
   constructor(
     private movieService: MoviesServices,
@@ -49,53 +36,64 @@ export class EditMovieComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.idReceived = this.route.snapshot.paramMap.get('id');
-    // this.movie = this.movieService.getMovie(this.idReceived);
+    this.movieService.currentMovie
+      .subscribe(
+        data => {
+          console.log(data);
+          this.movie = data;
+          this.title = this.movie.title;
+          this.trailerUrl = this.movie.trailerUrl;
+          this.originalSourceUrl = this.movie.originalSourceUrl;
+          this.coverUrl = this.movie.coverUrl;
+          this.description = this.movie.description;
+          this.name = 'Action';
+          this.imdbId = this.movie.imdbId;
+          console.log(this.imdbId, 'imdbID');
+          this.imdbScore = this.movie.imdbScore;
+          this.releaseDate = this.movie.releaseDate;
+          this.id = this.movie.id;
+        }
+      );
 
-    // completezi datele
-    this.movie = this.movie1;
-
-    console.log(this.movie.title);
     this.addMovie = new FormGroup({
       title: new FormControl('', Validators.required),
       trailerUrl: new FormControl('', Validators.required),
       originalSourceUrl: new FormControl('', Validators.required),
       coverUrl: new FormControl(''),
       description: new FormControl(''),
-      category: new FormGroup({
-        name: new FormControl(''),
-      }),
+      // category: new FormGroup({
+      //   name: new FormControl(''),
+      // }),
       imdbScore: new FormControl(''),
       releaseDate: new FormControl(''),
-      imdb_id: new FormControl('')
+      imdbId: new FormControl(''),
+      id: new FormControl('')
     });
 
-    this.title = this.movie.title;
-    this.trailerUrl = this.movie.trailerUrl;
-    this.originalSourceUrl = this.movie.originalSourceUrl;
-    this.coverUrl = this.movie.coverUrl;
-    this.description = this.movie.description;
-    // this.name = this.movie.category[0].name;
-    this.name = 'Action';
-    this.imdbScore = this.movie.imdbScore;
-    this.releaseDate = this.movie.releaseDate;
+
   }
 
   Submit() {
-    console.log(this.addMovie);
+    // console.log(this.addMovie);
     // this.addMovie.value.releaseDate = String(this.addMovie.value.releaseDate);
-
-    this.addMovie.value.imdb_id = '123';
-    this.addMovie.value.imdbScore = +this.addMovie.value.imdbScore;
-
+    this.addMovie.value.title = this.title;
+    this.addMovie.value.trailerUrl = this.trailerUrl;
+    this.addMovie.value.originalSourceUrl = this.originalSourceUrl;
+    this.addMovie.value.imdb_id = this.imdbId;
+    this.addMovie.value.id = this.id;
+    this.addMovie.value.imdbScore = this.imdbScore;
     const mapped = [this.addMovie.value.category];
-    this.addMovie.value.category = mapped;
+    // this.addMovie.value.category = mapped;
+    this.addMovie.value.imdbScore = this.imdbScore;
+    this.addMovie.value.releaseDate = this.releaseDate;
 
-    console.log('afisam mapped', mapped);
-
-    console.log(this.addMovie.value);
+    // console.log(this.addMovie.value);
+    console.log('intra in butt');
+    this.movieService.editMovie(this.addMovie.value).subscribe(
+      data => { console.log(data); },
+      error => { console.log(error); }
+    )
 
     // this.movieService.changeMessage(this.addMovie.value);
-    this.addMovie.reset();
   }
 }

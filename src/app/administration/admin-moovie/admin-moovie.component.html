@@ -1,12 +1,12 @@
 <!-- <app-admin-nav-bar></app-admin-nav-bar> -->
 <div style="background-color: white;">
-  <div class="container firstContainer">
+  <div class="container twoContainer">
     <div class="row">
-      <div class="col-md-6">
-        <input class="form-control mr-sm-2 searchBtn" type="text" placeholder="Search for a movie" />
+      <div class="col-md-3 col-sm-6">
+        <input class="form-control mr-sm-2 searchBtn" type="text" placeholder="Search for a movie" (input)="filterMovies($event.target.value)"/>
         <span class="fa fa-search positionSearcBtn"></span>
       </div>
-      <div class="col-md-6 btnRight">
+      <div class="col-md-9 btnRight">
         <button class="btn" (click)="lgModal.show()">Add new</button>
       </div>
     </div>
