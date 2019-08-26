@@ -11,7 +11,9 @@ export class AddMoovieComponent implements OnInit {
   addMovie: FormGroup;
   message: string;
   categorys: any[] = [];
-
+  configurare = {
+    dateInputFormat: 'YYYY-MM-DD'
+  };
   constructor(private movieService: MoviesServices) { }
 
   ngOnInit() {

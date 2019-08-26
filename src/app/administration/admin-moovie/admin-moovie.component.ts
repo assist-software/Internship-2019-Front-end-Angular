@@ -15,6 +15,7 @@ export class AdminMoovieComponent implements OnInit {
   limit = 16;
 
   listMovies: Movie[] = [];
+  Movies: Movie[] = [];
   constructor(
     private modalService: BsModalService,
     private moviesService: MoviesServices
@@ -26,6 +27,7 @@ export class AdminMoovieComponent implements OnInit {
         data => {
           console.log('data', data);
           this.listMovies = data;
+          this.Movies = data;
           console.log('list movie', this.listMovies);
         },
         error => {
@@ -74,5 +76,14 @@ export class AdminMoovieComponent implements OnInit {
 
   sendMovie(value) {
     console.log(value);
+    this.moviesService.movieSendToEdit(value);
+  }
+
+  filterMovies(value: string) {
+    this.listMovies = this.Movies.filter(movie =>
+      movie.title.toLowerCase().includes(value.toLowerCase()) ||
+      movie.category[0].name.toLowerCase().includes(value.toLowerCase()) ||
+      movie.description.toLowerCase().includes(value.toLowerCase())
+    );
   }
 }

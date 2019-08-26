@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Movie } from '../../models/movie.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MoviesServices } from '../../services/movies.service';
-
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-higlight-moovie',
@@ -19,7 +19,7 @@ export class HiglightMoovieComponent implements OnInit {
     originalSourceUrl: '',
     coverUrl: '',
     description: '',
-    imdbId: 1,
+    
     category: [{
       name: '',
     }],
@@ -32,6 +32,7 @@ export class HiglightMoovieComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     private moviesService: MoviesServices,
+    @Inject(DOCUMENT) private document: Document,
   ) { }
 
   ngOnInit() {
@@ -58,4 +59,9 @@ export class HiglightMoovieComponent implements OnInit {
     }
   }
 
+  goTo(value) {
+    // this.document.location.href = value;
+    console.log('http://' + value);
+    window.open('http://' + value, '_blank');
+  }
 }
