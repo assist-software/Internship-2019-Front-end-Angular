@@ -30,7 +30,11 @@ import { OrderModule } from 'ngx-order-pipe';
 import { FilterPipe } from './filter.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+<<<<<<< HEAD
 import { CategoryComponent } from './category/category.component';
+=======
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+>>>>>>> 72e72b39c38e804b0686b7b6f420ace215daa3db
 
 @NgModule({
   declarations: [
@@ -65,7 +69,8 @@ import { CategoryComponent } from './category/category.component';
     HttpClientModule,
     OrderModule,
     NgbModule,
-    FilterPipeModule
+    FilterPipeModule, SlickCarouselModule
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
@@ -73,4 +78,4 @@ import { CategoryComponent } from './category/category.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
