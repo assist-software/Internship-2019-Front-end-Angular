@@ -60,12 +60,11 @@
 .positionSearcBtn {
   position: absolute;
   top: 34%;
-  right: -9px;
-  ;
+  right: 7px;
 }
 
 .searchBtn {
-  position: relative;
+  width: 100%
 }
 
 .btnRight {

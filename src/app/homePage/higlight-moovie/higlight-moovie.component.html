@@ -5,13 +5,13 @@
                 <h1 class="title-movie">{{movi1.title}}</h1>
                 <p class="description">{{movi1.description}}</p>
                 <div class="buttonContainer">
-                    <a [href]="movi1.trailerUrl" target="_blank"><button class="button1">Watch trailer</button></a>
+                    <button class="button1" (click)="goTo(movi1.trailerUrl)">Watch trailer</button>
                     <button class="button2" (click)="addToWhatchlist(movi1)" [popover]="messageOF"
                         [outsideClick]="true">+ Add to list</button>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="image-movie"> <img class="img-fluid" [src]="movi1.coverUrl" alt=""> </div>
+                <div class="image-movie" > <img class="img-fluid" [src]="movi1.coverUrl" alt=""> </div>
             </div>
         </div>
     </div>
