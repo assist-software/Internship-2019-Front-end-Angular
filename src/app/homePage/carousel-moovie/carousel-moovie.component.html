@@ -17,15 +17,15 @@
 </div>
 <div class="myContainer">
     <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
-        <div ngxSlickItem *ngFor="let slide of slides" class="slide imageMovie">
+        <div ngxSlickItem *ngFor="let slide of moviesArray" class="slide imageMovie">
             
             <div class="imageslide">
                 <button class="watchlistbutton">Add to watchlist</button>
-                <button class="notemovie">{{slide.score}}</button>
-                <img [src]="slide.image" alt="">
+                <button class="notemovie">{{slide.imdbScore}}</button>
+                <img [src]="slide.coverUrl" alt="">
             </div>
             <h1 class="title-movie">{{slide.title}}</h1>
-            <p class="details-movie">Realese date: {{slide.date}}</p>
+            <p class="details-movie">Realese date: {{slide.releaseDate}}</p>
             <p class="details-movie">{{slide.category[0].name}}</p>
         </div>
     </ngx-slick>

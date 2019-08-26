@@ -54,12 +54,13 @@ input {
 .titleMovie {
     font-family: Campton;
     font-size: 18px;
-    line-height: 80px;
-    /* or 444% */
+    line-height: 25px;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-align: center;
     align-items: center;
-    color: #FFFFFF;
-    margin: 0;
+    color: #ffffff;
+    margin-bottom: 0px; 
 }
 
 .categoryMovie {
@@ -87,28 +88,30 @@ input {
     width: 32px;
     height: 32px;
     right: 24px;
-    bottom: 24px;
+    margin-top: 113%;
+    /* bottom: 24px; */
     background: #FF9A03;
     border-radius: 5px;
     font-family: Campton;
     font-size: 10px;
-    /* line-height: 80px; */
     text-align: center;
-    color: #FFFFFF
+    color: #FFFFFF;
 }
 
 .btnRemove {
     position: absolute;
-    width: 106px;
+    width: 50%;
+    max-width: 200px;
     height: 32px;
-    right: 63px;
-    bottom: 24px;
+    margin-top: 113%;
+    margin-left: -68%;
     background: #F5044C;
     border-radius: 4.81818px;
     font-family: Campton;
     font-size: 10px;
     line-height: 14px;
     text-align: center;
+    color: #FFFFFF;
     color: #FFFFFF;
 }
 
@@ -117,4 +120,13 @@ input {
     .container {
         max-width: 1194px;
     }
+}
+.position {
+    position: relative;
+}
+img {
+    height: auto;
+    margin: auto;
+    width: 100%;
+    cursor: pointer;
 }

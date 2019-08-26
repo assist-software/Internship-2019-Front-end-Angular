@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BsDatepickerConfig } from 'ngx-bootstrap';
+import { MoviesServices } from 'src/app/services/movies.service';
+import { Movie } from 'src/app/models/movie.model';
+
 
 
 @Component({
@@ -11,10 +14,13 @@ import { BsDatepickerConfig } from 'ngx-bootstrap';
 export class ListOfNextMoovieComponent implements OnInit {
 
   bsConfig: Partial<BsDatepickerConfig>;
-
+  moviesArray: Movie[] = [];
   backgroundImage: any;
+  movieArraySort = [];
+  movieArrayFilter: Movie[] = [];
+  categorys = [];
   myPicture = 'assets/img/anonymous_finger_goouGu.com.jpg';
-  moviesArray = [
+  moviesArray1 = [
     // [ngStyle]="{'background-image': 'url(' + photo + ')'}"
     {
       image: 'assets/img/anonymous_finger_goouGu.com.jpg',
@@ -83,21 +89,42 @@ export class ListOfNextMoovieComponent implements OnInit {
       date: 333333
     }
   ];
-  
-  moviefilter() {
-    this.moviesArray = this.moviesArray.filter(
-      book => book.category === "some text v1");
-  }
-  
-  constructor(private sanitizer: DomSanitizer) {
+
+
+  constructor(private sanitizer: DomSanitizer,
+    private moviesService: MoviesServices) {
     // this.backgoundImage = this.sanitizer.bypassSecurityTrustStyle("'background-image': 'url(" + this.myPicture + ")'");
 
-    this.backgroundImage = this.sanitizer.bypassSecurityTrustStyle(`url(${this.myPicture})`);
-    console.log(this.backgroundImage);
+
+
   }
 
   ngOnInit() {
     this.bsConfig = Object.assign({}, { containerClass: 'theme-red' });
-  }
+    this.moviesService.getMovies()
+      .subscribe(
+        data => {
+          this.moviesArray = data;
+        })
 
+      }
+      dataChanged(value: string) {
+        if (value === 'Default') {
+          this.moviesArray = this.movieArraySort;
+        } else {
+          console.log(value);
+          this.moviesArray = this.movieArraySort.filter(movie =>
+            movie.category[0].name === value);
+        }
+        console.log(this.moviesArray);
+      }
+    
+      filterMovies(value: string) {
+        this.moviesArray = this.movieArraySort.filter(movie =>
+          movie.title.toLowerCase().includes(value.toLowerCase()) ||
+          movie.category[0].name.toLowerCase().includes(value.toLowerCase()) ||
+          movie.description.toLowerCase().includes(value.toLowerCase())
+        );
+      }
+      
 }

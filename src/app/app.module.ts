@@ -9,8 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { SlickModule } from 'ngx-slick';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-// import { SlickCarouselModule } from 'ngx-slick-carousel';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './loginRegister/register/register.component';
@@ -48,6 +46,7 @@ import { CategoryComponent } from './category/category.component';
 
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { EditMovieComponent } from './administration/edit-movie/edit-movie.component';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 
 
 @NgModule({
@@ -94,7 +93,8 @@ import { EditMovieComponent } from './administration/edit-movie/edit-movie.compo
         whitelistedDomains: ['example.com'],
         blacklistedRoutes: ['example.com/examplebadroute/']
       }
-    })
+    }),
+    PopoverModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

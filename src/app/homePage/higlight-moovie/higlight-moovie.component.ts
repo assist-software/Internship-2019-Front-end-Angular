@@ -10,7 +10,7 @@ import { MoviesServices } from '../../services/movies.service';
   styleUrls: ['./higlight-moovie.component.css']
 })
 export class HiglightMoovieComponent implements OnInit {
-
+  messageOF: string;
   backgroundImage: any[] = [];
   moviesArray: Movie[] = [];
   public movi1: Movie = {
@@ -21,34 +21,17 @@ export class HiglightMoovieComponent implements OnInit {
     description: '',
     imdbId: 1,
     category: [{
-      id: 1,
       name: '',
     }],
     imdbScore: 0,
     releaseDate: null,
     id: 1,
-    images: null,
+    images: null
   };
-
-  // moviehi = {
-  //   image: 'assets/pictures/image 4.2.png',
-  //   title: 'Moonlight',
-  //   trailerUrl: 'www.google.ro',
-  //   source: 'www.filme-bune.ro',
-  //   coverUrl: 'ww.my-cover.com',
-    // tslint:disable-next-line:max-line-length
-  //   description: 'A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.',
-  //   category: [{
-  //     id: 1,
-  //     name: 'western',
-  //   }],
-  //   score: 10,
-  //   date: 12321
-  // };
 
   constructor(
     private sanitizer: DomSanitizer,
-    private moviesService: MoviesServices
+    private moviesService: MoviesServices,
   ) { }
 
   ngOnInit() {
@@ -58,13 +41,21 @@ export class HiglightMoovieComponent implements OnInit {
         data => {
 
           this.moviesArray = data;
-          // this.movi1 = this.moviesArray[0];
           for (const movie of this.moviesArray) {
             if (this.movi1.imdbScore < movie.imdbScore) {
               this.movi1 = movie;
             }
           }
         });
+  }
+
+  addToWhatchlist(value) {
+    const result = this.moviesService.addMovieToWhatchlist(value);
+    if (result === true) {
+      this.messageOF = 'The movie was successfully added!';
+    } else {
+      this.messageOF = 'This movie is already in Whatchlist!';
+    }
   }
 
 }

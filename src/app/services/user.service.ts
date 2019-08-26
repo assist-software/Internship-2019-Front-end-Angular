@@ -21,16 +21,15 @@ export class UserService {
 
     userDetails() {
         const helper = new JwtHelperService();
+
         // preluare din local storage
         const localToken = localStorage.getItem('token');
         const token = JSON.parse(localToken);
-        console.log(token);
 
         // decodare token
         const decodedToken = helper.decodeToken(token);
-        console.log('decodare token', decodedToken);
-        // return this.http.post(`${environment.movieUrl}/api/user`, { email });
-        return decodedToken;
+
+        return decodedToken.sub;
     }
 
 }
