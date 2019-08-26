@@ -99,8 +99,8 @@ export class HomeComponent implements OnInit {
     else return -1;
   }
   sortFilterScore(c1: movie, c2: movie) {
-    if (c1.imdbId > c2.imdbId) return -1
-    else if (c1.imdbId === c2.imdbId) return 0
+    if (c1.imdbScore > c2.imdbScore) return -1
+    else if (c1.imdbScore === c2.imdbScore) return 0
     else return 1;
   }
 }

@@ -10,6 +10,7 @@ export interface movie {
         name: string;
     }
     imdbId: number,
+    imdbScore: number,
     releaseDate: string
 
 
