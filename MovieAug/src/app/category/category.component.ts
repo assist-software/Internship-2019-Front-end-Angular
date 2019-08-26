@@ -58,12 +58,7 @@ export class CategoryComponent implements OnInit {
       this.nameDrop = 'IMBD Score'
     } else {
       this.nameDrop = sort;
-      let filtered = this.movies.filter(movie => {
-        if (movie.Category === sort) {
-          return movie
-        }
-      });
-      console.log(filtered)
+
     }
   }
   sortFilterTitle(c1: movie, c2: movie) {
@@ -95,7 +90,7 @@ export class CategoryComponent implements OnInit {
       return this.movies;
     }
     else
-      return this.movies.filter(movie => movie.Category === this.nameDrop);
+      return this.movies.filter(movie => movie.categories[0].name === this.nameDrop);
 
   }
 }

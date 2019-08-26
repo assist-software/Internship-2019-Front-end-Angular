@@ -47,7 +47,6 @@ export class HomeComponent implements OnInit {
       console.log("Din DB:", data);
       for (let movie of this.movies) {
         if (movie.imdbScore > this.MaxIMDB) {
-          console.log(this.MaxIMDB);
           this.MaxIMDB = movie.imdbScore;
         }
       }

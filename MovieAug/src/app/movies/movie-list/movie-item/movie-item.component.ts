@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RestApiService } from '../../../shared/rest-api.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { movie } from '@app/shared/movie';
 @Component({
   selector: 'app-movie-item',
   templateUrl: './movie-item.component.html',
@@ -8,7 +9,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class MovieItemComponent implements OnInit {
   @Input() movies: any = [];
-  @Input() movie: any;
+  @Input() movie: movie;
   @Input() index: number = 0;
   movieID: number;
   movieItem: any = [];
@@ -41,8 +42,6 @@ export class MovieItemComponent implements OnInit {
         this.movieItem = movie;
 
       }
-      console.log("Json");
-      console.log(data);
     })
   }
 }

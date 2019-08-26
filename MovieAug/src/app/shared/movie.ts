@@ -1,11 +1,15 @@
 export interface movie {
     id: number,
     title: string,
-    trailer: string,
-    source: string,
-    coverURL: string,
+    trailerUrl: string,
+    originalSourceUrl: string,
+    coverUrl: string,
     description: string,
-    Category: string,
+    categories:
+    {
+        name: string;
+    }
+    imdbId: number,
     imdbScore: number,
     releaseDate: string
 

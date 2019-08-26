@@ -11,7 +11,7 @@ export class RestApiService {
   apiURL = 'http://localhost:3000';
   apiUserDB = 'http://192.168.151.193:8080/user';
   // apiUserDBSignUP = 'http://192.168.151.193:8080/signup';
-  apiURLDB = 'http://192.168.151.193:8080/api/movie';
+  apiURLDB = 'http://192.168.151.218:8090/api/movie';
   constructor(private http: HttpClient) { }
   // Http Options
   httpOptions = {
@@ -122,7 +122,6 @@ export class RestApiService {
   }
   // Error handling 
   handleError(error) {
-
     return throwError(error)
   }
 }

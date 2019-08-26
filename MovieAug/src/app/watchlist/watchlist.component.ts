@@ -41,14 +41,11 @@ export class WatchlistComponent implements OnInit {
   }
 
   loadMovie() {
-
-    return this.restApi.getMoviesUser().subscribe((data: {}) => {
+    return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
-      this.copyMovies = this.movies;
-      for (let movie of this.movies) {
-        this.movieItem = movie;
+      console.log("Din DB:", data);
 
-      }
+
     })
   }
 
@@ -68,12 +65,8 @@ export class WatchlistComponent implements OnInit {
         if (movie.Category === sort) {
           return movie
         }
-        ``
       });
-
       console.log(filtered)
-
-
     }
   }
 
