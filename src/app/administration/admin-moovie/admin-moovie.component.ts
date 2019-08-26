@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { MoviesServices } from 'src/app/services/movies.service';
+import { Movie } from 'src/app/models/movie.model';
 
 @Component({
   selector: 'app-admin-moovie',
@@ -9,59 +10,65 @@ import { MoviesServices } from 'src/app/services/movies.service';
 })
 export class AdminMoovieComponent implements OnInit {
   modalRef: BsModalRef;
-
+  idDeleted: number;
   message;
+  limit = 16;
 
-  listMovies = [
-    {
-      image: 'imagine',
-      title: 'some text',
-      trailerUrl: 'some text',
-      source: 'some text',
-      coverUrl: 'some text',
-      description: 'some text',
-      category: 'some text',
-      score: 10,
-      date: 12321,
-    },
-    {
-      image: 'imagine2',
-      title: 'some text v1',
-      trailerUrl: 'some text v1',
-      source: 'some text v1',
-      coverUrl: 'some text v1',
-      description: 'some text v1',
-      category: 'some text v1',
-      score: 9,
-      date: 333333,
-    }
-  ];
+  listMovies: Movie[] = [];
   constructor(
     private modalService: BsModalService,
     private moviesService: MoviesServices
   ) { }
 
   ngOnInit() {
+    this.moviesService.getMovies()
+      .subscribe(
+        data => {
+          console.log('data', data);
+          this.listMovies = data;
+          console.log('list movie', this.listMovies);
+        },
+        error => {
+          console.log('error', error);
+        }
+      );
+
     this.moviesService.currentMessage.subscribe(message => {
       this.message = message;
       this.listMovies.push(this.message);
       console.log(this.message);
     });
+
   }
 
-  confirm(): void {
-    // this.message = 'Confirmed!';
-    console.log('A spus da');
+
+  confirm() {
+    const test = typeof (this.idDeleted);
+    console.log('A spus da', test);
+    this.moviesService.deleteMovie(this.idDeleted).subscribe(
+      data => {
+        console.log('id este');
+      },
+      error => {
+        console.log('error', error);
+      }
+    );
     this.modalRef.hide();
   }
 
   decline(): void {
-    // this.message = 'Declined!';
     console.log('A spus nu');
     this.modalRef.hide();
   }
-  openModal(template: TemplateRef<any>) {
+
+  openModal(template: TemplateRef<any>, id: number) {
     this.modalRef = this.modalService.show(template);
+    // this.idDeleted = id;
+    this.idDeleted = id;
+    console.log('id-ul la setare', id);
   }
 
+  loadMore() {
+    this.limit += 8;
+  }
 }

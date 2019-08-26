@@ -17,7 +17,6 @@ export class AuthGuard implements CanActivate {
         const token = localStorage.getItem('token');
         // decodez token
         const decodedToken = this.helper.decodeToken(token);
-        // console.log(decodedToken.rol);
         if (token) {
             if (this.auth.isAuthenticated()) {
                 if (decodedToken.rol[0] === 'Admin') {
@@ -30,6 +29,8 @@ export class AuthGuard implements CanActivate {
                 this.router.navigate(['/']);
                 return false;
             }
+        } else {
+            this.router.navigate(['/']);
         }
     }
 }

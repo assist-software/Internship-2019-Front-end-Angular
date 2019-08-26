@@ -1,24 +1,21 @@
 <!-- <h1 style="text-align: center">Add movie</h1> -->
 <div class="container">
-  <form [formGroup]="addMovie" (ngSubmit)="addMovieFunction()">
+  <form #fomr="ngForm" [formGroup]="addMovie" (ngSubmit)="Submit()">
     <div class="form-row">
       <div class="form-group col-6">
-        <label for="title">Title movie<span class="star">*</span></label
-        ><br />
+        <label for="title">Title movie<span class="star">*</span></label><br />
         <input name="title" formControlName="title" />
       </div>
 
       <div class="form-group col-6">
-        <label for="trailerUrl">Trailer URL<span class="star">*</span></label
-        ><br />
+        <label for="trailerUrl">Trailer URL<span class="star">*</span></label><br />
         <input name="trailerUrl" formControlName="trailerUrl" />
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-12">
-        <label for="source">Original source<span class="star">*</span></label
-        ><br />
-        <input name="source" formControlName="source" />
+        <label for="originalSourceUrl">Original source<span class="star">*</span></label><br />
+        <input name="originalSourceUrl" formControlName="originalSourceUrl" />
       </div>
     </div>
     <div class="form-row">
@@ -30,44 +27,35 @@
     <div class="form-row">
       <div class="form-group col-12 myTag">
         <label for="description">Description</label>
-        <textarea
-          class="form-control"
-          name="description"
-          rows="5"
-          formControlName="description"
-        ></textarea>
+        <textarea class="form-control" name="description" rows="5" formControlName="description"></textarea>
       </div>
     </div>
     <div class="form-row">
-      <div class="form-group col-7">
-        <label for="category">Category<span class="star">*</span></label
-        ><br />
-        <select
-          class="selectCategory"
-          name="category"
-          formControlName="category"
-        >
+      <div class="form-group col-7" formGroupName="category">
+        <label for="category">Category<span class="star">*</span></label><br />
+        <select class="selectCategory" name="category" formControlName="name">
           <option value="action">Action</option>
           <option value="drama">Drama</option>
           <option value="comedy">Comedy</option>
         </select>
       </div>
       <div class="form-group col-5">
-        <label for="score">IMDB Score</label><br />
-        <input name="score" formControlName="score" />
+        <label for="imdbScore">IMDB Score</label><br />
+        <input name="imdbScore" formControlName="imdbScore" />
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-12">
-        <label for="date">Release date</label><br />
-        <input name="date" formControlName="date" />
+        <label for="releaseDate">Release date</label><br />
+        <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker placement="top"
+          formControlName="releaseDate">
       </div>
     </div>
     <div class="form-row">
       <button class="btn btn-success myBtn" [disabled]="!addMovie.valid">
         Add movie
       </button>
-      <button class="btn myBtnCancel">Cancel</button>
+      <button class="btn myBtnCancel" disabled>Cancel</button>
     </div>
   </form>
 </div>

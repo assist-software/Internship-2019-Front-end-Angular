@@ -4,12 +4,13 @@ export interface Movie {
     originalSourceUrl: string;
     coverUrl: string;
     description: string;
-    imdbId: number;
+    imdb_id?: number;
     category: [{
-        id: number;
         name: string;
     }];
     imdbScore: number;
-    releaseDate: Date;
-    id: number;
+    releaseDate: string;
+    images: [{
+        imageUrl: string;
+    }];
 }

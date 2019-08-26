@@ -12,19 +12,22 @@ import { MoovieDetailsComponent } from './moovie/moovie-details/moovie-details.c
 import { NewMoovieComponent } from './new-moovie/new-moovie.component';
 import { AuthGuard } from './services/auth.guard';
 import { ContactComponent } from './contact/contact.component';
+import { CategoryComponent } from './category/category.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'reset-password', component: ResetPassComponent },
   { path: 'add-moovie', component: AddMoovieComponent },
   { path: 'admin-moovie', component: AdminMoovieComponent, canActivate: [AuthGuard] },
   { path: 'list-moovie', component: ListMoovieComponent },
-  { path: 'movie-details', component: MoovieDetailsComponent },
+  { path: 'movie-details/:id', component: MoovieDetailsComponent },
   { path: 'new-movie', component: NewMoovieComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'movie', component: CategoryComponent }
 
 ];
 

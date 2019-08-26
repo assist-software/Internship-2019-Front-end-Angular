@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.type = 'password';
     }
-    
+
   }
 
   onSubmit() {

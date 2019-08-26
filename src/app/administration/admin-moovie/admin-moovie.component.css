@@ -53,14 +53,21 @@
   color: #ffffff;
 }
 
+.mt-0 {
+  position: relative;
+}
+
 .positionSearcBtn {
   position: absolute;
   top: 34%;
-  right: 311px;
+  right: -9px;
+  ;
 }
+
 .searchBtn {
   position: relative;
 }
+
 .btnRight {
   text-align: right;
   margin-left: -60px;
@@ -163,4 +170,11 @@
   .container {
     max-width: 1474px;
   }
+}
+
+.myBtnMore {
+  margin-bottom: 41px;
+  padding: 13px;
+  margin-right: auto;
+  margin-left: auto;
 }

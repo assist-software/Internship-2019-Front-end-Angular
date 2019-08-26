@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 import { User } from '../models/user.model';
 // import * as jwt_decode from 'jwt-decode';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class AuthenticationService {
 
   constructor(
     public http: HttpClient,
-    public jwtHelper: JwtHelperService
+    public jwtHelper: JwtHelperService,
+    public userServices: UserService
   ) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('curentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
@@ -36,8 +38,9 @@ export class AuthenticationService {
           const token = res.headers.get('Authorization');
           const user = email;
           if (token) {
+
             localStorage.setItem('token', JSON.stringify(token));
-            // this.currentUserSubject.next(user);
+            this.userServices.userDetails();
           }
           return res;
         })
@@ -45,8 +48,7 @@ export class AuthenticationService {
   }
 
   public logout() {
-    // sterge user din local storage
-    localStorage.clear();
+    localStorage.removeItem('token');
   }
 
   public isAuthenticated(): boolean {

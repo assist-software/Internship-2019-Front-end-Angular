@@ -1,0 +1,62 @@
+<!-- <h1 style="text-align: center">Add movie</h1> -->
+<div class="container">
+    <form #fomr="ngForm" (ngSubmit)="Submit()">
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label for="title">Title movie<span class="star">*</span></label><br />
+                <input name="title" [(ngModel)]="title" />
+            </div>
+
+            <div class="form-group col-6">
+                <label for="trailerUrl">Trailer URL<span class="star">*</span></label><br />
+                <input name="trailerUrl" [(ngModel)]="trailerUrl" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="originalSourceUrl">Original source<span class="star">*</span></label><br />
+                <input name="originalSourceUrl" [(ngModel)]="originalSourceUrl" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="coverUrl">Cover URL</label><br />
+                <input name="coverUrl" [(ngModel)]="coverUrl" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12 myTag">
+                <label for="description">Description</label>
+                <textarea class="form-control" name="description" rows="5" [(ngModel)]="description"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-7">
+                <label for="category">Category<span class="star">*</span></label><br />
+                <select class="selectCategory" name="name" [(ngModel)]="name">
+                    <option value="action" selected="">Action</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                </select>
+            </div>
+            <div class="form-group col-5">
+                <label for="imdbScore">IMDB Score</label><br />
+                <input name="imdbScore" [(ngModel)]="imdbScore" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="releaseDate">Release date</label><br />
+                <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker placement="top"
+                    name="releaseDate" [(ngModel)]="releaseDate" [bsConfig]="{dateInputFormat: 'yyyy-MM-dd'}">
+            </div>
+        </div>
+        <div class="form-row">
+            <button class="btn btn-success myBtn">
+                <!-- [disabled]="!addMovie.valid -->
+                Add movie
+            </button>
+            <button class="btn myBtnCancel" disabled>Cancel</button>
+        </div>
+    </form>
+</div>

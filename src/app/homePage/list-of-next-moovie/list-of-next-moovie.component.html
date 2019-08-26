@@ -7,8 +7,9 @@
             <div class="col-md-6">
                 <div class="form-row">
                     <p class="txtFilter">Filter by</p>
-                    <select name="categori" id="">
-                        <option value="default">Default</option>
+                    <select name="categori" id="" >
+                        <option value="default" >Default</option>
+                        <option value="default1" >Default1</option>
                     </select>
                     <div class="col-xs-12 col-12 col-md-4 form-group">
                         <input type="text" placeholder="Any date" class="form-control theme-red" [bsConfig]="bsConfig" bsDatepicker>
@@ -21,10 +22,12 @@
         <div>
             <div class="row">
                 <div class="col-md-3" *ngFor="let movie of moviesArray">
+                    
                     <div class="pictureContainer" [style.background-image]="backgroundImage">
                         <button class="btn btnRemove">Add to whatchlist</button>
                         <button class="btn btnScore">{{movie.score}}</button>
                     </div>
+                    
                     <p class="titleMovie">{{ movie.title }}</p>
                     <div class="groupDescription">
                         <p class="categoryMovie">Release date: {{movie.date}}</p>
