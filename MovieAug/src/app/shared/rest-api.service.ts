@@ -11,7 +11,7 @@ export class RestApiService {
   apiURL = 'http://localhost:3000';
   apiUserDB = 'http://192.168.151.193:8080/user';
   // apiUserDBSignUP = 'http://192.168.151.193:8080/signup';
-  apiURLDB = 'http://192.168.151.193:8080/api/movie';
+  apiURLDB = 'http://192.168.151.218:8090/api/movie';
   constructor(private http: HttpClient) { }
   // Http Options
   httpOptions = {
@@ -122,29 +122,6 @@ export class RestApiService {
   }
   // Error handling 
   handleError(error) {
-<<<<<<< HEAD
-    // let errorMessage = '';
-    // if (error.error instanceof ErrorEvent) {
-    //   // Get client-side error
-    //   errorMessage = error.error.message;
-    // } else {
-    //   // Get server-side error
-    //   errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    // }
-    // window.alert(errorMessage);
-    // return throwError(errorMessage);
-=======
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
-    } else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    // window.alert(errorMessage);
-    return throwError(errorMessage);
->>>>>>> 72e72b39c38e804b0686b7b6f420ace215daa3db
     return throwError(error)
   }
 }

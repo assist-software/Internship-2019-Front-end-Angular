@@ -41,14 +41,11 @@ export class WatchlistComponent implements OnInit {
   }
 
   loadMovie() {
-
-    return this.restApi.getMoviesUser().subscribe((data: {}) => {
+    return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
-      this.copyMovies = this.movies;
-      for (let movie of this.movies) {
-        this.movieItem = movie;
+      console.log("Din DB:", data);
 
-      }
+
     })
   }
 
@@ -68,12 +65,8 @@ export class WatchlistComponent implements OnInit {
         if (movie.Category === sort) {
           return movie
         }
-        ``
       });
-
       console.log(filtered)
-
-
     }
   }
 
@@ -83,15 +76,14 @@ export class WatchlistComponent implements OnInit {
     else return -1;
   }
   sortFilterData(c1: movie, c2: movie) {
-    if (c1.ReleaseDate > c2.ReleaseDate) return 1
-    else if (c1.ReleaseDate === c2.ReleaseDate) return 0
+    if (c1.releaseDate > c2.releaseDate) return 1
+    else if (c1.releaseDate === c2.releaseDate) return 0
     else return -1;
   }
   sortFilterScore(c1: movie, c2: movie) {
-    if (c1.IMDBScore > c2.IMDBScore) return -1
-    else if (c1.IMDBScore === c2.IMDBScore) return 0
+    if (c1.imdbScore > c2.imdbScore) return -1
+    else if (c1.imdbScore === c2.imdbScore) return 0
     else return 1;
-
   }
 
 }
