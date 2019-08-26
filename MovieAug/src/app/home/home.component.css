@@ -1,10 +1,8 @@
 header {
-  background: url('../../assets/img/bg.png') no-repeat 0 0;
+  background: url("../../assets/img/bg.png") no-repeat 0 0;
   border-top: 29px solid transparent;
   background-size: 100%;
   background-size: cover;
-
-
 }
 
 .containerHeader {
@@ -25,7 +23,6 @@ ul {
   background-color: rgb(197, 55, 126);
   color: white;
   margin-right: 2%;
-
 }
 
 .btn-primary-secondary {
@@ -74,8 +71,6 @@ body {
   background-color: #f5044c;
   color: white;
   width: 40%;
-
-
 }
 
 .container .btn:hover {
@@ -93,8 +88,6 @@ body {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   width: 16%;
-
-
 }
 
 .no-click {
@@ -102,9 +95,11 @@ body {
 }
 
 .btn1 {
-
   background-color: #f5044c;
   color: white;
   border-width: 5px;
   border-color: #f5044c;
+}
+::ng-deep .ngx-pagination {
+  background: #f5044c;
 }
