@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { Movie } from '../../models/movie.model';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MoviesServices } from '../../services/movies.service';
 
 
 @Component({
@@ -9,9 +11,9 @@ import { Component } from '@angular/core';
 })
 // implements OnInit
 export class CarouselMoovieComponent {
-
+  moviesArray: Movie[] = [];
   slidesChangeMessage = '';
-
+  totalslides: number;
   slides = [
     {
       image: 'assets/pictures/image110.png',
@@ -103,9 +105,27 @@ export class CarouselMoovieComponent {
     slidesToShow: 4, slidesToScroll: 4, arrows: false,
     centerPadding: 'auto', centerMarging: '0px', centerMode: true, adaptiveHeight: true,
   };
-  totalslides = this.slides.length;
-  constructor() { }
+  
+  constructor(
+    private sanitizer: DomSanitizer,
+    private moviesService: MoviesServices
+  ) { }
+  ngOnInit() {
 
+    this.moviesService.getMovies()
+      .subscribe(
+        data => {
+          
+          this.moviesArray = data;
+          this.moviesArray = this.moviesArray.reverse();
+          this.moviesArray = this.moviesArray.slice(0,10);
+          this.totalslides = this.moviesArray.length;
+          // this.movi1 = this.moviesArray[0];
+          // for (const movie of this.moviesArray) {
+
+          // }
+        });
+  }
 
   addSlide() {
     this.slides.push({

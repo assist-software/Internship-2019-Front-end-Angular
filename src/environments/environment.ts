@@ -8,10 +8,10 @@ export const environment = {
   apiUrl: 'http://192.168.151.218:8080',
 
   // boris server
-  // movieUrl: 'http://192.168.151.226:3500',
+  //movieUrl: 'http://192.168.151.226:3500',
 
   // assist serve
-  movieUrl: 'http://192.168.151.218:8080',
+   movieUrl: 'http://192.168.151.218:8080',
 
   // wili server
   // movieUrl: 'http://192.168.151.223:8080'

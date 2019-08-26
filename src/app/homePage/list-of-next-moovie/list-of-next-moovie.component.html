@@ -7,18 +7,20 @@
             <div class="col-md-6">
                 <div class="form-row">
                     <p class="txtFilter">Filter by</p>
-                    <select name="categori" id="" >
-                        <option value="default" >Default</option>
-                        <option value="default1" >Default1</option>
+                    <select class="form-control mySelect" [(ngModel)]="filter" (ngModelChange)="dataChanged($event)">
+                        <!-- size="4" -->
+                        <option selected>Default</option>
+                        <option *ngFor="let category of categorys" [value]="category.name">{{ category.name }}</option>
                     </select>
                     <div class="col-xs-12 col-12 col-md-4 form-group">
-                        <input type="text" placeholder="Any date" class="form-control theme-red" [bsConfig]="bsConfig" bsDatepicker>
+                        <input type="text" placeholder="Any date" class="form-control theme-red" [bsConfig]="bsConfig"
+                            bsDatepicker>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container" style="margin-top: 50px;">
+    <!-- <div class="container" style="margin-top: 50px;">
         <div>
             <div class="row">
                 <div class="col-md-3" *ngFor="let movie of moviesArray">
@@ -33,6 +35,21 @@
                         <p class="categoryMovie">Release date: {{movie.date}}</p>
                         <p class="categoryMovie">{{ movie.category }}</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container" style="margin-top: 50px;">
+        <div>
+            <div class="row">
+                <div class="col-md-3 position" *ngFor="let movie of moviesArray">
+                    <!-- <div class="pictureContainer" [style.background-image]="image"> -->
+                    <img [src]="movie.coverUrl" alt="orice" [routerLink]="['/movie-details', movie.id]">
+                    <button class="btn btnRemove" >Add to watchlist</button>
+                    <button class="btn btnScore">{{movie.imdbScore}}</button>
+                    <!-- </div> -->
+                    <p class="titleMovie">{{ movie.title }}</p>
+                    <p>{{ movie.category[0].name }}</p>
                 </div>
             </div>
         </div>
