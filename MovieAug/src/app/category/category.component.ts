@@ -58,12 +58,7 @@ export class CategoryComponent implements OnInit {
       this.nameDrop = 'IMBD Score'
     } else {
       this.nameDrop = sort;
-      let filtered = this.movies.filter(movie => {
-        if (movie.Category === sort) {
-          return movie
-        }
-      });
-      console.log(filtered)
+
     }
   }
   sortFilterTitle(c1: movie, c2: movie) {
@@ -72,13 +67,13 @@ export class CategoryComponent implements OnInit {
     else return -1;
   }
   sortFilterData(c1: movie, c2: movie) {
-    if (c1.ReleaseDate > c2.ReleaseDate) return 1
-    else if (c1.ReleaseDate === c2.ReleaseDate) return 0
+    if (c1.releaseDate > c2.releaseDate) return 1
+    else if (c1.releaseDate === c2.releaseDate) return 0
     else return -1;
   }
   sortFilterScore(c1: movie, c2: movie) {
-    if (c1.IMDBScore > c2.IMDBScore) return -1
-    else if (c1.IMDBScore === c2.IMDBScore) return 0
+    if (c1.imdbId > c2.imdbId) return -1
+    else if (c1.imdbId === c2.imdbId) return 0
     else return 1;
   }
   filters(sort) {
@@ -95,7 +90,7 @@ export class CategoryComponent implements OnInit {
       return this.movies;
     }
     else
-      return this.movies.filter(movie => movie.Category === this.nameDrop);
+      return this.movies.filter(movie => movie.categories[0].name === this.nameDrop);
 
   }
 }

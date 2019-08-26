@@ -68,12 +68,8 @@ export class WatchlistComponent implements OnInit {
         if (movie.Category === sort) {
           return movie
         }
-        ``
       });
-
       console.log(filtered)
-
-
     }
   }
 
@@ -83,13 +79,13 @@ export class WatchlistComponent implements OnInit {
     else return -1;
   }
   sortFilterData(c1: movie, c2: movie) {
-    if (c1.ReleaseDate > c2.ReleaseDate) return 1
-    else if (c1.ReleaseDate === c2.ReleaseDate) return 0
+    if (c1.releaseDate > c2.releaseDate) return 1
+    else if (c1.releaseDate === c2.releaseDate) return 0
     else return -1;
   }
   sortFilterScore(c1: movie, c2: movie) {
-    if (c1.IMDBScore > c2.IMDBScore) return -1
-    else if (c1.IMDBScore === c2.IMDBScore) return 0
+    if (c1.releaseDate > c2.releaseDate) return -1
+    else if (c1.releaseDate === c2.releaseDate) return 0
     else return 1;
 
   }

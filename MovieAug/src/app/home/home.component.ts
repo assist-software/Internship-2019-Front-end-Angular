@@ -47,7 +47,6 @@ export class HomeComponent implements OnInit {
       console.log("Din DB:", data);
       for (let movie of this.movies) {
         if (movie.imdbScore > this.MaxIMDB) {
-          console.log(this.MaxIMDB);
           this.MaxIMDB = movie.imdbScore;
         }
       }
@@ -85,13 +84,13 @@ export class HomeComponent implements OnInit {
     else return -1;
   }
   sortFilterData(c1: movie, c2: movie) {
-    if (c1.ReleaseDate > c2.ReleaseDate) return 1
-    else if (c1.ReleaseDate === c2.ReleaseDate) return 0
+    if (c1.releaseDate > c2.releaseDate) return 1
+    else if (c1.releaseDate === c2.releaseDate) return 0
     else return -1;
   }
   sortFilterScore(c1: movie, c2: movie) {
-    if (c1.IMDBScore > c2.IMDBScore) return -1
-    else if (c1.IMDBScore === c2.IMDBScore) return 0
+    if (c1.imdbId > c2.imdbId) return -1
+    else if (c1.imdbId === c2.imdbId) return 0
     else return 1;
   }
 }

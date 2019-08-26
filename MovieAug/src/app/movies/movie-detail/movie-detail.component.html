@@ -3,9 +3,8 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <iframe class="embed-responsive-item trailerURL" src='https://www.youtube.com/embed/zpOULjyy-n8?rel=0'
-          allowfullscreen></iframe>
-        <p class="OriginalSource">See original source</p>I modified the
+        <iframe class="embed-responsive-item trailerURL" [src]=" currentMovie.trailerUrl" allowfullscreen></iframe>
+        <p class="OriginalSource">See original source</p>
       </div>
       <div class="col">
         <h4 class="title">{{currentMovie.title}} <span class="nota"> {{currentMovie.imdbScore}}</span></h4>
