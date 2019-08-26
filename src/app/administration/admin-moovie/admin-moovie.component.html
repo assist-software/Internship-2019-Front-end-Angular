@@ -24,7 +24,7 @@
       <div class="col-2 align myPicture">
         <img class="positionImgRec" src="assets/img/Vector (1).png" alt="Recicle"
           (click)="openModal(template, movie.id)" />
-        <img class="positionImgEdit" src="assets/img/Vector (2).png" alt="Edit" (click)="lgModalEdit.show()" />
+        <img class="positionImgEdit" src="assets/img/Vector (2).png" alt="Edit" (click)="lgModalEdit.show()" (click)="sendMovie(movie)"/>
       </div>
     </div>
     <div *ngIf="listMovies.length > 16 && !(listMovies.length < limit)" style="display: flex">

@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 
 export class MoviesServices {
+    // pentru numarul filmelor
     private messageSource = new Subject<Movie>();
     currentMessage = this.messageSource.asObservable();
 

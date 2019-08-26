@@ -9,22 +9,14 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./admin-nav-bar.component.css']
 })
 export class AdminNavBarComponent implements OnInit {
-  userName = 'Mihai';
+  userName = '';
   constructor(
     private authentication: AuthenticationService,
     private userServices: UserService
   ) { }
 
   ngOnInit() {
-    this.userServices.userDetails();
-    // .subscribe(
-    //   data => {
-    //     console.log(data);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
+    this.userName = this.userServices.userDetails();
   }
 
   logOutFunc() {

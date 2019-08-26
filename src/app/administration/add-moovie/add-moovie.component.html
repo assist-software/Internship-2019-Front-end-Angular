@@ -34,9 +34,7 @@
       <div class="form-group col-7" formGroupName="category">
         <label for="category">Category<span class="star">*</span></label><br />
         <select class="selectCategory" name="category" formControlName="name">
-          <option value="action">Action</option>
-          <option value="drama">Drama</option>
-          <option value="comedy">Comedy</option>
+          <option *ngFor="let category of categorys" [value]="category.name">{{ category.name }}</option>
         </select>
       </div>
       <div class="form-group col-5">
@@ -47,7 +45,7 @@
     <div class="form-row">
       <div class="form-group col-12">
         <label for="releaseDate">Release date</label><br />
-        <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker placement="top"
+        <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker placement="top" [bsConfig]="{dateInputFormat: 'yyyy-MM-dd'}"
           formControlName="releaseDate">
       </div>
     </div>
