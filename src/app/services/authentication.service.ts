@@ -37,7 +37,6 @@ export class AuthenticationService {
           const user = email;
           if (token) {
             localStorage.setItem('token', JSON.stringify(token));
-            // this.currentUserSubject.next(user);
           }
           return res;
         })
@@ -46,7 +45,7 @@ export class AuthenticationService {
 
   public logout() {
     // sterge user din local storage
-    localStorage.clear();
+    localStorage.removeItem('token');
   }
 
   public isAuthenticated(): boolean {

@@ -1,17 +1,25 @@
 <div class="myBody">
   <div class="container">
-    <div class="row">
+    <div class="row" *ngIf="movieToShow">
       <div class="col-md-6 text-center">
         <img [src]="movieToShow.coverUrl" alt="movie.image" width="368px" height="552px">
-        <a [href]="movieToShow.originalSource"><p class="originalSource">See original source</p></a>
+        <a [href]="movieToShow.originalSource">
+          <p class="originalSource">See original source</p>
+        </a>
       </div>
-      <div class="col-md-6 myCol">
+      <div class="col-md-6 myCol" >
         <h4 class="movieTitle">{{ movieToShow.title }}</h4>
         <br />
         <h6 class="movieCategory">{{ movieToShow.category[0].name }}</h6> <br>
         <p class="movieDescription">{{ movieToShow.description }}</p> <br>
         <button class="btn myBtn">Add to watchlist</button><br>
         <!-- <p class="movieDirector"> Director: <span class="txtMovieDir">{{ movieToShow.director}}</span></p> -->
+
+      </div>
+    </div>
+    <div class="row" style="width: 70%; margin: auto;">
+      <div class="col-md-2" *ngFor="let image of morePictures">
+        <img [src]="image.imageUrl" alt="nu merge" width="110px" height="99px" class="moroPhoto">
       </div>
     </div>
   </div>

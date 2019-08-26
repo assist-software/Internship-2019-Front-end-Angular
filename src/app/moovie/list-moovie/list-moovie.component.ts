@@ -9,53 +9,72 @@ import { Movie } from 'src/app/models/movie.model';
   styleUrls: ['./list-moovie.component.css']
 })
 export class ListMoovieComponent implements OnInit {
-  backgroundImage: any[] = [];
-  backgroundImages;
-  myPicture = 'assets/img/anonymous_finger_goouGu.com.jpg';
+  // backgroundImage: any[] = [];
+  // myPicture = 'assets/img/anonymous_finger_goouGu.com.jpg';
+  // moviesArray: Movie[] = [];
+  numberOfMOvie: number;
+  movieArraySort: Movie[] = [];
   moviesArray: Movie[] = [];
-  movieArraySort = [];
 
 
   message: any;
+
   constructor(
     private sanitizer: DomSanitizer,
     private moviesService: MoviesServices
   ) {
-    // this.backgoundImage = this.sanitizer.bypassSecurityTrustStyle(''background-image': 'url(' + this.myPicture + ')'');
-    // this is corect;
+    // aceasta functie se foloseste in cazul in care avem warning de la domSanitizer
     // this.backgroundImages = this.sanitizer.bypassSecurityTrustStyle(`url(${this.myPicture})`);
   }
 
   ngOnInit() {
-    this.moviesService.getMovies()
-      .subscribe(
-        data => {
-          // console.log(data);
-
-          this.moviesArray = data;
-
-          // console.log(this.moviesArray);
-          for (const movie of this.moviesArray) {
-            const picture = movie.coverUrl;
-            this.backgroundImage.push(this.sanitizer.bypassSecurityTrustStyle(`url(${picture})`));
-            console.log('url ', movie.coverUrl);
-          }
-          // console.log('imagini', this.backgroundImage);
-          // this.moviesArray = this.movieArraySort.filter(
-          //   book => book.title === title);
-
-          console.log(this.moviesArray);
-        });
-
-
-    // functie pentru sortat
-    // this.moviesArray.sort((a, b) => {
-    //   if (a.title < b.title) { return -1; }
-    //   if (a.title > b.title) { return 1; }
-    //   return 0;
-    // });
-    // console.log(this.moviesArray);
+    // this.moviesService.getMovies()
+    //   .subscribe(
+    //     data => {
+    //       this.moviesArray = data;
+    //       this.movieArraySort = this.moviesArray;
+    //       this.numberOfMOvie = this.movieArraySort.length;
+    //       console.log('numarul de filme', this.numberOfMOvie);
+    //       localStorage.setItem('movieWhatchlist2', JSON.stringify(this.movieArraySort));
+    //       console.log(localStorage.getItem('movieWhatchlist2'));
+    //     },
+    //     error => {
+    //       console.log('eror', error);
+    //     });
+    const retrievedObject = localStorage.getItem('movieWhatchlist');
+    this.moviesArray = JSON.parse(retrievedObject);
+    this.movieArraySort = this.moviesArray;
 
   }
 
+  dataChanged(value) {
+    console.log(value);
+    if (value === 'imdbScore' || value === 'releaseDate') {
+      this.moviesArray.sort((a, b) => {
+        if (a[value] > b[value]) { return -1; }
+        if (a[value] < b[value]) { return 1; }
+        return 0;
+      });
+    } else {
+      this.moviesArray.sort((a, b) => {
+        if (a[value] < b[value]) { return -1; }
+        if (a[value] > b[value]) { return 1; }
+        return 0;
+      });
+    }
+  }
+
+  filterMovies(value) {
+    console.log(value);
+    this.moviesArray = this.movieArraySort.filter(movie =>
+      movie.title.toLowerCase().includes(value.toLowerCase()) ||
+      movie.category[0].name.toLowerCase().includes(value.toLowerCase()) ||
+      movie.description.toLowerCase().includes(value.toLowerCase())
+    );
+  }
+
+  removeFunc(value) {
+    console.log(value);
+    console.log(this.moviesArray);
+  }
 }

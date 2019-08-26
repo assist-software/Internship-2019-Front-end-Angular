@@ -26,7 +26,8 @@ export class HiglightMoovieComponent implements OnInit {
     }],
     imdbScore: 0,
     releaseDate:null ,
-    id: 1
+    id: 1,
+    images: null
   };
 
   moviehi = {

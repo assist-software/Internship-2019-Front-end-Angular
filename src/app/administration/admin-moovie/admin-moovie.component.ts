@@ -37,14 +37,16 @@ export class AdminMoovieComponent implements OnInit {
       this.listMovies.push(this.message);
       console.log(this.message);
     });
+
   }
 
 
   confirm() {
-    console.log('A spus da');
+    const test = typeof (this.idDeleted);
+    console.log('A spus da', test);
     this.moviesService.deleteMovie(this.idDeleted).subscribe(
       data => {
-        console.log('data', data);
+        console.log('id este');
       },
       error => {
         console.log('error', error);
@@ -60,7 +62,9 @@ export class AdminMoovieComponent implements OnInit {
 
   openModal(template: TemplateRef<any>, id: number) {
     this.modalRef = this.modalService.show(template);
+    // this.idDeleted = id;
     this.idDeleted = id;
+    console.log('id-ul la setare', id);
   }
 
 }
