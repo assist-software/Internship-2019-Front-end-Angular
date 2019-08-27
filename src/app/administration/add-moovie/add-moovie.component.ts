@@ -70,7 +70,7 @@ export class AddMoovieComponent implements OnInit {
 
     this.movieService.postMovie(this.addMovie.value)
       .subscribe(
-        data => {
+        (data: any) => {
           // console.log(data, "post movie");
           if ('NoMovieFound' === data.errorMessage) {
             this.myError = true;

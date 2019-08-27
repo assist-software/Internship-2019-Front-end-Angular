@@ -27,19 +27,19 @@ export class ListOfNextMoovieComponent implements OnInit {
   month: number;
   month1: string;
   year: number;
+  ngbdate = new Date();
+  minDate = new Date();
+  maxDate = new Date();
 
 
   constructor(
     private sanitizer: DomSanitizer,
     private moviesService: MoviesServices
-  ) {
-    // this.backgoundImage = this.sanitizer.bypassSecurityTrustStyle("'background-image': 'url(" + this.myPicture + ")'");
-
-
-
-  }
+  ) { }
 
   ngOnInit() {
+    this.minDate = new Date(this.dateVariable.getFullYear(), this.dateVariable.getMonth() + 1, 1);
+    this.maxDate = new Date(this.dateVariable.getFullYear(), this.dateVariable.getMonth() + 1, 31);
     this.bsConfig = Object.assign({}, { containerClass: 'theme-red' });
 
     this.myGroup = new FormGroup({
@@ -55,14 +55,18 @@ export class ListOfNextMoovieComponent implements OnInit {
 
           for (const movie of this.movieArraySort) {
 
-            if (movie.releaseDate.substr(5, 2) === this.month && movie.releaseDate.substr(0, 4) === this.year) {
+            if (movie.releaseDate.substr(5, 2) == this.month && movie.releaseDate.substr(0, 4) == this.year) {
               this.moviesArray.push(movie);
-
+              console.log(movie.releaseDate.substr(8, 2));
             }
           }
+
+          console.log(this.moviesArray);
           this.movieArraySort = this.moviesArray;
           this.movieArrayFilter = this.moviesArray;
+          console.log('x');
         });
+
     this.moviesService.getCategory()
       .subscribe(
         data => {
@@ -90,6 +94,15 @@ export class ListOfNextMoovieComponent implements OnInit {
     }
     console.log(this.moviesArray);
   }
+  Datesort(value: Date) {
+    console.log(this.ngbdate);
+    this.moviesArray = this.movieArraySort.filter(movie => {
+      // tslint:disable-next-line:triple-equals
+      return movie.releaseDate.substr(8, 2) == value.getDate();
+    });
+    console.log(this.moviesArray);
+
+  }
 
   filterMovies(value: string) {
     this.moviesArray = this.movieArraySort.filter(movie =>
@@ -104,7 +117,6 @@ export class ListOfNextMoovieComponent implements OnInit {
 
   sortByDate() {
     console.log(this.myGroup.value.dateForSort);
-
   }
 
 }
