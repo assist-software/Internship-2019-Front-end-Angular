@@ -8,12 +8,12 @@ import { retry, catchError } from "rxjs/operators";
   providedIn: "root"
 })
 export class RestApiService {
-  apiUserDB = 'http://192.168.151.218:8090/user';
-  apiUserDBEdit = 'http://192.168.151.193:8080/api/movie';
-  apiServer = 'http://192.168.151.218:8090'
+  apiUserDB = "http://192.168.151.218:8090/user";
+  apiUserDBEdit = "http://192.168.151.193:8080/api/movie";
+  apiServer = "http://192.168.151.218:8090";
   // apiUserDBSignUP = 'http://192.168.151.193:8080/signup';
-  apiURLDB = 'http://192.168.151.224:8080/api/movie';
-  constructor(private http: HttpClient) { }
+  apiURLDB = "http://192.168.151.218:8090/api/movie";
+  constructor(private http: HttpClient) {}
   // Http Options
   httpOptions = {
     headers: new HttpHeaders({
@@ -31,11 +31,10 @@ export class RestApiService {
       );
   }
   getMovie(id): Observable<any> {
-    return this.http.get<any>(this.apiURLDB + '/' + id)
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
+    return this.http.get<any>(this.apiURLDB + "/" + id).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
   }
   getUser(id): Observable<any> {
     return this.http.get<any>(this.apiUserDB + "/" + id).pipe(
@@ -58,14 +57,24 @@ export class RestApiService {
       );
   }
   updateMovie(id, movie): Observable<movie> {
-    return this.http.put<movie>(this.apiUserDBEdit + '/' + id, JSON.stringify(movie), this.httpOptions)
+    return this.http
+      .put<movie>(
+        this.apiUserDBEdit + "/" + id,
+        JSON.stringify(movie),
+        this.httpOptions
+      )
       .pipe(
         retry(1),
         catchError(this.handleError)
       );
   }
   updateUser(id, user): Observable<any> {
-    return this.http.put<any>(this.apiUserDBEdit + '/' + id, JSON.stringify(user), this.httpOptions)
+    return this.http
+      .put<any>(
+        this.apiUserDBEdit + "/" + id,
+        JSON.stringify(user),
+        this.httpOptions
+      )
       .pipe(
         retry(1),
         catchError(this.handleError)

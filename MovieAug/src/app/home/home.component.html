@@ -23,7 +23,8 @@
           <br>
           <li>
             <button class="btn btn-primary-danger" (click)="watchTriler(triler, movieItem.id)">Watch triler</button>
-            <button class="btn btn-primary-secondary"><i class="fas fa-plus"></i>Add to list</button>
+            <button class="btn btn-primary-secondary" (click)="addWatchlist(movieItem.id)"><i
+                class="fas fa-plus"></i>Add to list</button>
           </li>
         </ul>
       </div>
@@ -45,15 +46,15 @@
 <br>
 <br>
 <div class="container">
-  <app-movie-list [moviesList]="movies"></app-movie-list>
+  <app-movie-list [moviesList]="moviesOld"></app-movie-list>
 </div>
-<div class="container bgColor">
+<div class="container bgColor p-3">
   <div class="row">
     <div class="col-sm-5">
       <h1>See what movies come next month</h1>
     </div>
     <div class="col-sm-4"></div>
-    <label for="sdropdownBasic1">Sort by:</label>
+    <label for="dropdownBasic1">Sort by:</label>
     <div class="col">
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>

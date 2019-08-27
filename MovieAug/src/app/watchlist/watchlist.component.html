@@ -1,5 +1,4 @@
-<body class="bdy ">
-
+<div class="bdy text-white">
   <div class="container">
     <app-header></app-header>
     <div class="row">
@@ -14,22 +13,14 @@
     </div>
     <div class="row ">
       <div class="col test">
-
-
         <input type="search" [(ngModel)]="searchText" placeholder="Search movie...">
-
         <i class="fas fa-search"></i>
-
-
-
       </div>
-
       <div class="col" style="margin-left: 30%; ">
-
         <div class="row">
           <div class="col">
           </div>
-          <label for="sdropdownBasic1">Sort by:</label>
+          <label for="dropdownBasic1">Sort by:</label>
           <div class="col">
             <div ngbDropdown class="d-inline-block">
               <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{nameDrop}}</button>
@@ -37,29 +28,18 @@
                 <button class="butn" ngbDropdownItem (click)="sendFilter('data')">ReleaseDate</button>
                 <button class="butn" ngbDropdownItem (click)="sendFilter('score')">IMDBScore</button>
                 <button class="butn" ngbDropdownItem (click)="sendFilter('titlu')">title</button>
-
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
-
-    <div class="row">
+    <div class="row m-5">
       <div class="col-md-3 col-sm-4" *ngFor="let movie of movies  | filter: searchText  ">
         <app-movie-item [movie]="movie"></app-movie-item>
-
-
-
       </div>
     </div>
-
   </div>
-
-
-
-</body>
+</div>
 
 <app-footer></app-footer>

@@ -14,7 +14,7 @@
         <br />
         <h6 class="category">{{currentMovie.Category}} <span>1h 33min</span> </h6> <br>
         <p class="description">{{currentMovie.description}}</p> <br>
-        <button class="btn ">Add to watchlist</button><br>
+        <button class="btn" (click)="addWatchlist(currentMovie.id)">Add to watchlist</button><br>
         <p class="director"> Director: <span class="txtMovie">Chris Addison</span></p>
         <p class="director"> Writers: <span class="txtMovie">Stanley Shapiro (screenplay by), Paul Henning
             (screenplay by)</span></p>
