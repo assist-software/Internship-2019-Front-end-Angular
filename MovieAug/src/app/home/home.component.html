@@ -1,0 +1,86 @@
+<!-- <div class="row ">
+  <div class="col-md-9">
+    <app-header></app-header>
+
+    <app-movies></app-movies>
+    <app-footer></app-footer>
+
+  </div>
+</div> -->
+
+<header>
+  <div class="container">
+    <app-header></app-header>
+    <div class="row containerHeader">
+      <div class="col">
+        <ul>
+          <li>
+            <h1 style="color:white">{{movieItem.title}}</h1>
+          </li>
+          <li>
+            <p style="color:white">{{movieItem.description}}</p>
+          </li>
+          <br>
+          <li>
+            <button class="btn btn-primary-danger" (click)="watchTriler(triler, movieItem.id)">Watch triler</button>
+            <button class="btn btn-primary-secondary"><i class="fas fa-plus"></i>Add to list</button>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <P><img [src]="'http://image.tmdb.org/t/p/w185' + movieItem.coverUrl" alt="Movie" class="rounded"></P>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <p><i class="arrow down scrolly"></i></p>
+    </div>
+  </div>
+</header>
+<br>
+<br>
+<br>
+<div>
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+  <app-movie-list [moviesList]="movies"></app-movie-list>
+</div>
+<div class="container bgColor">
+  <div class="row">
+    <div class="col-sm-5">
+      <h1>See what movies come next month</h1>
+    </div>
+    <div class="col-sm-4"></div>
+    <label for="sdropdownBasic1">Sort by:</label>
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          {{ nameDrop }}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="sendFilter('data')">ReleaseDate</button>
+          <button ngbDropdownItem (click)="sendFilter('score')">IMDBScore</button>
+          <button ngbDropdownItem (click)="sendFilter('titlu')">Title</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-4" *ngFor="let movie of moviesNew">
+      <app-movie-item [movie]="movie"></app-movie-item>
+    </div>
+  </div>
+</div>
+<ng-template #triler class="TrilerDiv">
+  <div class="text-center">
+    <div class="modal-body triler">
+
+      <iframe class="embed-responsive-item trailerURL" [src]="url" allowfullscreen></iframe>
+      <button type="button" class="btn  ModaleCancel" (click)="modalRef.hide()">Cancel</button>
+    </div>
+  </div>
+</ng-template>
+<app-footer></app-footer>

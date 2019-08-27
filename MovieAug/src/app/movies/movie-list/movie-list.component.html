@@ -1,0 +1,13 @@
+<div class="contrainer">
+  <p>Recent added movies ({{ slideIndex }}/10)</p>
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    (afterChange)="afterChange($event)"
+  >
+    <div ngxSlickItem *ngFor="let movie of movies; let i = index" class="slide">
+      <app-movie-item [movie]="movie"></app-movie-item>
+    </div>
+  </ngx-slick-carousel>
+</div>

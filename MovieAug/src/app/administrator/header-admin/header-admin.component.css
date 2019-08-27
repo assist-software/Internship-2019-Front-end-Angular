@@ -1,0 +1,37 @@
+.container-header {
+  background-color: black;
+}
+
+.photos {
+  border-width: 1px;
+  border-color: red;
+  border-style: solid;
+  margin-right: 2%;
+
+}
+
+.profil {
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block
+}
+
+img {
+  height: 50px;
+  margin-left: 15%;
+}
+
+.movies {
+  display: inline-block;
+  margin-left: 900%;
+}
+
+.name {
+  display: inline-block;
+}
+
+.ul {
+  margin-right: 20%;
+}

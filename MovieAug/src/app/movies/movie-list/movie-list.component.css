@@ -1,0 +1,17 @@
+::ng-deep button.slick-prev,
+::ng-deep button.slick-next
+{
+    top: -10% !important;
+    background: #F5044C !important;
+    border-radius: 8px !important;
+    height: 32px;
+    width: 32px;
+    /* background-image: url("../../../assets/arrow.png"); */
+
+}
+::ng-deep button.slick-prev{
+    left:90%;
+}
+::ng-deep button.slick-next{
+    right:0%
+}   

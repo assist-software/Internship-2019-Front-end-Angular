@@ -1,0 +1,183 @@
+{
+  "movie": [{
+      "id": 14,
+      "title": "Action",
+      "trailer": "sdegterhterherhrth",
+      "source": "https://www.imdb.com/title/tt3741700/mediaviewer/rm3629213184",
+      "coverURL": "Tony Stark",
+      "description": "20/02/04.2019",
+      "Category": "Action",
+      "IMDBScore": "7",
+      "ReleaseDate": "20/09/2019"
+    },
+    {
+      "id": 11,
+      "title": "Mihaela",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/03/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "8",
+      "ReleaseDate": "20/02/2019"
+    },
+    {
+      "id": 17,
+      "title": "Mihaela",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/05/2019",
+      "Category": "Adventure",
+      "IMDBScore": "2",
+      "ReleaseDate": "20/05/2019"
+    },
+    {
+      "id": 14,
+      "title": "Fantastic Beasts",
+      "trailer": "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
+      "source": "001-123-4567",
+      "coverURL": "assets/img/left-arrow.png",
+      "description": "Josephine Chesterfield is a glamorous, seductive British woman who has a penchant for defrauding gullible men out of their money. Into her well-ordered, meticulous world comes Penny Rust, a cunning and fun-loving Australian woman who lives to swindle unsuspecting marks. Despite their different methods, the two grifters soon join forces for the ultimate score -- a young and naive tech billionaire in the South of France.",
+      "Category": "Fantasy",
+      "IMDBScore": "6",
+      "ReleaseDate": "28/08/2019"
+    },
+    {
+      "id": 14,
+      "title": "Fantastic Beasts",
+      "trailer": "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
+      "source": "001-123-4567",
+      "coverURL": "assets/img/left-arrow.png",
+      "description": "Josephine Chesterfield is a glamorous, seductive British woman who has a penchant for defrauding gullible men out of their money. Into her well-ordered, meticulous world comes Penny Rust, a cunning and fun-loving Australian woman who lives to swindle unsuspecting marks. Despite their different methods, the two grifters soon join forces for the ultimate score -- a young and naive tech billionaire in the South of France.",
+      "Category": "Fantasy",
+      "IMDBScore": "6",
+      "ReleaseDate": "28/08/2019"
+    },
+
+    {
+      "id": 10,
+      "title": "Mihaela",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj31pPuppPkAhUC6aQKHRnZA_IQjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fwww.kisspng.com%252Fpng-user-logo-information-service-design-6499157%252F%26psig%3DAOvVaw0Bbv4tmYg6Y0G37a_ZPJF0%26ust%3D1566454167600585&psig=AOvVaw0Bbv4tmYg6Y0G37a_ZPJF0&ust=1566454167600585",
+      "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
+      "Category": "Fantasy",
+      "IMDBScore": "7",
+      "ReleaseDate": "02/08/2019"
+    },
+    {
+      "id": 667,
+      "title": "TestModificat",
+      "trailer": "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
+      "source": "ery",
+      "coverURL": "assets/img/81B2m2WVzkL._SX342_.jpg",
+      "description": "A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.",
+      "Category": "Fantasy",
+      "IMDBScore": "5",
+      "ReleaseDate": "12/04/2019"
+    }
+  ],
+  "user": [
+
+    {
+      "id": 3,
+      "email": "test@test.test",
+      "name": "Test",
+      " token": "fake-jwt-token",
+      "password": "Mihaela",
+      "rol": "admin",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 11,
+      "title": "Tony Stark",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Adventure",
+      "IMDBScore": "9",
+      "ReleaseDate": "001-123-4567"
+    },
+    {
+      "id": 10,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "9",
+      "ReleaseDate": "20/05/2009"
+    },
+    {
+      "id": 93,
+      "title": "Tony Stark",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Adventure",
+      "IMDBScore": "9",
+      "ReleaseDate": "20/05/2018"
+    },
+    {
+      "id": 24,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "8",
+      "ReleaseDate": "24/05/2019"
+    }
+  ],
+  "movieUser": [{
+      "id": 14,
+      "title": "Action",
+      "trailer": "sdegterhterherhrth",
+      "source": "https://www.imdb.com/title/tt3741700/mediaviewer/rm3629213184",
+      "coverURL": "Tony Stark",
+      "description": "20/02/04.2019",
+      "Category": "Action",
+      "IMDBScore": "7",
+      "ReleaseDate": "20/09/2019"
+    },
+    {
+      "id": 11,
+      "title": "Mihaela",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/03/04.2019",
+      "Category": "Fantasy",
+      "IMDBScore": "8",
+      "ReleaseDate": "20/02/2019"
+    },
+    {
+      "id": 17,
+      "title": "Mihaela",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/05/2019",
+      "Category": "Adventure",
+      "IMDBScore": "2",
+      "ReleaseDate": "20/05/2019"
+    },
+    {
+      "id": 16,
+      "title": "Fantastic Beasts",
+      "trailer": "sdegterhterherhrth",
+      "source": "001-123-4567",
+      "coverURL": "Tony Stark",
+      "description": "20/04/04.2019",
+      "Category": "Action",
+      "IMDBScore": "4",
+      "ReleaseDate": "20/04/2019"
+    }
+  ]
+}
