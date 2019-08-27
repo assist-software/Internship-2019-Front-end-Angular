@@ -28,7 +28,8 @@
                 <div class="col-md-3 position" *ngFor="let movie of moviesArray | slice:0:limit">
                     <!-- <div class="pictureContainer" [style.background-image]="image"> -->
                     <img [src]="movie.coverUrl" alt="orice" [routerLink]="['/movie-details', movie.id]">
-                    <button class="btn btnRemove" (click)="addMovie(movie)">+Whatchlist</button>
+                    <button class="btn btnRemove" (click)="addMovie(movie)" [popover]="messageOF"
+                        [outsideClick]="true">+Whatchlist</button>
                     <button class="btn btnScore">{{ movie.imdbScore }}</button>
                     <!-- </div> -->
                     <p class="titleMovie">{{ movie.title }}</p>

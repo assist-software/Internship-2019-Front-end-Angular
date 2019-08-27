@@ -81,3 +81,7 @@ input.ng-invalid.ng-touched {
 select.ng-invalid.ng-touched {
     border-color: red;
 }
+
+.text-success{
+    color: green;
+}

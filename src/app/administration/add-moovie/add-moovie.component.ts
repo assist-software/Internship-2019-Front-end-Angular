@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MoviesServices } from 'src/app/services/movies.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-moovie',
@@ -11,10 +12,14 @@ export class AddMoovieComponent implements OnInit {
   addMovie: FormGroup;
   message: string;
   categorys: any[] = [];
+  post = false;
+  myError = false;
   configurare = {
     dateInputFormat: 'YYYY-MM-DD'
   };
-  constructor(private movieService: MoviesServices) { }
+  constructor(
+    private movieService: MoviesServices,
+    private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.addMovie = new FormGroup({
@@ -61,23 +66,29 @@ export class AddMoovieComponent implements OnInit {
     // de vazut ce trebuie facut cu imdbId
     this.addMovie.value.imdbId = 'new';
 
-    // trebuie convertita data in yy-mm-dd
-    // this.addMovie.value.releaseDate = '2019-08-21';
-    console.log(this.addMovie.value);
+    // console.log(this.addMovie.value);
 
     this.movieService.postMovie(this.addMovie.value)
       .subscribe(
         data => {
-          console.log('data', data);
+          // console.log(data, "post movie");
+          if ('NoMovieFound' === data.errorMessage) {
+            this.myError = true;
+          } else {
+            this.movieService.changeMessage(this.addMovie.value);
+            this.post = true;
+            this.cd.detectChanges();
+            this.addMovie.reset();
+          }
+
         },
         error => {
           console.log('error', error);
         }
       );
+  }
 
-    console.log(this.addMovie.value);
-
-    this.movieService.changeMessage(this.addMovie.value);
-    // this.addMovie.reset();
+  cleanForm() {
+    this.addMovie.reset();
   }
 }

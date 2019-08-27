@@ -11,7 +11,6 @@ export class MoviesServices {
     private messageSource = new Subject<Movie>();
     currentMessage = this.messageSource.asObservable();
 
-
     // trimitere film pentru editare
     private movieSource = new Subject<Movie>();
     currentMovie = this.movieSource.asObservable();
@@ -54,7 +53,6 @@ export class MoviesServices {
             Authorization: token,
         });
         console.log(value.id);
-        // const id = 1000;
         return this.http.put(`${environment.movieUrl}/api/movie/${value.id}`, value, { headers });
     }
 
@@ -83,7 +81,7 @@ export class MoviesServices {
 
     addMovieToWhatchlist(value) {
 
-        const retrieveObject = localStorage.getItem('movieWhatchlist');
+        let retrieveObject = localStorage.getItem('movieWhatchlist');
         if (retrieveObject === 'null') {
             const arrayMovie = [];
             arrayMovie.push(value);
@@ -91,8 +89,9 @@ export class MoviesServices {
             this.numberMovieWhatchlist(arrayMovie.length);
             return true;
         } else {
+            retrieveObject = localStorage.getItem('movieWhatchlist');
             const arrayMovie = JSON.parse(retrieveObject);
-            if (arrayMovie === 0) {
+            if (!(arrayMovie === 0)) {
                 console.log('am intrat in if');
                 if (
                     arrayMovie.some(

@@ -12,7 +12,7 @@ import { datepickerAnimation } from 'ngx-bootstrap/datepicker/datepicker-animati
   styleUrls: ['./edit-movie.component.css']
 })
 export class EditMovieComponent implements OnInit {
-
+  post = false;
   title;
   trailerUrl;
   originalSourceUrl;
@@ -23,7 +23,13 @@ export class EditMovieComponent implements OnInit {
   releaseDate;
   id;
   imdbId;
+  category;
+  images;
 
+
+  configurare = {
+    dateInputFormat: 'YYYY-MM-DD'
+  };
 
   idReceived: string;
   addMovie: FormGroup;
@@ -46,12 +52,14 @@ export class EditMovieComponent implements OnInit {
           this.originalSourceUrl = this.movie.originalSourceUrl;
           this.coverUrl = this.movie.coverUrl;
           this.description = this.movie.description;
-          this.name = 'Action';
+          this.category = this.movie.category;
+          console.log(this.imdbId);
           this.imdbId = this.movie.imdbId;
           console.log(this.imdbId, 'imdbID');
           this.imdbScore = this.movie.imdbScore;
           this.releaseDate = this.movie.releaseDate;
           this.id = this.movie.id;
+          this.images = this.movie.images;
         }
       );
 
@@ -61,9 +69,6 @@ export class EditMovieComponent implements OnInit {
       originalSourceUrl: new FormControl('', Validators.required),
       coverUrl: new FormControl(''),
       description: new FormControl(''),
-      // category: new FormGroup({
-      //   name: new FormControl(''),
-      // }),
       imdbScore: new FormControl(''),
       releaseDate: new FormControl(''),
       imdbId: new FormControl(''),
@@ -74,26 +79,25 @@ export class EditMovieComponent implements OnInit {
   }
 
   Submit() {
-    // console.log(this.addMovie);
-    // this.addMovie.value.releaseDate = String(this.addMovie.value.releaseDate);
     this.addMovie.value.title = this.title;
     this.addMovie.value.trailerUrl = this.trailerUrl;
     this.addMovie.value.originalSourceUrl = this.originalSourceUrl;
-    this.addMovie.value.imdb_id = this.imdbId;
+    this.addMovie.value.imdbId = this.imdbId;
     this.addMovie.value.id = this.id;
     this.addMovie.value.imdbScore = this.imdbScore;
-    const mapped = [this.addMovie.value.category];
-    // this.addMovie.value.category = mapped;
+    this.addMovie.value.category = this.category;
     this.addMovie.value.imdbScore = this.imdbScore;
     this.addMovie.value.releaseDate = this.releaseDate;
+    this.addMovie.value.description = this.description;
+    this.addMovie.value.coverUrl = this.coverUrl;
+    this.addMovie.value.images = this.images;
 
-    // console.log(this.addMovie.value);
-    console.log('intra in butt');
     this.movieService.editMovie(this.addMovie.value).subscribe(
-      data => { console.log(data); },
+      data => {
+        this.movieService.movieSendToEdit(this.addMovie.value);
+        this.post = true;
+      },
       error => { console.log(error); }
-    )
-
-    // this.movieService.changeMessage(this.addMovie.value);
+    );
   }
 }

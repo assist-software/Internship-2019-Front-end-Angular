@@ -20,6 +20,7 @@ export class CategoryComponent implements OnInit {
   sortBy = 'Default';
   limit = 16;
   message: any;
+  messageOF;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -45,25 +46,15 @@ export class CategoryComponent implements OnInit {
           console.log('error category', error);
         }
       );
-
-
-    // this.movieArraySort = this.movieArrayFilter;
-    // this.moviesArray = this.movieArraySort;
-    // this.moviesArray.map((movie =>
-    //   this.categorys.push(movie.category[0].name)
-    // return 'x';
-    // ));
     console.log(this.categorys);
   }
 
 
   dataChanged(value: string) {
-    console.log(value);
     if (value === 'Default') {
       this.moviesArray = this.movieArraySort;
       this.sortBy = null;
     } else {
-      console.log(value);
       this.moviesArray = this.movieArraySort.filter(movie =>
         movie.category[0].name === value);
       this.sortBy = value;
@@ -80,30 +71,15 @@ export class CategoryComponent implements OnInit {
   }
 
   addMovie(value) {
-    console.log(this.moviesService.addMovieToWhatchlist(value));
+    const result = this.moviesService.addMovieToWhatchlist(value);
+    if (result === true) {
+      this.messageOF = 'The movie was successfully added!';
+    } else {
+      this.messageOF = 'This movie is already in Whatchlist!';
+    }
   }
 
   loadMore() {
-    // console.log('limit', this.limit);
-    // this.moviesArray = this.movieArrayFilter;
-    // this.limit = this.limit + 5;
-
-    // console.log('filmele de afisat', this.moviesArray);
-    // this.moviesArray.length = this.limit;
-    // console.log('filmele de afisat dupa update:', this.moviesArray);
-    // console.log('baza', this.movieArrayFilter);
-
-    // a doua incercare
-    // this.movieArraySort.length = this.limit;
-    // this.limit = this.limit + 5;
-    // // console.log('baza', this.movieArrayFilter);
-    // console.log('primul vectore', this.movieArraySort);
-    // this.moviesArray = this.movieArraySort;
-    // console.log('vectorul de afisat', this.moviesArray);
-    // this.movieArraySort = this.movieArrayFilter;
-    // console.log('baza', this.movieArrayFilter);
-
     this.limit += 8;
-
   }
 }
