@@ -44,13 +44,14 @@
             <button class="btn btnScore">{{movie.imdbScore}}</button>
             <!-- </div> -->
             <p class="titleMovie">{{ movie.title }}</p>
+            <p class="firstText"> Released date: {{ movie.releaseDate }}</p>
             <p>{{ movie.category[0].name }}</p>
           </div>
         </div>
       </div>
       <div *ngIf="moviesArray.length > 8 && !(moviesArray.length < limit)" style="display: flex;">
         <!-- <div *ngIf="moviesArray.length < limit"> -->
-          <button class="btn myBtnMore" (click)="loadMore()">Load more</button>
+        <button class="btn myBtnMore" (click)="loadMore()">Load more</button>
         <!-- </div> -->
       </div>
     </div>

@@ -167,3 +167,7 @@ img {
     margin: auto;
     text-align: center;
 }
+
+.firstText {
+    margin-bottom: -7px;
+}

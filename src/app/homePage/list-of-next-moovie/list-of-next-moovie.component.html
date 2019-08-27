@@ -8,19 +8,19 @@
                 <div class="form-row">
                     <p class="txtFilter">Filter by</p>
                     <select class="form-control mySelect" [(ngModel)]="filter" (ngModelChange)="dataChanged($event)">
-                        <!-- size="4" -->
                         <option selected>Default</option>
                         <option *ngFor="let category of categorys" [value]="category.name">{{ category.name }}</option>
                     </select>
                     <div class="col-xs-12 col-12 col-md-4 form-group">
                         <input type="text" placeholder="Any date" class="form-control theme-red" [bsConfig]="bsConfig"
-                            bsDatepicker>
+                        bsDatepicker [(ngModel)]="ngbdate" (bsValueChange)="Datesort($event)" [minDate]="minDate"
+                        [maxDate]="maxDate">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="container" style="margin-top: 50px;">
         <div>
             <div class="row">

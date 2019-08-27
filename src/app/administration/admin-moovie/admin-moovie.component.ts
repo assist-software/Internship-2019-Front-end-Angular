@@ -14,7 +14,20 @@ export class AdminMoovieComponent implements OnInit {
   message;
   limit = 16;
 
-  listMovies: Movie[] = [];
+  listMovies: Movie[] = [{
+    images: [{ imageUrl: '' }],
+    title: '',
+    trailerUrl: '',
+    originalSourceUrl: '',
+    coverUrl: '',
+    description: '',
+    category: [{
+      name: '',
+    }],
+    imdbScore: 0,
+    releaseDate: '',
+    imdbId: 0,
+  }];
   Movies: Movie[] = [];
   constructor(
     private modalService: BsModalService,
@@ -27,7 +40,12 @@ export class AdminMoovieComponent implements OnInit {
         data => {
           console.log('data', data);
           this.listMovies = data;
-          this.Movies = data;
+          this.listMovies.sort((a, b) => {
+            if (a.id > b.id) { return -1; }
+            if (a.id < b.id) { return 1; }
+            return 0;
+          });
+          this.Movies = this.listMovies;
           console.log('list movie', this.listMovies);
         },
         error => {
@@ -37,9 +55,19 @@ export class AdminMoovieComponent implements OnInit {
 
     this.moviesService.currentMessage.subscribe(message => {
       this.message = message;
-      this.listMovies.push(this.message);
       console.log(this.message);
+      this.listMovies.unshift(this.message);
     });
+
+    this.moviesService.currentMovie.subscribe(
+      data => {
+        this.listMovies.splice(this.listMovies.indexOf(this.listMovies.find(id => id.id === data.id)), 1);
+        this.listMovies.unshift(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
 
   }
 
@@ -50,6 +78,18 @@ export class AdminMoovieComponent implements OnInit {
     this.moviesService.deleteMovie(this.idDeleted).subscribe(
       data => {
         console.log('id este');
+        let myVal = 0;
+        console.log(this.listMovies.values);
+        this.listMovies.map((id, index) => {
+          if (id.id === this.idDeleted) {
+            myVal = index;
+            return index;
+          }
+        });
+
+        this.listMovies.splice(myVal, 1);
+        console.log(this.listMovies.values);
+
       },
       error => {
         console.log('error', error);

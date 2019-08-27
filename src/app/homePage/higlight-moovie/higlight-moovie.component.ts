@@ -13,13 +13,13 @@ export class HiglightMoovieComponent implements OnInit {
   messageOF: string;
   backgroundImage: any[] = [];
   moviesArray: Movie[] = [];
+
   public movi1: Movie = {
     title: '',
     trailerUrl: '',
     originalSourceUrl: '',
     coverUrl: '',
     description: '',
-    
     category: [{
       name: '',
     }],

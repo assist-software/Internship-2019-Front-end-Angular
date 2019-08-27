@@ -38,6 +38,7 @@ export class HeaderBarComponent implements OnInit {
 
   verifiLog() {
     this.isLoggedIn = this.authenticationServices.isAuthenticated();
+    console.log(this.isLoggedIn);
   }
 
 }

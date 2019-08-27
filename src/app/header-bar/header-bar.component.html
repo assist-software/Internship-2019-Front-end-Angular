@@ -4,11 +4,16 @@
     <img class="navbar" src="assets/img/moovie-watchers_logo.png" alt="NOT FOUND">
     <a class="navbar" [routerLink]="['/list-moovie']" routerLinkActive="active-link">Watchlist<span
             class="numberOfMovie">{{numberOfMOvie}}</span></a>
+
+
+
     <div *ngIf="isLoggedIn; else loggedOut">
-        <a class="navbar" id="lastButton" [routerLink]="['/login']" routerLinkActive="active-link">Login</a>
+        <a class="navbar" id="lastButton" [routerLink]="['/login']" routerLinkActive="active-link">Log out</a>
     </div>
     <ng-template #loggedOut>
-        <a class="navbar" id="lastButton" [routerLink]="['/login']" routerLinkActive="active-link">Log out</a>
+        <a class="navbar" id="lastButton" [routerLink]="['/login']" routerLinkActive="active-link">Log in</a>
     </ng-template>
+
+
     <a class="navbar lastElement" id="lastButton" [routerLink]="['/contact']" routerLinkActive="active-link">Contact</a>
 </div>

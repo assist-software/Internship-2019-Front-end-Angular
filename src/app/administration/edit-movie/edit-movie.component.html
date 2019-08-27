@@ -48,15 +48,18 @@
             <div class="form-group col-12">
                 <label for="releaseDate">Release date</label><br />
                 <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker placement="top"
-                    name="releaseDate" [(ngModel)]="releaseDate" [bsConfig]="{dateInputFormat: 'yyyy-MM-dd'}">
+                    name="releaseDate" [(ngModel)]="releaseDate" [bsConfig]="configurare">
             </div>
+        </div>
+        <div *ngIf="post">
+            <span style="color: green;">Succes!</span>
         </div>
         <div class="form-row">
             <button class="btn btn-success myBtn">
                 <!-- [disabled]="!addMovie.valid -->
                 Edit movie
             </button>
-            <button class="btn myBtnCancel" disabled>Cancel</button>
+            <!-- <button class="btn myBtnCancel" disabled>Cancel</button> -->
         </div>
     </form>
 </div>

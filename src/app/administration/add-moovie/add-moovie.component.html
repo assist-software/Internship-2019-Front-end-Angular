@@ -1,6 +1,6 @@
 <!-- <h1 style="text-align: center">Add movie</h1> -->
 <div class="container">
-  <form #fomr="ngForm" [formGroup]="addMovie" (ngSubmit)="Submit()">
+  <form #fomr="ngForm" [formGroup]="addMovie">
     <div class="form-row">
       <div class="form-group col-6">
         <label for="title">Title movie<span class="star">*</span></label><br />
@@ -45,15 +45,22 @@
     <div class="form-row">
       <div class="form-group col-12">
         <label for="releaseDate">Release date</label><br />
-        <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker placement="top" [bsConfig]="configurare"
-          formControlName="releaseDate">
+        <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker placement="top"
+          [bsConfig]="configurare" formControlName="releaseDate">
       </div>
     </div>
+    <div *ngIf="post">
+      <span class="text-success">Succes!</span>
+    </div>
+    <div *ngIf="myError">
+      <span class="text-danger">This movie not exist!</span>
+    </div>
+    
     <div class="form-row">
-      <button class="btn btn-success myBtn" [disabled]="!addMovie.valid">
+      <button class="btn btn-success myBtn" [disabled]="!addMovie.valid" (click)="Submit()">
         Add movie
       </button>
-      <button class="btn myBtnCancel" disabled>Cancel</button>
+      <button class="btn myBtnCancel" (click)="cleanForm()">Cancel</button>
     </div>
   </form>
 </div>
