@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   movieID: number;
   nameDrop = 'Sort';
   modalRef: BsModalRef;
+  watchlist: any = [];
   public url;
 
   constructor(public restApi: RestApiService,
@@ -108,15 +109,15 @@ export class HomeComponent implements OnInit {
     else return 1;
   }
 
-  // addWatchlist(id) {
-  //   this.watchlist = JSON.parse(localStorage.getItem("watchlist"));
+  addWatchlist(id) {
+    this.watchlist = JSON.parse(localStorage.getItem("watchlist"));
 
-  //   if (this.watchlist) {
-  //     this.watchlist.push({ id: id });
-  //   } else {
-  //     this.watchlist = new Array();
-  //     this.watchlist.push({ id: id });
-  //   }
-  //   localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
-  // }
+    if (this.watchlist) {
+      this.watchlist.push({ id: id });
+    } else {
+      this.watchlist = new Array();
+      this.watchlist.push({ id: id });
+    }
+    localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
+  }
 }
