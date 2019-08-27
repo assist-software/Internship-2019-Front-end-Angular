@@ -25,6 +25,9 @@ export class ListOfNextMoovieComponent implements OnInit {
   month: number;
   month1: string;
   year: number;
+  ngbdate = new Date();
+  minDate = new Date();
+  maxDate = new Date();
 
 
   constructor(private sanitizer: DomSanitizer,
@@ -36,22 +39,25 @@ export class ListOfNextMoovieComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.minDate = new Date(this.dateVariable.getFullYear(), this.dateVariable.getMonth()+1, 1);
+    this.maxDate = new Date(this.dateVariable.getFullYear(),this.dateVariable.getMonth()+1,31);
     this.bsConfig = Object.assign({}, { containerClass: 'theme-red' });
     this.moviesService.getMovies()
       .subscribe(
         data => {
           this.movieArraySort = data;
-          this.month = this.dateVariable.getMonth()+2;
+          this.month = this.dateVariable.getMonth() + 2;
           this.year = this.dateVariable.getFullYear();
-          
+
           for (const movie of this.movieArraySort) {
-            
-            if(movie.releaseDate.substr(5,2)==this.month && movie.releaseDate.substr(0,4)==this.year)
-            {
+
+            if (movie.releaseDate.substr(5, 2) == this.month && movie.releaseDate.substr(0, 4) == this.year) {
               this.moviesArray.push(movie);
-                
+              console.log(movie.releaseDate.substr(8, 2));
+
             }
           }
+          console.log(this.moviesArray);
           this.movieArraySort = this.moviesArray;
           this.movieArrayFilter = this.moviesArray;
         })
@@ -66,7 +72,7 @@ export class ListOfNextMoovieComponent implements OnInit {
           console.log('error category', error);
         }
       );
-      console.log(this.categorys);
+    console.log(this.categorys);
 
 
   }
@@ -78,9 +84,19 @@ export class ListOfNextMoovieComponent implements OnInit {
       console.log(value);
       this.moviesArray = this.movieArraySort.filter(movie =>
         movie.category[0].name === value);
-        this.sortBy = value;
+      this.sortBy = value;
     }
     console.log(this.moviesArray);
+  }
+  Datesort(value: Date) {
+    console.log(this.ngbdate);
+    this.moviesArray = this.movieArraySort.filter(movie => {
+
+      return movie.releaseDate.substr(8, 2) == value.getDate();
+      
+    });
+    console.log(this.moviesArray);
+
   }
 
   filterMovies(value: string) {

@@ -14,7 +14,8 @@
                     </select>
                     <div class="col-xs-12 col-12 col-md-4 form-group">
                         <input type="text" placeholder="Any date" class="form-control theme-red" [bsConfig]="bsConfig"
-                            bsDatepicker>
+                        bsDatepicker [(ngModel)]="ngbdate" (bsValueChange)="Datesort($event)" [minDate]="minDate"
+                        [maxDate]="maxDate">
                     </div>
                 </div>
             </div>

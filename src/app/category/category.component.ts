@@ -20,7 +20,7 @@ export class CategoryComponent implements OnInit {
   sortBy = 'Default';
   limit = 16;
   message: any;
-
+ 
   constructor(
     private sanitizer: DomSanitizer,
     private moviesService: MoviesServices,
