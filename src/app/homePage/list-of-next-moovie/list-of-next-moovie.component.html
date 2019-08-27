@@ -11,7 +11,7 @@
                         <option selected>Default</option>
                         <option *ngFor="let category of categorys" [value]="category.name">{{ category.name }}</option>
                     </select>
-                    <div [formGroup]="myGroup" class="col-xs-12 col-12 col-md-4 form-group">
+                    <div class="col-xs-12 col-12 col-md-4 form-group">
                         <input type="text" placeholder="Any date" class="form-control theme-red" [bsConfig]="bsConfig"
                         bsDatepicker [(ngModel)]="ngbdate" (bsValueChange)="Datesort($event)" [minDate]="minDate"
                         [maxDate]="maxDate">
