@@ -10,13 +10,21 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddMovieComponent implements OnInit {
   genMovies = [
-    { id: 1, name: 'Actiune' },
-    { id: 2, name: 'Fantasy' },
-    { id: 3, name: 'Western' },
-    { id: 4, name: 'Musical' },
-    { id: 5, name: 'Comedy' },
-    { id: 6, name: 'Cartoon' },
-    { id: 7, name: 'Thriller' },
+    { id: 1, name: 'Action' },
+    { id: 2, name: 'Adventure' },
+    { id: 3, name: 'Animation' },
+    { id: 4, name: 'Comedy' },
+    { id: 5, name: 'Crime' },
+    { id: 6, name: 'Documentary' },
+    { id: 7, name: 'Drama' },
+    { id: 8, name: 'Family' },
+    { id: 9, name: 'Fantasy' },
+    { id: 10, name: 'History' },
+    { id: 11, name: 'Romance' },
+    { id: 8, name: 'Thriller' },
+    { id: 9, name: 'Western' },
+    { id: 10, name: 'Science Fiction' },
+    { id: 11, name: 'War' },
   ]
   titleModal = "Add movie";
   movies: any = [];
