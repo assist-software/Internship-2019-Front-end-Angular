@@ -1,21 +1,10 @@
 <div>
   <div class="container">
-    <img
-      (click)="MoviShow(movie.id)"
-      [src]="'http://image.tmdb.org/t/p/w185' + movie.coverUrl"
-      alt="img"
-    />
-    <button
-      *ngIf="rout.url === '/'"
-      class="btn1 btn btn-primary-danger"
-      (click)="addWatchlist(movie.id)"
-    >
+    <img (click)="MoviShow(movie.id)" [src]="'http://image.tmdb.org/t/p/w185' + movie.coverUrl" alt="img" />
+    <button *ngIf="rout.url === '/'" class="btn1 btn btn-primary-danger" (click)="addWatchlist(movie.id)">
       Add to watchlist
     </button>
-    <button
-      *ngIf="rout.url === '/watchlist'"
-      class="btn1 btn btn-primary-danger"
-    >
+    <button *ngIf="rout.url === '/watchlist'" class="btn1 btn btn-primary-danger" (click)="removeWatchlist(movie.id)">
       Remove
     </button>
     <button class="no-click btn2 btn btn-primary-danger">

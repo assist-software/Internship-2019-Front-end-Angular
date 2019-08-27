@@ -56,4 +56,13 @@ export class MovieItemComponent implements OnInit {
     }
     localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
   }
+  removeWatchlist(id) {
+    this.watchlist = JSON.parse(localStorage.getItem("watchlist"));
+    if (this.watchlist) {
+      this.watchlist = this.watchlist.filter(function(obj) {
+        return obj.id !== id;
+      });
+      localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
+    }
+  }
 }

@@ -1,13 +1,21 @@
 header {
-  background: url("../../assets/img/bg.png") no-repeat 0 0;
+  /* background: url("../../assets/img/bg.png") no-repeat 0 0;
   border-top: 29px solid transparent;
   background-size: 100%;
+  background-size: cover; */
+  background: url("../../assets/img/bg.png") no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
   background-size: cover;
 }
-
+.bgColor {
+  background-color: #13131c;
+}
 .containerHeader {
   margin-top: 5%;
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
 }
 
 div {

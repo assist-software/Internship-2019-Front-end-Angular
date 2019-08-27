@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   nameDrop = "Sort";
   myDate = new Date();
   curentDate: any;
-
+  watchlist: any = [];
   constructor(
     public restApi: RestApiService,
     private route: ActivatedRoute,
@@ -52,8 +52,9 @@ export class HomeComponent implements OnInit {
         }
       }
       this.moviesNew = this.movies.filter(
-        m => m.releaseDate === this.curentDate
+        m => m.releaseDate >= this.curentDate
       );
+      this.movies = this.movies.filter(m => m.releaseDate <= this.curentDate);
     });
   }
 
@@ -91,5 +92,17 @@ export class HomeComponent implements OnInit {
     if (c1.imdbScore > c2.imdbScore) return -1;
     else if (c1.imdbScore === c2.imdbScore) return 0;
     else return 1;
+  }
+
+  addWatchlist(id) {
+    this.watchlist = JSON.parse(localStorage.getItem("watchlist"));
+
+    if (this.watchlist) {
+      this.watchlist.push({ id: id });
+    } else {
+      this.watchlist = new Array();
+      this.watchlist.push({ id: id });
+    }
+    localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
   }
 }
