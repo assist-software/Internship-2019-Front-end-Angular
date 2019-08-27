@@ -32,7 +32,6 @@ export class AddMovieComponent implements OnInit {
   ngOnInit() {
     this.loadMovie(localStorage.getItem('movie'));
     this.addMovie = new FormGroup({
-      id: new FormControl(Math.floor(Math.random() * 1000)),
       title: new FormControl('', Validators.required),
       trailerUrl: new FormControl('', Validators.required),
       originalSourceUrl: new FormControl('', Validators.required),
@@ -40,7 +39,7 @@ export class AddMovieComponent implements OnInit {
       description: new FormControl(''),
       categories: new FormGroup({ name: new FormControl('') }),
       imdbScore: new FormControl(''),
-      imdbId: new FormControl('test3'),
+      imdbId: new FormControl(''),
       releaseDate: new FormControl(''),
     });
     console.log("test cosmin:", this.addMovie);

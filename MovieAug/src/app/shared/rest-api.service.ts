@@ -12,7 +12,7 @@ export class RestApiService {
   apiUserDBEdit = 'http://192.168.151.193:8080/api/movie';
   apiServer = 'http://192.168.151.218:8090'
   // apiUserDBSignUP = 'http://192.168.151.193:8080/signup';
-  apiURLDB = 'http://192.168.151.218:8090/api/movie';
+  apiURLDB = 'http://192.168.151.224:8080/api/movie';
   constructor(private http: HttpClient) { }
   // Http Options
   httpOptions = {
@@ -59,7 +59,7 @@ export class RestApiService {
       )
   }
   updateMovie(id, movie): Observable<movie> {
-    return this.http.put<movie>(this.apiUserDBEdit, JSON.stringify(movie), this.httpOptions)
+    return this.http.put<movie>(this.apiUserDBEdit + '/' + id, JSON.stringify(movie), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
