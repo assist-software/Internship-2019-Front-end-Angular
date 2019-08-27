@@ -6,6 +6,13 @@
 }
 
 .photoMovi {
+  width: 60px;
+  margin-top: -19px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.photoMoviButton {
   cursor: pointer;
 }
 
@@ -23,7 +30,6 @@
   width: 176px;
   height: 48px;
   background: #f5044c;
-
   border: 1px solid #010103;
   box-sizing: border-box;
   border-radius: 8px;

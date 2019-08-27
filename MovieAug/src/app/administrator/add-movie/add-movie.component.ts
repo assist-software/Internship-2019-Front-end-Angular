@@ -32,7 +32,6 @@ export class AddMovieComponent implements OnInit {
   ngOnInit() {
     this.loadMovie(localStorage.getItem('movie'));
     this.addMovie = new FormGroup({
-      id: new FormControl(Math.floor(Math.random() * 1000)),
       title: new FormControl('', Validators.required),
       trailerUrl: new FormControl('', Validators.required),
       originalSourceUrl: new FormControl('', Validators.required),
@@ -40,7 +39,7 @@ export class AddMovieComponent implements OnInit {
       description: new FormControl(''),
       categories: new FormGroup({ name: new FormControl('') }),
       imdbScore: new FormControl(''),
-      imdbId: new FormControl('test3'),
+      imdbId: new FormControl(''),
       releaseDate: new FormControl(''),
     });
     console.log("test cosmin:", this.addMovie);
@@ -53,9 +52,6 @@ export class AddMovieComponent implements OnInit {
       this.titleModal = "Edit movie";
       return this.restApi.getMovie(id).subscribe((data: {}) => {
         this.movies = data;
-        console.log("Json:", this.movies.title);
-        console.log("JSON END:");
-
       })
     }
   }
@@ -72,6 +68,8 @@ export class AddMovieComponent implements OnInit {
     else {
       console.log("Intra in update");
       this.loadMovie(this.idMovie);
+      const mapped = [this.addMovie.value.categories];
+      this.addMovie.value.categories = mapped;
       this.restApi.updateMovie(this.idMovie, this.addMovie.value).subscribe(data => {
       })
     }

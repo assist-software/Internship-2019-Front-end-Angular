@@ -1,15 +1,50 @@
 header {
-  background: url('../../assets/img/bg.png') no-repeat 0 0;
+  /* background: url("../../assets/img/bg.png") no-repeat 0 0;
   border-top: 29px solid transparent;
   background-size: 100%;
+  background-size: cover; */
+  background: url("../../assets/img/bg.png") no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
   background-size: cover;
+}
 
+.ModaleCancel {
+  border-radius: 8px;
+  font-family: Campton;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+}
 
+.TrilerDiv {
+  margin-top: 20%;
+
+}
+
+.triler {
+  height: 350px;
+  width: 500px;
+  background: black;
+}
+
+.trailerURL {
+  height: 300px;
+  width: 450px;
+  margin-left: 10px;
+
+}
+
+.bgColor {
+  background-color: #13131c;
 }
 
 .containerHeader {
   margin-top: 5%;
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
 }
 
 div {
@@ -25,7 +60,6 @@ ul {
   background-color: rgb(197, 55, 126);
   color: white;
   margin-right: 2%;
-
 }
 
 .btn-primary-secondary {
@@ -74,8 +108,6 @@ body {
   background-color: #f5044c;
   color: white;
   width: 40%;
-
-
 }
 
 .container .btn:hover {
@@ -93,8 +125,6 @@ body {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   width: 16%;
-
-
 }
 
 .no-click {
@@ -102,9 +132,26 @@ body {
 }
 
 .btn1 {
-
   background-color: #f5044c;
   color: white;
   border-width: 5px;
   border-color: #f5044c;
+}
+
+@media (max-width: 577px) {
+  .triler {
+    height: 200px;
+    width: 100px;
+  }
+
+  .trailerURL {
+    height: 200px;
+    width: 250px;
+    margin-left: 10px;
+
+  }
+
+  .TrilerDiv {
+    margin-top: 20%;
+  }
 }

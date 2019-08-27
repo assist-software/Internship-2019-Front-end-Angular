@@ -19,7 +19,7 @@
     <div class="section2"><br>
       <div class="row">
         <div class="col-2 ">
-          <img src="../../../assets/image11.png" class="photoMovi" alt="Moovie">
+          <img [src]="'http://image.tmdb.org/t/p/w92' + movie.coverUrl " class="photoMovi" alt="Moovie">
         </div>
         <div class="col-3 ">
           <p>{{movie.title}}</p>
@@ -28,12 +28,12 @@
           <p>{{movie.releaseDate}}</p>
         </div>
         <div class="col-2 ">
-          <span *ngIf="movie !== undefined">
-            <!-- <p>{{movie.categories[0].name}}</p> -->
+          <span *ngIf="movie.categories && movie.categories.length > 0 ">
+            <p>{{movie.categories[0].name}}</p>
           </span>
         </div>
         <div class="col-1   buttonsModify">
-          <img src="../../../assets/Vector.png" (click)="deleteMovieModal(delete, movie.id)" class="photoMovi"
+          <img src="../../../assets/Vector.png" (click)="deleteMovieModal(delete, movie.id)" class="photoMoviButton"
             alt="Moovie">
           <img src="../../../assets/Edit.png" (click)="UpdateMovie(template, movie.id)" class="edit" alt="Moovie">
         </div>

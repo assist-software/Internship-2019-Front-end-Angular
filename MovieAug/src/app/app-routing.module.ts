@@ -7,9 +7,9 @@ import { AddMovieComponent } from "./administrator/add-movie/add-movie.component
 import { ListMoviesAdminComponent } from "./administrator/list-movies-admin/list-movies-admin.component";
 import { AuthComponent } from "./auth/auth.component";
 import { AuthGuard } from "@app/_helper";
-import { ContactComponent } from './contact/contact.component';
-import { ProfileComponent } from './administrator/profile/profile.component';
-import { CategoryComponent } from './category/category.component';
+import { ContactComponent } from "./contact/contact.component";
+import { ProfileComponent } from "./administrator/profile/profile.component";
+import { CategoryComponent } from "./category/category.component";
 
 const routes: Routes = [
   { path: "login", component: AuthComponent },
@@ -18,11 +18,15 @@ const routes: Routes = [
     path: "watchlist",
     component: WatchlistComponent
   },
-  { path: "category", component: CategoryComponent, canActivate: [AuthGuard] },
+  { path: "category", component: CategoryComponent },
   { path: "addMovie", component: AddMovieComponent, canActivate: [AuthGuard] },
-  { path: "contact", component: ContactComponent, canActivate: [AuthGuard] },
-  { path: "profile/:id", component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: "movieDetail/:id", component: MovieDetailComponent, canActivate: [AuthGuard] },
+  { path: "contact", component: ContactComponent },
+  {
+    path: "profile/:id",
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  { path: "movieDetail/:id", component: MovieDetailComponent },
   {
     path: "adminMoviesList",
     component: ListMoviesAdminComponent,
@@ -35,4 +39,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

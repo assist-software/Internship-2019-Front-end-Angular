@@ -152,8 +152,8 @@ export class AuthComponent implements OnInit {
     this.isResetMode = false;
     this.isLoginMode = false;
 
-    this.authForms.controls["fullName"].setValidators([Validators.required,Validators.minLength(1),
-      Validators.maxLength(50)]);
+    this.authForms.controls["fullName"].setValidators([Validators.required, Validators.minLength(1),
+    Validators.maxLength(50)]);
     this.authForms.controls["fullName"].updateValueAndValidity();
 
     this.authForms.controls["password"].setValidators([
