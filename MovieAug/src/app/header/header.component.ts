@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
       this.watchlistNumber = Object.keys(this.watchList).length;
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   navbarCollapsed = true;
 

@@ -8,11 +8,16 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 export class HeaderAdminComponent implements OnInit {
   private IdUser;
   public url;
+  public name;
   constructor(
     private router: Router,
   ) { }
 
   ngOnInit() {
+
+    this.IdUser = JSON.parse(localStorage.getItem("currentUser"));
+    console.log("name:", this.IdUser.name);
+    this.name = this.IdUser.name;
   }
   logOut() {
     localStorage.removeItem('currentUser');
@@ -20,6 +25,6 @@ export class HeaderAdminComponent implements OnInit {
   profil() {
     this.IdUser = JSON.parse(localStorage.getItem("currentUser"));
     this.url = this.router.navigate(['profile/' + this.IdUser.id]);
-    console.log("ID:", this.url.id);
+
   }
 }
