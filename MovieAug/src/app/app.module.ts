@@ -24,14 +24,15 @@ import { AddMovieComponent } from "./administrator/add-movie/add-movie.component
 import { HeaderAdminComponent } from "./administrator/header-admin/header-admin.component";
 import { ListMoviesAdminComponent } from "./administrator/list-movies-admin/list-movies-admin.component";
 import { AuthComponent } from "./auth/auth.component";
-import { ContactComponent } from './contact/contact.component';
-import { ProfileComponent } from './administrator/profile/profile.component';
-import { OrderModule } from 'ngx-order-pipe';
-import { FilterPipe } from './filter.pipe';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FilterPipeModule } from 'ngx-filter-pipe';
-import { CategoryComponent } from './category/category.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ContactComponent } from "./contact/contact.component";
+import { ProfileComponent } from "./administrator/profile/profile.component";
+import { OrderModule } from "ngx-order-pipe";
+import { FilterPipe } from "./filter.pipe";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FilterPipeModule } from "ngx-filter-pipe";
+import { CategoryComponent } from "./category/category.component";
+import { SlickCarouselModule } from "ngx-slick-carousel";
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     ProfileComponent,
     FilterPipe,
     CategoryComponent
-
   ],
   imports: [
     BrowserModule,
@@ -66,8 +66,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     HttpClientModule,
     OrderModule,
     NgbModule,
-    FilterPipeModule, SlickCarouselModule
-
+    FilterPipeModule,
+    SlickCarouselModule,
+    NgxPaginationModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

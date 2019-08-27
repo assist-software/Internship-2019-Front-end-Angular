@@ -9,7 +9,7 @@
 </div> -->
 
 <header>
-  <div class="container ">
+  <div class="container">
     <app-header></app-header>
     <div class="row containerHeader">
       <div class="col">
@@ -31,8 +31,8 @@
         <P><img [src]="'http://image.tmdb.org/t/p/w185' + movieItem.coverUrl" alt="Movie" class="rounded"></P>
       </div>
     </div>
-    <div class="row d-flex justify-content-center ">
-      <p> <i class="arrow down"></i></p>
+    <div class="row d-flex justify-content-center">
+      <p><i class="arrow down scrolly"></i></p>
     </div>
   </div>
 </header>
@@ -45,19 +45,20 @@
 <br>
 <br>
 <div class="container">
-  <app-movie-list></app-movie-list>
+  <app-movie-list [moviesList]="movies"></app-movie-list>
 </div>
-<div class="container">
+<div class="container bgColor">
   <div class="row">
     <div class="col-sm-5">
       <h1>See what movies come next month</h1>
     </div>
-    <div class="col-sm-4">
-    </div>
+    <div class="col-sm-4"></div>
     <label for="sdropdownBasic1">Sort by:</label>
     <div class="col">
       <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{nameDrop}}</button>
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          {{ nameDrop }}
+        </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem (click)="sendFilter('data')">ReleaseDate</button>
           <button ngbDropdownItem (click)="sendFilter('score')">IMDBScore</button>
@@ -68,7 +69,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 col-sm-4" *ngFor="let movie of movies   ">
+    <div class="col-md-3 col-sm-4" *ngFor="let movie of moviesNew">
       <app-movie-item [movie]="movie"></app-movie-item>
     </div>
   </div>

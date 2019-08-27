@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
+  watchList = JSON.parse(localStorage.getItem("watchlist"));
 
-  constructor() { }
+  watchlistNumber: number;
 
-  ngOnInit() {
+  constructor(public rout: Router) {
+    if (this.watchList)
+      this.watchlistNumber = Object.keys(this.watchList).length;
   }
 
+  ngOnInit() {}
+
+  navbarCollapsed = true;
+
+  toggleNavbarCollapsing() {
+    console.log(this.watchList);
+    this.navbarCollapsed = !this.navbarCollapsed;
+  }
 }

@@ -1,19 +1,27 @@
 <div>
   <div class="container">
-    <img (click)="MoviShow(movie.id)" [src]="'http://image.tmdb.org/t/p/w185' + movie.coverUrl " alt="img">
-    <button class="btn1 btn btn-primary-danger">{{movie.function}}</button>
-    <button class="no-click btn2 btn btn-primary-danger">{{movie.imdbScore}}</button>
+    <img (click)="MoviShow(movie.id)" [src]="'http://image.tmdb.org/t/p/w185' + movie.coverUrl" alt="img" />
+    <button *ngIf="rout.url === '/' || rout.url === '/category' " class="btn1 btn btn-primary-danger"
+      (click)="addWatchlist(movie.id)">
+      Add to watchlist
+    </button>
+    <button *ngIf="rout.url === '/watchlist'" class="btn1 btn btn-primary-danger" (click)="removeWatchlist(movie.id)">
+      Remove
+    </button>
+    <button class="no-click btn2 btn btn-primary-danger">
+      {{ movie.imdbScore }}
+    </button>
   </div>
   <div class="row">
     <ul style="list-style: none">
       <li>
-        <h4>{{movie.title}}</h4>
+        <h4>{{ movie.title }}</h4>
       </li>
       <li>
-        <p>Release date: {{movie.releaseDate}}</p>
+        <p>Release date: {{ movie.releaseDate }}</p>
       </li>
-      <li *ngIf="movie.categories && movie.categories.length > 0 ">
-        <p>{{movie.categories[0].name }}</p>
+      <li>
+        <span *ngFor="let cat of movie.categories">{{ cat.name }} • </span>
       </li>
     </ul>
   </div>

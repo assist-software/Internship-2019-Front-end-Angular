@@ -5,25 +5,44 @@
   </div>
   <div class="col">
     <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{nameDrop}}</button>
-
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+        {{ nameDrop }}
+      </button>
 
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button ngbDropdownItem (click)="sendFilter('Sort')" class="btn btn-outline-primary">All</button>
-        <button ngbDropdownItem (click)="sendFilter('Action')" class="btn btn-outline-primary">Action</button>
-        <button ngbDropdownItem (click)="sendFilter('Adventure')" class="btn btn-outline-primary">Adventure</button>
-        <button ngbDropdownItem (click)="sendFilter('Horror')" class="btn btn-outline-primary">Horror</button>
-        <button ngbDropdownItem (click)="sendFilter('Fantasy')" class="btn btn-outline-primary">Fantasy</button>
-
+        <button ngbDropdownItem (click)="sendFilter('Sort')" class="btn btn-outline-primary">
+          All
+        </button>
+        <button ngbDropdownItem (click)="sendFilter('Action')" class="btn btn-outline-primary">
+          Action
+        </button>
+        <button ngbDropdownItem (click)="sendFilter('Adventure')" class="btn btn-outline-primary">
+          Adventure
+        </button>
+        <button ngbDropdownItem (click)="sendFilter('Horror')" class="btn btn-outline-primary">
+          Horror
+        </button>
+        <button ngbDropdownItem (click)="sendFilter('Fantasy')" class="btn btn-outline-primary">
+          Fantasy
+        </button>
       </div>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-3 col-sm-4" *ngFor="let movie of filterFunction() ">
+    <div class="col-md-3 col-sm-4" *ngFor="
+        let movie of filterFunction()
+          | paginate: { itemsPerPage: 8, currentPage: p }
+      ">
       <app-movie-item [movie]="movie"></app-movie-item>
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-6 col-sm-6 text-center">
+    <pagination-controls class="my-pagination" (pageChange)="p = $event" responsive="true"></pagination-controls>
+  </div>
+</div>
+
 <app-footer></app-footer>
