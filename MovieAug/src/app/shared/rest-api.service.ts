@@ -10,7 +10,7 @@ import { retry, catchError } from "rxjs/operators";
 export class RestApiService {
   apiUserDB = 'http://192.168.151.218:8090/user';
   apiUserDBEdit = 'http://192.168.151.193:8080/api/movie';
-  apiServer = 'http://192.168.151.218:8090'
+  apiServer = 'http://192.168.151.193:8090'
   // apiUserDBSignUP = 'http://192.168.151.193:8080/signup';
   apiURLDB = 'http://192.168.151.224:8080/api/movie';
   constructor(private http: HttpClient) { }

@@ -1,8 +1,5 @@
-import { Component, OnInit, Input, TemplateRef } from "@angular/core";
-import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { Component, OnInit } from "@angular/core";
 import { RestApiService } from "../shared/rest-api.service";
-import { OrderPipe } from "ngx-order-pipe";
-import { MoviesComponent } from "@app/movies/movies.component";
 import { movie } from "@app/shared/movie";
 
 @Component({
@@ -22,9 +19,6 @@ export class CategoryComponent implements OnInit {
 
   constructor(
     public restApi: RestApiService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private orderPipe: OrderPipe
   ) { }
 
   ngOnInit() {
@@ -88,35 +82,23 @@ export class CategoryComponent implements OnInit {
     });
   }
   filterFunction(): any[] {
-
     if (this.nameDrop === 'Sort') {
       return this.movies;
-
     }
     else {
-
-
       console.log(this.movies)
       const x = [];
       this.movies.filter(movie => {
         if (movie.categories && movie.categories[0]) {
           movie.categories.map(category => {
-            // console.log(movie.categories[0].name == this.nameDrop)
+
             if (category.name == this.nameDrop) {
               x.push(movie)
             }
-
           })
         }
       });
-      // console.log('XXXXXXX', x)
       return x;
     }
   }
 }
-// this.movieMap = this.movies.map(movie => movie.categories);
-
-// console.log(this.movieMap);
-// console.log(this.movieMap);
-// if (this.movieMap.name === this.nameDrop)
-//   return this.movies;

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RestApiService } from '../../shared/rest-api.service';
-// import { SafeResourceUrl, DomSanitizationService } from '@angular/platform-browser';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-movie-detail',

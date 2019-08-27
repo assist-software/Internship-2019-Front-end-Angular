@@ -1,8 +1,5 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { RestApiService } from '../shared/rest-api.service';
-import { OrderPipe } from 'ngx-order-pipe';
-import { MoviesComponent } from '@app/movies/movies.component';
 import { movie } from '@app/shared/movie';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -25,28 +22,13 @@ export class HomeComponent implements OnInit {
   public url;
 
   constructor(public restApi: RestApiService,
-    private route: ActivatedRoute,
     private modalService: BsModalService,
-    private router: Router,
-    private orderPipe: OrderPipe,
     private sanitizer: DomSanitizer) {
-    // this.items = [
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    // ]
+
   }
   ngOnInit() {
     this.loadMovie();
   }
-
   loadMovie() {
     return this.restApi.getMovies().subscribe((data: {}) => {
       this.movies = data;
@@ -61,10 +43,6 @@ export class HomeComponent implements OnInit {
           this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.movieItem.trailerUrl);
         }
       }
-      // this.moviesNew = this.movies.filter(
-      //   m => m.releaseDate >= this.curentDate
-      // );
-      // this.movies = this.movies.filter(m => m.releaseDate <= this.curentDate);
     });
   }
   watchTriler(template: TemplateRef<any>, id) {
@@ -107,16 +85,4 @@ export class HomeComponent implements OnInit {
     else if (c1.imdbScore === c2.imdbScore) return 0
     else return 1;
   }
-
-  // addWatchlist(id) {
-  //   this.watchlist = JSON.parse(localStorage.getItem("watchlist"));
-
-  //   if (this.watchlist) {
-  //     this.watchlist.push({ id: id });
-  //   } else {
-  //     this.watchlist = new Array();
-  //     this.watchlist.push({ id: id });
-  //   }
-  //   localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
-  // }
 }

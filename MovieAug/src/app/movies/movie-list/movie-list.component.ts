@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   HostListener,
   Input,
   OnChanges,
@@ -23,7 +22,7 @@ export class MovieListComponent implements OnChanges {
     slidesToScroll: 4
   };
 
-  constructor() {}
+  constructor() { }
   ngOnChanges(changes: SimpleChanges) {
     if (changes["moviesList"].currentValue) {
       this.movies = this.moviesList.sort(this.sortFilterData).slice(0, 7);
@@ -37,10 +36,10 @@ export class MovieListComponent implements OnChanges {
     else return -1;
   }
   afterChange(e) {
-    // console.log(e);
+
   }
   @HostListener("window:resize", ["$event"])
   onresize(event) {
-    // console.log(this.movies);
+
   }
 }

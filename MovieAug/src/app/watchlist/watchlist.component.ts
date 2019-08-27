@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RestApiService } from "../shared/rest-api.service";
 import { OrderPipe } from "ngx-order-pipe";
-import { MoviesComponent } from "@app/movies/movies.component";
 import { movie } from "@app/shared/movie";
 @Component({
   selector: "app-watchlist",
@@ -27,9 +26,6 @@ export class WatchlistComponent implements OnInit {
   deleteMovie(Id) {
     console.log("delete", Id);
     console.log("test");
-    // this.restApi.deleteMovieUser(Id).subscribe(data => {
-    //   this.loadMovie();
-    // });
     window.location.reload();
   }
 
