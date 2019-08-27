@@ -31,18 +31,7 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private orderPipe: OrderPipe,
     private sanitizer: DomSanitizer) {
-    // this.items = [
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    //   { name: '../../assets/img/left-arrow.png' },
-    // ]
+
   }
   ngOnInit() {
     this.loadMovie();
@@ -67,6 +56,10 @@ export class HomeComponent implements OnInit {
       // );
       // this.movies = this.movies.filter(m => m.releaseDate <= this.curentDate);
     });
+  }
+  MoviShow(id) {
+    console.log("Am ajuns in MovieShow");
+    this.router.navigate(["movieDetail/" + id]);
   }
   watchTriler(template: TemplateRef<any>, id) {
 
@@ -120,4 +113,5 @@ export class HomeComponent implements OnInit {
     }
     localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
   }
+
 }

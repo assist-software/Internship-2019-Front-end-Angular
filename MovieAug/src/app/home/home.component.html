@@ -29,7 +29,8 @@
         </ul>
       </div>
       <div class="col">
-        <P><img [src]="'http://image.tmdb.org/t/p/w185' + movieItem.coverUrl" alt="Movie" class="rounded"></P>
+        <P><img (click)="MoviShow(movieItem.id)" [src]="'http://image.tmdb.org/t/p/w780' + movieItem.coverUrl"
+            alt="Movie" class="rounded"></P>
       </div>
     </div>
     <div class="row d-flex justify-content-center">

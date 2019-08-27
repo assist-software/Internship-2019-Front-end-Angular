@@ -15,7 +15,11 @@
     </div>
   </div>
 
-  <div *ngFor="let movie of movies  | filter: searchText  " class="service_box">
+
+
+
+  <div *ngFor="let movie of movies  | filter: searchText | paginate: { itemsPerPage: 8, currentPage: p } "
+    class="service_box">
     <div class="section2"><br>
       <div class="row">
         <div class="col-2 ">
@@ -40,7 +44,11 @@
       </div>
     </div>
   </div>
-
+  <div class="row">
+    <div class=" col-sm-6 text-center">
+      <pagination-controls class="my-pagination" (pageChange)="p = $event" responsive="true"></pagination-controls>
+    </div>
+  </div>
 
   <!-- modalul pentru adaugarea sau editarea unui film -->
   <ng-template #template let-modal let-c="close" let-d="dismiss">

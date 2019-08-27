@@ -12,9 +12,11 @@
       <div class="col">
         <h4 class="title">{{currentMovie.title}} <span class="nota"> {{currentMovie.imdbScore}}</span></h4>
         <br />
-        <h6 class="category">{{currentMovie.Category}} <span>1h 33min</span> </h6> <br>
+        <span *ngIf="currentMovie.categories && currentMovie.categories.length > 0 ">
+          <h6 class="category">{{currentMovie.categories[0].name}} <span> • 1h 33min</span> </h6>
+        </span> <br>
         <p class="description">{{currentMovie.description}}</p> <br>
-        <button class="btn ">Add to watchlist</button><br>
+        <button class="btn " (click)="addWatchlist(currentMovie.id)">Add to watchlist</button><br>
         <p class="director"> Director: <span class="txtMovie">Chris Addison</span></p>
         <p class="director"> Writers: <span class="txtMovie">Stanley Shapiro (screenplay by), Paul Henning
             (screenplay by)</span></p>
@@ -27,8 +29,14 @@
         <h1>Photos</h1>
       </div>
       <div class="row">
-        <div class="col" *ngFor="let i of [1,2,3,4,5]">
-          <p><img class="ListPhoto" src="../../assets/img/81B2m2WVzkL._SX342_.jpg" alt=""></p>
+        <div class="col">
+          <p><img class="ListPhoto" [src]="'https://image.tmdb.org/t/p/w154' + currentMovie.image1" alt=""></p>
+        </div>
+        <div class="col">
+          <p><img class="ListPhoto" [src]="'https://image.tmdb.org/t/p/w154' + currentMovie.image2" alt=""></p>
+        </div>
+        <div class="col">
+          <p><img class="ListPhoto" [src]="'https://image.tmdb.org/t/p/w154' + currentMovie.image3" alt=""></p>
         </div>
       </div>
     </div>

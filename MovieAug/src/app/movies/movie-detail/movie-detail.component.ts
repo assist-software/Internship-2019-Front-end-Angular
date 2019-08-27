@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class MovieDetailComponent implements OnInit {
   movies: any = [];
   public url;
+  watchlist: any = [];
   currentMovie: any = [];
   currentURL = '';
   constructor(public restApi: RestApiService,
@@ -32,6 +33,17 @@ export class MovieDetailComponent implements OnInit {
         }
       }
     })
+  }
+  addWatchlist(id) {
+    this.watchlist = JSON.parse(localStorage.getItem("watchlist"));
+
+    if (this.watchlist) {
+      this.watchlist.push({ id: id });
+    } else {
+      this.watchlist = new Array();
+      this.watchlist.push({ id: id });
+    }
+    localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
   }
 
 }
