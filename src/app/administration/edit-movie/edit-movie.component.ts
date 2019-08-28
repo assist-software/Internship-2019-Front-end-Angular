@@ -97,7 +97,7 @@ export class EditMovieComponent implements OnInit {
         this.movieService.movieSendToEdit(this.addMovie.value);
         this.post = true;
       },
-      error => { console.log(error); }
+      error => { console.log('error from editMovie', error); }
     );
   }
 }

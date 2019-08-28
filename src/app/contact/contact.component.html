@@ -1,23 +1,23 @@
 <div class="container-contact">
     <div class="container-form">
         <h2 class="titleForm">Contact us</h2>
-  <form [formGroup]="contact" (ngSubmit)="contactFunction()">
+  <form [formGroup]="contact">
     <div class="form-row">
       <div class="form-group col-12">
         <br />
-        <input formname="name" placeholder="  Name"  />
+        <input formControlName="name" placeholder="  Name"  />
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-12">
         <br />
-        <input formemail="email" placeholder="  Email"/>
+        <input formControlName="email" placeholder="  Email"/>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-12">
         <br />
-        <select class="selectCategory" name="category">
+        <select class="selectCategory" name="category" formControlName="category">
           <option value="" disabled selected>Subject</option>
           <option value="Feedback">Feedback</option>
           <option value="bugreport">Report a bug</option>
@@ -29,11 +29,14 @@
     <div class="form-row">
       <div class="form-group col-12 myTag">
         <label for="description">Description</label>
-        <textarea class="form-control" placeholder="Description" name="description" rows="5"></textarea>
+        <textarea class="form-control" placeholder="Description" name="description" formControlName="description" rows="5"></textarea>
       </div>
     </div>
+    <div *ngIf="sendMessage">
+      <span style="color: green;">Your message has ben send!</span>
+    </div>
     <div class="form-row">
-      <button class="myBtn" >
+      <button class="myBtn" (click)="contactFunction()" >
         Send
       </button>
     </div>

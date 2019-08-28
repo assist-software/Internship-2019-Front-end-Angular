@@ -21,7 +21,6 @@
 
 .myPicture {
   margin-right: -32px;
-  /* margin-top: 25px; */
 }
 
 .positionImgRec {
@@ -91,19 +90,15 @@
   font-family: Campton;
   font-size: 24px;
   line-height: 33px;
-  /* align-items: center; */
   color: #000000;
-  /* display: flex; */
 }
 
 .textInfo {
   font-family: Campton;
   font-size: 18px;
   line-height: 25px;
-  /* align-items: center; */
   color: #000000;
   opacity: 0.6;
-  /* display: flex; */
 }
 
 .modal1 {
@@ -116,7 +111,6 @@
 .cancelBtn {
   width: 176;
   height: 48;
-  /* black */
   border: 1px solid #010103;
   box-sizing: border-box;
   border-radius: 8px;
@@ -137,7 +131,6 @@
   font-family: Campton;
   font-size: 18px;
   line-height: 25px;
-  /* identical to box height */
   text-align: center;
   color: #ffffff;
 }

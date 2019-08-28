@@ -66,12 +66,10 @@ export class AddMoovieComponent implements OnInit {
     // de vazut ce trebuie facut cu imdbId
     this.addMovie.value.imdbId = 'new';
 
-    // console.log(this.addMovie.value);
 
     this.movieService.postMovie(this.addMovie.value)
       .subscribe(
         (data: any) => {
-          // console.log(data, "post movie");
           if ('NoMovieFound' === data.errorMessage) {
             this.myError = true;
           } else {
@@ -83,12 +81,14 @@ export class AddMoovieComponent implements OnInit {
 
         },
         error => {
-          console.log('error', error);
+          console.log('error from addMovie', error);
         }
       );
   }
 
   cleanForm() {
     this.addMovie.reset();
+    this.myError = false;
+    this.post = false;
   }
 }

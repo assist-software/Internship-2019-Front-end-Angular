@@ -74,38 +74,30 @@ export class AdminMoovieComponent implements OnInit {
 
   confirm() {
     const test = typeof (this.idDeleted);
-    console.log('A spus da', test);
     this.moviesService.deleteMovie(this.idDeleted).subscribe(
       data => {
-        console.log('id este');
         let myVal = 0;
-        console.log(this.listMovies.values);
         this.listMovies.map((id, index) => {
           if (id.id === this.idDeleted) {
             myVal = index;
             return index;
           }
         });
-
         this.listMovies.splice(myVal, 1);
-        console.log(this.listMovies.values);
-
       },
       error => {
-        console.log('error', error);
+        console.log('error from adminMovie', error);
       }
     );
     this.modalRef.hide();
   }
 
   decline(): void {
-    console.log('A spus nu');
     this.modalRef.hide();
   }
 
   openModal(template: TemplateRef<any>, id: number) {
     this.modalRef = this.modalService.show(template);
-    // this.idDeleted = id;
     this.idDeleted = id;
     console.log('id-ul la setare', id);
   }

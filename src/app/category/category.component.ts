@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/movie.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MoviesServices } from '../services/movies.service';
-import { reduce } from 'rxjs/operators';
-// import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -40,13 +38,11 @@ export class CategoryComponent implements OnInit {
         data => {
           this.categorys = data;
           this.categorys.push({ id: this.categorys.length + 1, name: 'Default' });
-          console.log('categor', this.categorys);
         },
         error => {
-          console.log('error category', error);
+          console.log('error categories', error);
         }
       );
-    console.log(this.categorys);
   }
 
 

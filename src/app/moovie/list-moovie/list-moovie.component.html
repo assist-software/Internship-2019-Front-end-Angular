@@ -35,10 +35,10 @@
       </div>
     </div>
     <div class="container" style="margin-top: 50px;">
-      <div>
+      <div *ngIf="!(testArray); else try">
         <div class="row">
+          <span>Am intrat in if</span>
           <div class="col-md-3 position" *ngFor="let movie of moviesArray | slice:0:limit">
-            <!-- <div class="pictureContainer" [style.background-image]="image"> -->
             <img [src]="movie.coverUrl" alt="orice" [routerLink]="['/movie-details', movie.id]">
             <button class="btn btnRemove" (click)="removeFunc(movie.id)">Remove</button>
             <button class="btn btnScore">{{movie.imdbScore}}</button>
@@ -48,11 +48,13 @@
             <p>{{ movie.category[0].name }}</p>
           </div>
         </div>
+        <div *ngIf="moviesArray.length > 8 && !(moviesArray.length < limit)" style="display: flex;">
+          <button class="btn myBtnMore" (click)="loadMore()">Load more</button>
+        </div>
       </div>
-      <div *ngIf="moviesArray.length > 8 && !(moviesArray.length < limit)" style="display: flex;">
-        <!-- <div *ngIf="moviesArray.length < limit"> -->
-        <button class="btn myBtnMore" (click)="loadMore()">Load more</button>
-        <!-- </div> -->
-      </div>
+      <ng-template #try>
+          <span class="someTextWarning">You have no movies added to the Watchlist!</span>
+      </ng-template>
     </div>
   </div>
+</div>

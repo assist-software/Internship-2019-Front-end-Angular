@@ -82,7 +82,9 @@ export class MoviesServices {
     addMovieToWhatchlist(value) {
 
         let retrieveObject = localStorage.getItem('movieWhatchlist');
-        if (retrieveObject === 'null') {
+        console.log(retrieveObject);
+        if (retrieveObject === null) {
+            console.log('nu am intrat in if');
             const arrayMovie = [];
             arrayMovie.push(value);
             localStorage.setItem('movieWhatchlist', JSON.stringify(arrayMovie));

@@ -17,6 +17,7 @@ export class ListMoovieComponent implements OnInit {
   moviesArray: Movie[] = [];
   sortBy: string;
   limit = 16;
+  testArray = false;
 
 
   message: any;
@@ -34,6 +35,11 @@ export class ListMoovieComponent implements OnInit {
     const retrievedObject = localStorage.getItem('movieWhatchlist');
     this.moviesArray = JSON.parse(retrievedObject);
     this.movieArraySort = this.moviesArray;
+    console.log(this.testArray);
+    if (this.moviesArray === null) {
+      this.testArray = true;
+    }
+    console.log(this.testArray);
 
   }
 
