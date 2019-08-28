@@ -16,8 +16,6 @@
   </div>
 
 
-
-
   <div *ngFor="let movie of movies  | filter: searchText | paginate: { itemsPerPage: 8, currentPage: p } "
     class="service_box">
     <div class="section2"><br>
@@ -44,7 +42,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row  justify-content-center ">
     <div class=" col-sm-6 text-center">
       <pagination-controls class="my-pagination" (pageChange)="p = $event" responsive="true"></pagination-controls>
     </div>

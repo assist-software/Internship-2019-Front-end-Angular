@@ -1,7 +1,7 @@
 <div class="container ">
   <app-header></app-header>
   <div class="col">
-    <label for="sdropdownBasic1">Sort by:</label>
+    <label for="dropdownBasic1">Sort by:</label>
   </div>
   <div class="col">
     <div ngbDropdown class="d-inline-block">
@@ -39,8 +39,13 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-6 col-sm-6 text-center">
+<div class="row m-5 justify-content-center">
+  <div class="">
+    <style>
+      .my-pagination /deep/ .ngx-pagination a {
+        color: white;
+      }
+    </style>
     <pagination-controls class="my-pagination" (pageChange)="p = $event" responsive="true"></pagination-controls>
   </div>
 </div>

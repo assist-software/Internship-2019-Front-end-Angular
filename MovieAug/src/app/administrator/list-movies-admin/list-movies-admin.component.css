@@ -122,4 +122,50 @@
   margin-right: 43px;
 }
 
-@media (max-width: 999px) {}
+.my-pagination /deep/ .ngx-pagination a {
+  color: black;
+}
+
+@media (max-width: 909px) {
+
+
+  .buttonsModify {
+    margin-top: -2%;
+  }
+
+  .search {
+    width: 200px;
+  }
+}
+
+@media (max-width: 563px) {
+  .buttonAdauga {
+    margin-left: -20%;
+    width: 200px;
+  }
+
+
+  .row {
+    display: inline;
+  }
+
+  .col-3,
+  .col-2,
+  .col-1 {
+    width: 100%;
+    align-items: center;
+    margin-left: 35%;
+    text-align: center;
+  }
+
+  .buttonsModify {
+    position: inherit;
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section2 {
+    max-width: 1474px;
+  }
+}

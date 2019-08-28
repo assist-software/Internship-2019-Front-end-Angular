@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { RestApiService } from '../../../shared/rest-api.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { movie } from '@app/shared/movie';
+import { Component, OnInit, Input } from "@angular/core";
+import { RestApiService } from "../../../shared/rest-api.service";
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { movie } from "@app/shared/movie";
 @Component({
   selector: "app-movie-item",
   templateUrl: "./movie-item.component.html",
@@ -18,7 +18,7 @@ export class MovieItemComponent implements OnInit {
     private route: ActivatedRoute,
     public restApi: RestApiService,
     public rout: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.loadMovie();
@@ -60,7 +60,7 @@ export class MovieItemComponent implements OnInit {
   removeWatchlist(id) {
     this.watchlist = JSON.parse(localStorage.getItem("watchlist"));
     if (this.watchlist) {
-      this.watchlist = this.watchlist.filter(function (obj) {
+      this.watchlist = this.watchlist.filter(function(obj) {
         return obj.id !== id;
       });
       localStorage.setItem("watchlist", JSON.stringify(this.watchlist));
