@@ -24,7 +24,7 @@
     "angular-sanitize": "^1.7.8",
     "angular-ui-carousel": "^0.1.10",
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-bootstrap": "^5.1.1",
     "ngx-filter-pipe": "^2.1.2",
     "ngx-order-pipe": "^2.0.3",
